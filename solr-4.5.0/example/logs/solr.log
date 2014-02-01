@@ -16815,3 +16815,431 @@ Caused by: org.apache.solr.common.SolrException: default search field 'ProductTi
 	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:507)
 	... 13 more
 
+INFO  - 2014-02-01 14:37:50.503; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-02-01 14:37:50.522; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/contexts at interval 0
+INFO  - 2014-02-01 14:37:50.527; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/contexts/solr-jetty-context.xml
+INFO  - 2014-02-01 14:37:51.429; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-02-01 14:37:51.469; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-02-01 14:37:51.512; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-02-01 14:37:51.512; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-02-01 14:37:51.513; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-02-01 14:37:51.636; org.apache.solr.core.ConfigSolr; Loading container configuration from /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/solr.xml
+INFO  - 2014-02-01 14:37:51.753; org.apache.solr.core.ConfigSolrXml; Config-defined core root directory: 
+INFO  - 2014-02-01 14:37:51.763; org.apache.solr.core.CoreContainer; New CoreContainer 1849999958
+INFO  - 2014-02-01 14:37:51.763; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-02-01 14:37:51.776; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-02-01 14:37:51.776; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2014-02-01 14:37:51.776; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-02-01 14:37:51.777; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-02-01 14:37:51.779; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-02-01 14:37:51.779; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-02-01 14:37:51.779; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-02-01 14:37:51.780; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-02-01 14:37:51.780; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-02-01 14:37:51.786; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-02-01 14:37:51.900; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-02-01 14:37:51.901; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-02-01 14:37:51.927; org.apache.solr.core.CorePropertiesLocator; Looking for core definitions underneath /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr
+INFO  - 2014-02-01 14:37:51.945; org.apache.solr.core.CorePropertiesLocator; Found core collection1 in /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/
+INFO  - 2014-02-01 14:37:51.945; org.apache.solr.core.CorePropertiesLocator; Found 1 core definitions
+INFO  - 2014-02-01 14:37:51.947; org.apache.solr.core.CoreContainer; Creating SolrCore 'collection1' using instanceDir: /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1
+INFO  - 2014-02-01 14:37:51.947; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/'
+INFO  - 2014-02-01 14:37:52.030; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2014-02-01 14:37:52.032; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2014-02-01 14:37:52.032; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2014-02-01 14:37:52.033; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2014-02-01 14:37:52.033; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2014-02-01 14:37:52.033; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.033; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.034; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.034; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/fontbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.034; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/icu4j-49.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.035; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.035; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.035; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/jempbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.036; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2014-02-01 14:37:52.036; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2014-02-01 14:37:52.036; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2014-02-01 14:37:52.036; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/pdfbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.037; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-3.9.jar' to classloader
+INFO  - 2014-02-01 14:37:52.037; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-ooxml-3.9.jar' to classloader
+INFO  - 2014-02-01 14:37:52.037; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-ooxml-schemas-3.9.jar' to classloader
+INFO  - 2014-02-01 14:37:52.038; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-scratchpad-3.9.jar' to classloader
+INFO  - 2014-02-01 14:37:52.038; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2014-02-01 14:37:52.038; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.038; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/tika-core-1.4.jar' to classloader
+INFO  - 2014-02-01 14:37:52.039; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/tika-parsers-1.4.jar' to classloader
+INFO  - 2014-02-01 14:37:52.039; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.039; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.039; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.040; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.040; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/xz-1.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.041; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.042; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/attributes-binder-1.2.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.042; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/carrot2-mini-3.8.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.042; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/hppc-0.5.2.jar' to classloader
+INFO  - 2014-02-01 14:37:52.043; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
+INFO  - 2014-02-01 14:37:52.043; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
+INFO  - 2014-02-01 14:37:52.043; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.043; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2014-02-01 14:37:52.044; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/simple-xml-2.7.jar' to classloader
+INFO  - 2014-02-01 14:37:52.045; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.046; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2014-02-01 14:37:52.046; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2014-02-01 14:37:52.047; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.047; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar' to classloader
+INFO  - 2014-02-01 14:37:52.048; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar.sha1' to classloader
+INFO  - 2014-02-01 14:37:52.048; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom' to classloader
+INFO  - 2014-02-01 14:37:52.048; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom.sha1' to classloader
+INFO  - 2014-02-01 14:37:52.048; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-4.5.0.war' to classloader
+INFO  - 2014-02-01 14:37:52.049; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-analysis-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.049; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.049; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.049; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-core-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.050; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.050; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.050; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.050; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.050; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-solrj-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.051; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-test-framework-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.051; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-uima-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.051; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.051; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solrj-lib/' to classloader
+INFO  - 2014-02-01 14:37:52.052; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/test-framework/' to classloader
+INFO  - 2014-02-01 14:37:52.052; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.053; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.053; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2014-02-01 14:37:52.053; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.054; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.055; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar' to classloader
+INFO  - 2014-02-01 14:37:52.055; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar.sha1' to classloader
+INFO  - 2014-02-01 14:37:52.055; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom' to classloader
+INFO  - 2014-02-01 14:37:52.055; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom.sha1' to classloader
+INFO  - 2014-02-01 14:37:52.055; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-4.5.0.war' to classloader
+INFO  - 2014-02-01 14:37:52.056; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-analysis-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.056; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.056; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.056; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-core-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.056; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.057; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.1.jar' to classloader
+INFO  - 2014-02-01 14:37:52.057; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.057; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.057; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-solrj-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.058; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-test-framework-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.058; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-uima-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.058; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:37:52.058; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solrj-lib/' to classloader
+INFO  - 2014-02-01 14:37:52.059; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/test-framework/' to classloader
+INFO  - 2014-02-01 14:37:52.194; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2014-02-01 14:37:52.200; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_45
+INFO  - 2014-02-01 14:37:52.334; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-02-01 14:37:52.339; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-02-01 14:37:52.366; org.apache.solr.schema.IndexSchema; [collection1] Schema name=example
+ERROR - 2014-02-01 14:37:52.663; org.apache.solr.core.CoreContainer; Unable to create core: collection1
+org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed. Schema file is /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/schema.xml
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:608)
+	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:166)
+	at org.apache.solr.schema.IndexSchemaFactory.create(IndexSchemaFactory.java:55)
+	at org.apache.solr.schema.IndexSchemaFactory.buildIndexSchema(IndexSchemaFactory.java:69)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:521)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:559)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:241)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:507)
+	... 13 more
+ERROR - 2014-02-01 14:37:52.665; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: Unable to create core: collection1
+	at org.apache.solr.core.CoreContainer.recordAndThrow(CoreContainer.java:936)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:568)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:241)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed. Schema file is /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/schema.xml
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:608)
+	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:166)
+	at org.apache.solr.schema.IndexSchemaFactory.create(IndexSchemaFactory.java:55)
+	at org.apache.solr.schema.IndexSchemaFactory.buildIndexSchema(IndexSchemaFactory.java:69)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:521)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:559)
+	... 8 more
+Caused by: org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:507)
+	... 13 more
+
+INFO  - 2014-02-01 14:37:52.666; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example
+INFO  - 2014-02-01 14:37:52.667; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+WARN  - 2014-02-01 14:37:52.693; org.eclipse.jetty.util.component.AbstractLifeCycle; FAILED SocketConnector@0.0.0.0:8983: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.eclipse.jetty.server.bio.SocketConnector.newServerSocket(SocketConnector.java:96)
+	at org.eclipse.jetty.server.bio.SocketConnector.open(SocketConnector.java:85)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.bio.SocketConnector.doStart(SocketConnector.java:156)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:291)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.xml.XmlConfiguration$1.run(XmlConfiguration.java:1259)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.jetty.xml.XmlConfiguration.main(XmlConfiguration.java:1182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.jetty.start.Main.invokeMain(Main.java:473)
+	at org.eclipse.jetty.start.Main.start(Main.java:615)
+	at org.eclipse.jetty.start.Main.main(Main.java:96)
+WARN  - 2014-02-01 14:37:52.694; org.eclipse.jetty.util.component.AbstractLifeCycle; FAILED org.eclipse.jetty.server.Server@185ed59f: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.eclipse.jetty.server.bio.SocketConnector.newServerSocket(SocketConnector.java:96)
+	at org.eclipse.jetty.server.bio.SocketConnector.open(SocketConnector.java:85)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.bio.SocketConnector.doStart(SocketConnector.java:156)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:291)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.xml.XmlConfiguration$1.run(XmlConfiguration.java:1259)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.jetty.xml.XmlConfiguration.main(XmlConfiguration.java:1182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.jetty.start.Main.invokeMain(Main.java:473)
+	at org.eclipse.jetty.start.Main.start(Main.java:615)
+	at org.eclipse.jetty.start.Main.main(Main.java:96)
+INFO  - 2014-02-01 14:38:26.510; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-02-01 14:38:26.528; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/contexts at interval 0
+INFO  - 2014-02-01 14:38:26.534; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/contexts/solr-jetty-context.xml
+INFO  - 2014-02-01 14:38:27.457; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-02-01 14:38:27.491; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-02-01 14:38:27.515; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-02-01 14:38:27.516; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-02-01 14:38:27.518; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-02-01 14:38:27.656; org.apache.solr.core.ConfigSolr; Loading container configuration from /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/solr.xml
+INFO  - 2014-02-01 14:38:27.766; org.apache.solr.core.ConfigSolrXml; Config-defined core root directory: 
+INFO  - 2014-02-01 14:38:27.775; org.apache.solr.core.CoreContainer; New CoreContainer 1338080314
+INFO  - 2014-02-01 14:38:27.776; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-02-01 14:38:27.797; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-02-01 14:38:27.797; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2014-02-01 14:38:27.798; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-02-01 14:38:27.798; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-02-01 14:38:27.800; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-02-01 14:38:27.800; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-02-01 14:38:27.800; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-02-01 14:38:27.801; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-02-01 14:38:27.801; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-02-01 14:38:27.808; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-02-01 14:38:27.936; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-02-01 14:38:27.937; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-02-01 14:38:27.963; org.apache.solr.core.CorePropertiesLocator; Looking for core definitions underneath /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr
+INFO  - 2014-02-01 14:38:27.976; org.apache.solr.core.CorePropertiesLocator; Found core collection1 in /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/
+INFO  - 2014-02-01 14:38:27.976; org.apache.solr.core.CorePropertiesLocator; Found 1 core definitions
+INFO  - 2014-02-01 14:38:27.978; org.apache.solr.core.CoreContainer; Creating SolrCore 'collection1' using instanceDir: /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1
+INFO  - 2014-02-01 14:38:27.978; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/'
+INFO  - 2014-02-01 14:38:28.054; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2014-02-01 14:38:28.057; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2014-02-01 14:38:28.058; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2014-02-01 14:38:28.058; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2014-02-01 14:38:28.059; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2014-02-01 14:38:28.059; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.059; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.060; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.060; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/fontbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.061; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/icu4j-49.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.061; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.061; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.062; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/jempbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.062; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2014-02-01 14:38:28.062; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2014-02-01 14:38:28.063; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2014-02-01 14:38:28.064; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/pdfbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.065; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-3.9.jar' to classloader
+INFO  - 2014-02-01 14:38:28.065; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-ooxml-3.9.jar' to classloader
+INFO  - 2014-02-01 14:38:28.066; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-ooxml-schemas-3.9.jar' to classloader
+INFO  - 2014-02-01 14:38:28.066; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-scratchpad-3.9.jar' to classloader
+INFO  - 2014-02-01 14:38:28.067; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2014-02-01 14:38:28.067; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.067; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/tika-core-1.4.jar' to classloader
+INFO  - 2014-02-01 14:38:28.067; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/tika-parsers-1.4.jar' to classloader
+INFO  - 2014-02-01 14:38:28.067; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.068; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.068; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.068; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.068; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/extraction/lib/xz-1.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.069; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.070; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/attributes-binder-1.2.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.070; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/carrot2-mini-3.8.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.070; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/hppc-0.5.2.jar' to classloader
+INFO  - 2014-02-01 14:38:28.070; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
+INFO  - 2014-02-01 14:38:28.071; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
+INFO  - 2014-02-01 14:38:28.071; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.071; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2014-02-01 14:38:28.071; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/clustering/lib/simple-xml-2.7.jar' to classloader
+INFO  - 2014-02-01 14:38:28.072; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.073; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2014-02-01 14:38:28.073; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2014-02-01 14:38:28.074; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.075; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar' to classloader
+INFO  - 2014-02-01 14:38:28.075; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar.sha1' to classloader
+INFO  - 2014-02-01 14:38:28.075; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom' to classloader
+INFO  - 2014-02-01 14:38:28.076; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom.sha1' to classloader
+INFO  - 2014-02-01 14:38:28.076; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-4.5.0.war' to classloader
+INFO  - 2014-02-01 14:38:28.076; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-analysis-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.077; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.077; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.077; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-core-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.078; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.078; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.078; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.078; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.079; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-solrj-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.079; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-test-framework-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.079; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-uima-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.079; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.080; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solrj-lib/' to classloader
+INFO  - 2014-02-01 14:38:28.080; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/test-framework/' to classloader
+INFO  - 2014-02-01 14:38:28.081; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.081; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.081; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2014-02-01 14:38:28.081; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.082; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.083; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar' to classloader
+INFO  - 2014-02-01 14:38:28.083; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar.sha1' to classloader
+INFO  - 2014-02-01 14:38:28.083; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom' to classloader
+INFO  - 2014-02-01 14:38:28.083; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom.sha1' to classloader
+INFO  - 2014-02-01 14:38:28.084; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-4.5.0.war' to classloader
+INFO  - 2014-02-01 14:38:28.084; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-analysis-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.084; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.084; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.084; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-core-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.085; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.085; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.1.jar' to classloader
+INFO  - 2014-02-01 14:38:28.085; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.085; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.086; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-solrj-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.086; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-test-framework-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.086; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-uima-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.086; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 14:38:28.087; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/solrj-lib/' to classloader
+INFO  - 2014-02-01 14:38:28.087; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/dist/test-framework/' to classloader
+INFO  - 2014-02-01 14:38:28.227; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2014-02-01 14:38:28.231; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_45
+INFO  - 2014-02-01 14:38:28.366; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-02-01 14:38:28.371; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-02-01 14:38:28.407; org.apache.solr.schema.IndexSchema; [collection1] Schema name=example
+ERROR - 2014-02-01 14:38:28.709; org.apache.solr.core.CoreContainer; Unable to create core: collection1
+org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed. Schema file is /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/schema.xml
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:608)
+	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:166)
+	at org.apache.solr.schema.IndexSchemaFactory.create(IndexSchemaFactory.java:55)
+	at org.apache.solr.schema.IndexSchemaFactory.buildIndexSchema(IndexSchemaFactory.java:69)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:521)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:559)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:241)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:507)
+	... 13 more
+ERROR - 2014-02-01 14:38:28.711; org.apache.solr.common.SolrException; null:org.apache.solr.common.SolrException: Unable to create core: collection1
+	at org.apache.solr.core.CoreContainer.recordAndThrow(CoreContainer.java:936)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:568)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:249)
+	at org.apache.solr.core.CoreContainer$1.call(CoreContainer.java:241)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:471)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:744)
+Caused by: org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed. Schema file is /Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example/solr/collection1/schema.xml
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:608)
+	at org.apache.solr.schema.IndexSchema.<init>(IndexSchema.java:166)
+	at org.apache.solr.schema.IndexSchemaFactory.create(IndexSchemaFactory.java:55)
+	at org.apache.solr.schema.IndexSchemaFactory.buildIndexSchema(IndexSchemaFactory.java:69)
+	at org.apache.solr.core.CoreContainer.createFromLocal(CoreContainer.java:521)
+	at org.apache.solr.core.CoreContainer.create(CoreContainer.java:559)
+	... 8 more
+Caused by: org.apache.solr.common.SolrException: default search field 'ProductTitle' not defined or not indexed
+	at org.apache.solr.schema.IndexSchema.readSchema(IndexSchema.java:507)
+	... 13 more
+
+INFO  - 2014-02-01 14:38:28.713; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Users/brett/Dropbox/UCLA/CS130/Project/szsearch3/solr-4.5.0/example
+INFO  - 2014-02-01 14:38:28.713; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+WARN  - 2014-02-01 14:38:28.738; org.eclipse.jetty.util.component.AbstractLifeCycle; FAILED SocketConnector@0.0.0.0:8983: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.eclipse.jetty.server.bio.SocketConnector.newServerSocket(SocketConnector.java:96)
+	at org.eclipse.jetty.server.bio.SocketConnector.open(SocketConnector.java:85)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.bio.SocketConnector.doStart(SocketConnector.java:156)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:291)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.xml.XmlConfiguration$1.run(XmlConfiguration.java:1259)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.jetty.xml.XmlConfiguration.main(XmlConfiguration.java:1182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.jetty.start.Main.invokeMain(Main.java:473)
+	at org.eclipse.jetty.start.Main.start(Main.java:615)
+	at org.eclipse.jetty.start.Main.main(Main.java:96)
+WARN  - 2014-02-01 14:38:28.739; org.eclipse.jetty.util.component.AbstractLifeCycle; FAILED org.eclipse.jetty.server.Server@73cbc528: java.net.BindException: Address already in use
+java.net.BindException: Address already in use
+	at java.net.PlainSocketImpl.socketBind(Native Method)
+	at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:376)
+	at java.net.ServerSocket.bind(ServerSocket.java:376)
+	at java.net.ServerSocket.<init>(ServerSocket.java:237)
+	at java.net.ServerSocket.<init>(ServerSocket.java:181)
+	at org.eclipse.jetty.server.bio.SocketConnector.newServerSocket(SocketConnector.java:96)
+	at org.eclipse.jetty.server.bio.SocketConnector.open(SocketConnector.java:85)
+	at org.eclipse.jetty.server.AbstractConnector.doStart(AbstractConnector.java:316)
+	at org.eclipse.jetty.server.bio.SocketConnector.doStart(SocketConnector.java:156)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:291)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:64)
+	at org.eclipse.jetty.xml.XmlConfiguration$1.run(XmlConfiguration.java:1259)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at org.eclipse.jetty.xml.XmlConfiguration.main(XmlConfiguration.java:1182)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.jetty.start.Main.invokeMain(Main.java:473)
+	at org.eclipse.jetty.start.Main.start(Main.java:615)
+	at org.eclipse.jetty.start.Main.main(Main.java:96)
+INFO  - 2014-02-01 14:38:54.509; org.eclipse.jetty.server.Server; Graceful shutdown SocketConnector@0.0.0.0:8983
+INFO  - 2014-02-01 14:38:54.510; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/solr-webapp/webapp/},/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/webapps/solr.war
+INFO  - 2014-02-01 14:38:55.513; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=844788033
+INFO  - 2014-02-01 14:38:55.515; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/solr-webapp/webapp/},/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/webapps/solr.war
