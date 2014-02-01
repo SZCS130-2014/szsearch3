@@ -802,7 +802,14 @@
      not be initialized until the first request that uses it.
      
      -->
-    <!-- SearchHandler
+
+	<requestHandler name="/dataimport" class="org.apache.solr.handler.dataimport.DataImportHandler">
+    		<lst name="defaults">
+		      <str name="config">data-config.xml</str>
+    		</lst>
+  	</requestHandler>
+    
+	<!-- SearchHandler
      
      http://wiki.apache.org/solr/SearchHandler
      
