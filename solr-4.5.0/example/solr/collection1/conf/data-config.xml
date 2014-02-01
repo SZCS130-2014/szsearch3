@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataConfig>
+    <dataSource type="JdbcDataSource"
+    driver="com.sybase.jdbc3.jdbc.SybDataSource"
+    url="jdbc:sybase:Tds:gondor-qa0.shopzilla.corp:6666/blackhole"
+    user="nova"
+    password="stardust"/>
+    <document>
+        <entity name="id"
+            query="select mModelID, mPartnerPID, mVendorName, mFamilyName, mModelNumber, mMPN, mCategoryName, mImgURL, mProductTitle, mDescription, mCategoryID from nova.RetrevoSearchView">
+            <field column="mModelID" name="solr_mModelID"/>
+            <field column="mPartnerPID" name="solr_mPartnerPID"/>
+            <field column="mVendorName" name="solr_mVendorName"/>
+            <field column="mFamilyName" name="solr_mFamilyName"/>
+            <field column="mModelNumber" name="solr_mModelNumber"/>
+            <field column="mMPN" name="solr_mMPN"/>
+            <field column="mCategoryName" name="solr_mCategory"/>
+            <field column="mImgURL" name="solr_mImgURL"/>
+            <field column="mCategoryID" name="solr_mCategoryID"/>
+            <field column="mProductTitle" name="solr_mProductTitle"/>
+            <field column="mDescription" name="solr_mDescription"/>
+        </entity>
+    </document>
+</dataConfig>

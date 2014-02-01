@@ -1,0 +1,125 @@
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+#-----------------------------------------------------------------------
+GB,gib,gigabyte,gigabytes
+MB,mib,megabyte,megabytes
+Television,Televisions,TV,TVs
+PS4,Playstation 4,Playstation4,Playstation4s,Playstation 4s
+PS3,Playstation 3,Playstation3,Playstation3s,Playstation 3s
+PS2,PS 2,Playstation 2,Playstation2,Playstation2s,Playstation 2s
+PS,Playstation,Playstations,PS1,PS 1
+cell phone,cell phones,cellular phones,cellular phone,cell_phone,cell_phones,cellphone,cellphones
+phone,phones,telephones,telephone
+mice,mouse
+washer,washers,washing machine
+dryer,dryers
+BINOCULARS,binocular
+CALCULATORS,calculator
+CAMCORDERS,camcorder
+DESKTOPS,desktop computer,desktop computers,desktop_computer,desktop
+DIGITAL_CAMERAS,digital cameras,digitalcamera,digital camera,camera,
+DISHWASHERS,dishwasher,dish washer,dish washers
+DVD_PLAYERS,dvd player,dvd players,dvdplayer
+DRYERS,dryer,drying machine
+DVRS,dvr
+GPS,global positioning system,gps system,gps tracker
+GRILLS,grill,grilling
+HOME_THEATER_SYSTEMS,home theater,home theater system,home theaters,home theaters system,home theater systems
+HEADPHONES,earphones,earbuds,ear buds,headphone
+LAPTOPS,laptop,laptop computer,laptop computers
+MICROWAVES,microwave
+MONITORS,monitor,computer screen
+MP3_PLAYERS,mp3 players,mp3 player
+MULTIFUNCTION_PRINTERS,multifunction printers
+PRINTERS,printer
+OVENS,oven
+PDAS_AND_HANDHELDS,pda,handhelds,handheld pda,pdas
+PROJECTORS,projector
+RANGES,range
+RADIOS,fm radio,am radio,radio
+RECEIVERS,receiver
+REFRIGERATORS,refrigerator
+SPEAKERS,speaker
+SATELLITE_RADIOS,satellite radios,satellite radio
+SCANNERS,scanner
+STORAGE,storages
+TELESCOPES,telescope
+VOICE_RECORDERS,voice recorder,voice recorders
+UNIVERSAL_REMOTES,universal remote,universal remotes,universalremotes
+VACUUMS,vacuum
+AMPS,amp,amplifiers,amplifier
+WIRELESS_ROUTERS,wireless router,wireless routers
+CAR_AMPLIFIERS,car amp,car aplifier,car amplifiers
+BLENDERS,blender,blending machine
+CAR_RECEIVERS,car receiver,car receivers
+COFFEE_MAKERS,coffee maker,coffee makers,coffeemaker,coffeemakers,coffee
+CAR_VIDEOS,car videos,car video,carvideos
+GUITARS,guitar
+FOOD_PROCESSORS,food processor,food processors,foodprocessors
+GAMING_CONSOLES,game console,game consoles
+KEYBOARDS,keyboard
+SWITCHES,sitch
+RADAR_DETECTORS,radar detector,radar detectors
+ROUTERS,router
+PORTABLE_DVD_PLAYERS,portable dvd players,portable dvd player
+TABLETS,tablet,tablet computer
+HEADSETS,headset
+MUSIC_KEYBOARDS,music keyboard
+TWO_WAY_RADIOS,two way radios,two-way radios,two-way radio,two way radio
+DIGITAL_PHOTO_FRAMES,digital photo frame, digital photo frames
+AIR_CONDITIONERS,air conditioners,air conditioner,air conditioning,conditioner,conditioning
+FREEZERS,freezer
+WATCHES,watch,wrist watch
+SPEAKER_SYSTEMS,speakers,speaker system,speaker systems
+SUBWOOFERS,subwoofer
+SECURITY_CAMERAS,security cameras,security camera,securitycameras
+HEATERS,heater
+AIR_PURIFIERS,air purifiers,air purifier,purifier,purifiers
+HUMIDIFIERS,humidifier
+DEHUMIDIFIERS,dehumidifier
+TOASTER_OVENS,toaster oven,toaster ovens
+BUILDING_TOYS,building toys,building toy,toys,toy
+COMPUTER_GAMES,computer games,computer game
+PS2_GAMES,ps2 games,ps2 game,playstation 2 games,playstation2 games,playstation2 game
+GAME_BOY_ADVANCED_GAMES,gameboy advanced game,game boy advanced games,game boy advanced game,gameboy advanced games
+GAME_CUBE_GAMES,gamecube game,gamecube games,game cube game,game cube games
+PSP_GAMES,psp games,psp game
+WII_GAMES,wii games,wii game
+NINTENDO_DS_LITE_GAMES,nintendo ds lite games,nintendo ds lite game,nintendo ds game,nintendo ds games,ds game,ds games
+XBOX_GAMES,xbox games,xbox game
+DREAMCAST_GAMES,dreamcast games,dreamcast game
+GRAPHICS_AND_PUBLISHING,graphics and publishing
+CAMERA_ACCESSORIES,camera accessories,digital camera accessories,camera accessory
+SLR_LENSES,slr lenses,slr lense 
+GPS_ACCESSORIES,gps accessories
+MP3_ACCESSORIES,mp3 accessories
+VIDEO_SWITCHERS,video switchers,video switcher
+COMPUTER_COMPONENTS,computer component,computer components,computercomponents
+GRAPHIC_CARDS,graphic cards,graphic card
+DOCKING_STATIONS,docking station,docking stations
+LAPTOP_ACCESSORIES,laptop accessories,laptop accessory,laptop computer accessories
+COMPUTER_AND_LAPTOP_MEMORY,computer and laptop memory,computer memory,laptop memory
+MONITOR_ACCESSORIES,monitor accessories,monitor accessory
+SOUND_CARDS,sound card,sound cards
+WEBCAMS,webcam
+DIGITAL_MEDIA_RECEIVERS,digital media receiver,digital media receivers
+FIREWALL_AND_SECURITY_DEVICES,firewall and security devices,firewall devices,security devices,firewall
+NETWORK_ADAPTERS,network adapters,network adapter
+TRANSCEIVERS,transceiver
+PDA_ACCESSORIES,pda accessories,pda accessory
+LABELING_SYSTEMS,labeling,labeling system,labeler
+CONTROLLERS,controller
+FLASH_MEMORY,flash memory
+FLOPPY_AND_TAPE,floppy and tape,floppy disk,tape
+IO_CARDS,IO card,IO cards
+USB_FIREWIRE_DEVICES,usb firewire devices,usb firewire device,usb firewire
