@@ -1,8 +1,8 @@
 *.class
-
+*.log
 # Package Files #
 *.ear
-
+solr-4.5.0/example/solr/collection1/conf/dataimport.properties
 .DS_Store
-solr-4.5.0/example/solr/collection1/data/
+solr-4.5.0/example/solr/collection1/data
 solr-4.5.0/example/dataset.xml
