@@ -7,7 +7,7 @@
 			<field column="ProductTitle" xpath="/products/product/@ProductTitle"/>
 			<field column="Review" xpath="/products/product/Comments/Comment/@Value"/>
 			<field column="Rating" xpath="/products/product/Comments/Comment/@Rating"/>
-			<field column="ReviewTitle" xpath="/products/product/Comments/Comment/@ReviewTitle"/>
+			<field column="ReviewTitle" xpath="/products/product/Comments/Comment/@Title"/>
 		</entity>
 	</document>
 </dataConfig>
