@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <dataConfig>
-	<dataSource type="FileDataSource" encoding="UTF-8"/>
+	<dataSource type="FileDataSource" encoding="UTF-8" url="dataset.xml"/>
 	<document>
-		<entity name="product" processor="XPathEntityProcessor" stream="true" forEach="products/product" url="dataset.xml">
+		<entity name="product" processor="XPathEntityProcessor" stream="true" forEach="/products/product" url="dataset.xml">
 			<field column="PID" xpath="/products/product/@PID"/>
-			<field column="ProductTitle" xpath="/products/product/ProductTitle"/>
-			<field name="Review" xpath="/products/product/comments/comment/@Value"/>
-			<field name="Rating" xpath="/products/product/comments/comment/@Rating"/>
-			<field name="ReviewTitle" xpath="/products/product/comments/comment/@ReviewTitle"/>
+			<field column="ProductTitle" xpath="/products/product/@ProductTitle"/>
+			<field column="Review" xpath="/products/product/Comments/Comment/@Value"/>
+			<field column="Rating" xpath="/products/product/Comments/Comment/@Rating"/>
+			<field column="ReviewTitle" xpath="/products/product/Comments/Comment/@ReviewTitle"/>
 		</entity>
 	</document>
 </dataConfig>

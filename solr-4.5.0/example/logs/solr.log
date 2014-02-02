@@ -17243,3 +17243,408 @@ INFO  - 2014-02-01 14:38:54.509; org.eclipse.jetty.server.Server; Graceful shutd
 INFO  - 2014-02-01 14:38:54.510; org.eclipse.jetty.server.Server; Graceful shutdown o.e.j.w.WebAppContext{/solr,file:/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/solr-webapp/webapp/},/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/webapps/solr.war
 INFO  - 2014-02-01 14:38:55.513; org.apache.solr.core.CoreContainer; Shutting down CoreContainer instance=844788033
 INFO  - 2014-02-01 14:38:55.515; org.eclipse.jetty.server.handler.ContextHandler; stopped o.e.j.w.WebAppContext{/solr,file:/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/solr-webapp/webapp/},/Users/brett/Dropbox/UCLA/CS130/Project/solr-4.5.0/example/webapps/solr.war
+INFO  - 2014-02-01 16:10:48.760; org.eclipse.jetty.server.Server; jetty-8.1.10.v20130312
+INFO  - 2014-02-01 16:10:48.813; org.eclipse.jetty.deploy.providers.ScanningAppProvider; Deployment monitor /Users/frosty/szsearch3/solr-4.5.0/example/contexts at interval 0
+INFO  - 2014-02-01 16:10:48.824; org.eclipse.jetty.deploy.DeploymentManager; Deployable added: /Users/frosty/szsearch3/solr-4.5.0/example/contexts/solr-jetty-context.xml
+INFO  - 2014-02-01 16:10:49.003; org.eclipse.jetty.webapp.WebInfConfiguration; Extract jar:file:/Users/frosty/szsearch3/solr-4.5.0/example/webapps/solr.war!/ to /Users/frosty/szsearch3/solr-4.5.0/example/solr-webapp/webapp
+INFO  - 2014-02-01 16:10:51.832; org.eclipse.jetty.webapp.StandardDescriptorProcessor; NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+INFO  - 2014-02-01 16:10:51.914; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init()
+INFO  - 2014-02-01 16:10:51.932; org.apache.solr.core.SolrResourceLoader; JNDI not configured for solr (NoInitialContextEx)
+INFO  - 2014-02-01 16:10:51.933; org.apache.solr.core.SolrResourceLoader; solr home defaulted to 'solr/' (could not find system property or JNDI)
+INFO  - 2014-02-01 16:10:51.934; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: 'solr/'
+INFO  - 2014-02-01 16:10:52.096; org.apache.solr.core.ConfigSolr; Loading container configuration from /Users/frosty/szsearch3/solr-4.5.0/example/solr/solr.xml
+INFO  - 2014-02-01 16:10:52.264; org.apache.solr.core.ConfigSolrXml; Config-defined core root directory: 
+INFO  - 2014-02-01 16:10:52.273; org.apache.solr.core.CoreContainer; New CoreContainer 1407844613
+INFO  - 2014-02-01 16:10:52.274; org.apache.solr.core.CoreContainer; Loading cores into CoreContainer [instanceDir=solr/]
+INFO  - 2014-02-01 16:10:52.293; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting socketTimeout to: 0
+INFO  - 2014-02-01 16:10:52.294; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting urlScheme to: http://
+INFO  - 2014-02-01 16:10:52.295; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting connTimeout to: 0
+INFO  - 2014-02-01 16:10:52.298; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxConnectionsPerHost to: 20
+INFO  - 2014-02-01 16:10:52.299; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting corePoolSize to: 0
+INFO  - 2014-02-01 16:10:52.316; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maximumPoolSize to: 2147483647
+INFO  - 2014-02-01 16:10:52.317; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting maxThreadIdleTime to: 5
+INFO  - 2014-02-01 16:10:52.317; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting sizeOfQueue to: -1
+INFO  - 2014-02-01 16:10:52.318; org.apache.solr.handler.component.HttpShardHandlerFactory; Setting fairnessPolicy to: false
+INFO  - 2014-02-01 16:10:52.327; org.apache.solr.client.solrj.impl.HttpClientUtil; Creating new http client, config:maxConnectionsPerHost=20&maxConnections=10000&socketTimeout=0&connTimeout=0&retry=false
+INFO  - 2014-02-01 16:10:52.633; org.apache.solr.logging.LogWatcher; SLF4J impl is org.slf4j.impl.Log4jLoggerFactory
+INFO  - 2014-02-01 16:10:52.634; org.apache.solr.logging.LogWatcher; Registering Log Listener [Log4j (org.slf4j.impl.Log4jLoggerFactory)]
+INFO  - 2014-02-01 16:10:52.692; org.apache.solr.core.CorePropertiesLocator; Looking for core definitions underneath /Users/frosty/szsearch3/solr-4.5.0/example/solr
+INFO  - 2014-02-01 16:10:52.713; org.apache.solr.core.CorePropertiesLocator; Found core collection1 in /Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/
+INFO  - 2014-02-01 16:10:52.714; org.apache.solr.core.CorePropertiesLocator; Found 1 core definitions
+INFO  - 2014-02-01 16:10:52.716; org.apache.solr.core.CoreContainer; Creating SolrCore 'collection1' using instanceDir: /Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1
+INFO  - 2014-02-01 16:10:52.717; org.apache.solr.core.SolrResourceLoader; new SolrResourceLoader for directory: '/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/'
+INFO  - 2014-02-01 16:10:52.836; org.apache.solr.core.SolrConfig; Adding specified lib dirs to ClassLoader
+INFO  - 2014-02-01 16:10:52.839; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/apache-mime4j-core-0.7.2.jar' to classloader
+INFO  - 2014-02-01 16:10:52.840; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/apache-mime4j-dom-0.7.2.jar' to classloader
+INFO  - 2014-02-01 16:10:52.840; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/bcmail-jdk15-1.45.jar' to classloader
+INFO  - 2014-02-01 16:10:52.841; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/bcprov-jdk15-1.45.jar' to classloader
+INFO  - 2014-02-01 16:10:52.841; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/boilerpipe-1.1.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.841; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/commons-compress-1.4.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.842; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/dom4j-1.6.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.842; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/fontbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.842; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/icu4j-49.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.843; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/isoparser-1.0-RC-1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.843; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/jdom-1.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.844; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/jempbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.844; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/juniversalchardet-1.0.3.jar' to classloader
+INFO  - 2014-02-01 16:10:52.844; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/metadata-extractor-2.6.2.jar' to classloader
+INFO  - 2014-02-01 16:10:52.845; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/netcdf-4.2-min.jar' to classloader
+INFO  - 2014-02-01 16:10:52.845; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/pdfbox-1.8.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.846; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-3.9.jar' to classloader
+INFO  - 2014-02-01 16:10:52.846; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-ooxml-3.9.jar' to classloader
+INFO  - 2014-02-01 16:10:52.846; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-ooxml-schemas-3.9.jar' to classloader
+INFO  - 2014-02-01 16:10:52.847; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/poi-scratchpad-3.9.jar' to classloader
+INFO  - 2014-02-01 16:10:52.847; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/rome-0.9.jar' to classloader
+INFO  - 2014-02-01 16:10:52.847; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/tagsoup-1.2.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.848; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/tika-core-1.4.jar' to classloader
+INFO  - 2014-02-01 16:10:52.848; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/tika-parsers-1.4.jar' to classloader
+INFO  - 2014-02-01 16:10:52.849; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/vorbis-java-core-0.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.849; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/vorbis-java-tika-0.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.850; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/xercesImpl-2.9.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.851; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/xmlbeans-2.3.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.851; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/extraction/lib/xz-1.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.855; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.857; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/attributes-binder-1.2.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.858; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/carrot2-mini-3.8.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.858; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/hppc-0.5.2.jar' to classloader
+INFO  - 2014-02-01 16:10:52.859; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/jackson-core-asl-1.7.4.jar' to classloader
+INFO  - 2014-02-01 16:10:52.859; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/jackson-mapper-asl-1.7.4.jar' to classloader
+INFO  - 2014-02-01 16:10:52.860; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/mahout-collections-1.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.860; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/mahout-math-0.6.jar' to classloader
+INFO  - 2014-02-01 16:10:52.861; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/clustering/lib/simple-xml-2.7.jar' to classloader
+INFO  - 2014-02-01 16:10:52.862; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.863; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/langid/lib/jsonic-1.2.7.jar' to classloader
+INFO  - 2014-02-01 16:10:52.864; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/langid/lib/langdetect-1.1-20120112.jar' to classloader
+INFO  - 2014-02-01 16:10:52.865; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.866; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar' to classloader
+INFO  - 2014-02-01 16:10:52.867; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar.sha1' to classloader
+INFO  - 2014-02-01 16:10:52.867; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom' to classloader
+INFO  - 2014-02-01 16:10:52.868; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom.sha1' to classloader
+INFO  - 2014-02-01 16:10:52.868; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-4.5.0.war' to classloader
+INFO  - 2014-02-01 16:10:52.869; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-analysis-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.870; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.870; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.870; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-core-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.871; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.873; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.885; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.885; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.886; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-solrj-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.886; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-test-framework-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.886; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-uima-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.886; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.887; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solrj-lib/' to classloader
+INFO  - 2014-02-01 16:10:52.887; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/test-framework/' to classloader
+INFO  - 2014-02-01 16:10:52.889; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/velocity/lib/commons-beanutils-1.7.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.889; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/velocity/lib/commons-collections-3.2.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.889; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/velocity/lib/velocity-1.7.jar' to classloader
+INFO  - 2014-02-01 16:10:52.890; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/contrib/velocity/lib/velocity-tools-2.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.891; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.891; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar' to classloader
+INFO  - 2014-02-01 16:10:52.892; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.jar.sha1' to classloader
+INFO  - 2014-02-01 16:10:52.892; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom' to classloader
+INFO  - 2014-02-01 16:10:52.892; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/jconn3-6.05_07.pom.sha1' to classloader
+INFO  - 2014-02-01 16:10:52.892; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-4.5.0.war' to classloader
+INFO  - 2014-02-01 16:10:52.893; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-analysis-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.893; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-cell-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.893; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-clustering-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.893; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-core-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.894; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.894; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-4.5.1.jar' to classloader
+INFO  - 2014-02-01 16:10:52.894; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-dataimporthandler-extras-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.894; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-langid-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.895; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-solrj-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.895; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-test-framework-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.895; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-uima-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.895; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solr-velocity-4.5.0.jar' to classloader
+INFO  - 2014-02-01 16:10:52.896; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/solrj-lib/' to classloader
+INFO  - 2014-02-01 16:10:52.896; org.apache.solr.core.SolrResourceLoader; Adding 'file:/Users/frosty/szsearch3/solr-4.5.0/dist/test-framework/' to classloader
+INFO  - 2014-02-01 16:10:53.139; org.apache.solr.update.SolrIndexConfig; IndexWriter infoStream solr logging is enabled
+INFO  - 2014-02-01 16:10:53.147; org.apache.solr.core.SolrConfig; Using Lucene MatchVersion: LUCENE_45
+INFO  - 2014-02-01 16:10:53.382; org.apache.solr.core.SolrConfig; Loaded SolrConfig: solrconfig.xml
+INFO  - 2014-02-01 16:10:53.390; org.apache.solr.schema.IndexSchema; Reading Solr Schema from schema.xml
+INFO  - 2014-02-01 16:10:53.479; org.apache.solr.schema.IndexSchema; [collection1] Schema name=example
+INFO  - 2014-02-01 16:10:53.906; org.apache.solr.schema.IndexSchema; default search field in schema is solr_mVendorName
+INFO  - 2014-02-01 16:10:53.909; org.apache.solr.schema.IndexSchema; unique key field: solr_mModelID
+INFO  - 2014-02-01 16:10:54.528; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2014-02-01 16:10:54.546; org.apache.solr.schema.FileExchangeRateProvider; Reloading exchange rates from file currency.xml
+INFO  - 2014-02-01 16:10:54.610; org.apache.solr.core.SolrCore; solr.NRTCachingDirectoryFactory
+INFO  - 2014-02-01 16:10:54.621; org.apache.solr.core.SolrCore; [collection1] Opening new SolrCore at /Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/, dataDir=/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/
+INFO  - 2014-02-01 16:10:54.648; org.apache.solr.core.JmxMonitoredMap; No JMX servers found, not exposing Solr information with JMX.
+INFO  - 2014-02-01 16:10:54.654; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for newSearcher: org.apache.solr.core.QuerySenderListener{queries=[]}
+INFO  - 2014-02-01 16:10:54.654; org.apache.solr.core.SolrCore; [collection1] Added SolrEventListener for firstSearcher: org.apache.solr.core.QuerySenderListener{queries=[{q=static firstSearcher warming in solrconfig.xml}]}
+INFO  - 2014-02-01 16:10:54.736; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data
+INFO  - 2014-02-01 16:10:54.736; org.apache.solr.core.SolrCore; New index directory detected: old=null new=/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/index/
+INFO  - 2014-02-01 16:10:54.737; org.apache.solr.core.CachingDirectoryFactory; return new directory for /Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/index
+INFO  - 2014-02-01 16:10:54.804; org.apache.solr.core.SolrCore; created json: solr.JSONResponseWriter
+INFO  - 2014-02-01 16:10:54.805; org.apache.solr.core.SolrCore; adding lazy queryResponseWriter: solr.VelocityResponseWriter
+INFO  - 2014-02-01 16:10:54.806; org.apache.solr.core.SolrCore; created velocity: solr.VelocityResponseWriter
+INFO  - 2014-02-01 16:10:54.811; org.apache.solr.core.SolrCore; created xslt: solr.XSLTResponseWriter
+INFO  - 2014-02-01 16:10:54.812; org.apache.solr.response.XSLTResponseWriter; xsltCacheLifetimeSeconds=5
+INFO  - 2014-02-01 16:10:54.979; org.apache.solr.core.SolrCore; no updateRequestProcessorChain defined as default, creating implicit default
+INFO  - 2014-02-01 16:10:54.991; org.apache.solr.core.RequestHandlers; created /dataimport: org.apache.solr.handler.dataimport.DataImportHandler
+INFO  - 2014-02-01 16:10:55.001; org.apache.solr.core.RequestHandlers; created /select: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.002; org.apache.solr.core.RequestHandlers; created /query: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.005; org.apache.solr.core.RequestHandlers; created /get: solr.RealTimeGetHandler
+INFO  - 2014-02-01 16:10:55.010; org.apache.solr.core.RequestHandlers; created /browse: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.029; org.apache.solr.core.RequestHandlers; created /update: solr.UpdateRequestHandler
+INFO  - 2014-02-01 16:10:55.036; org.apache.solr.core.RequestHandlers; created /update/json: solr.JsonUpdateRequestHandler
+INFO  - 2014-02-01 16:10:55.039; org.apache.solr.core.RequestHandlers; created /update/csv: solr.CSVRequestHandler
+INFO  - 2014-02-01 16:10:55.040; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.extraction.ExtractingRequestHandler
+INFO  - 2014-02-01 16:10:55.040; org.apache.solr.core.RequestHandlers; created /update/extract: solr.extraction.ExtractingRequestHandler
+INFO  - 2014-02-01 16:10:55.041; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.FieldAnalysisRequestHandler
+INFO  - 2014-02-01 16:10:55.041; org.apache.solr.core.RequestHandlers; created /analysis/field: solr.FieldAnalysisRequestHandler
+INFO  - 2014-02-01 16:10:55.041; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.DocumentAnalysisRequestHandler
+INFO  - 2014-02-01 16:10:55.041; org.apache.solr.core.RequestHandlers; created /analysis/document: solr.DocumentAnalysisRequestHandler
+INFO  - 2014-02-01 16:10:55.048; org.apache.solr.core.RequestHandlers; created /admin/: solr.admin.AdminHandlers
+INFO  - 2014-02-01 16:10:55.052; org.apache.solr.core.RequestHandlers; created /admin/ping: solr.PingRequestHandler
+INFO  - 2014-02-01 16:10:55.055; org.apache.solr.core.RequestHandlers; created /debug/dump: solr.DumpRequestHandler
+INFO  - 2014-02-01 16:10:55.067; org.apache.solr.core.RequestHandlers; created /replication: solr.ReplicationHandler
+INFO  - 2014-02-01 16:10:55.068; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.068; org.apache.solr.core.RequestHandlers; created /spell: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.068; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.068; org.apache.solr.core.RequestHandlers; created /tvrh: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.069; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: org.apache.solr.handler.js.JavaScriptRequestHandler
+INFO  - 2014-02-01 16:10:55.069; org.apache.solr.core.RequestHandlers; created /js: org.apache.solr.handler.js.JavaScriptRequestHandler
+INFO  - 2014-02-01 16:10:55.069; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.069; org.apache.solr.core.RequestHandlers; created /terms: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.069; org.apache.solr.core.RequestHandlers; adding lazy requestHandler: solr.SearchHandler
+INFO  - 2014-02-01 16:10:55.069; org.apache.solr.core.RequestHandlers; created /elevate: solr.SearchHandler
+WARN  - 2014-02-01 16:10:55.070; org.apache.solr.core.RequestHandlers; Multiple requestHandler registered to the same name: /dataimport ignoring: org.apache.solr.handler.dataimport.DataImportHandler
+INFO  - 2014-02-01 16:10:55.070; org.apache.solr.core.RequestHandlers; created /dataimport: org.apache.solr.handler.dataimport.DataImportHandler
+INFO  - 2014-02-01 16:10:55.111; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-02-01 16:10:55.131; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-02-01 16:10:55.133; org.apache.solr.handler.loader.XMLLoader; xsltCacheLifetimeSeconds=60
+INFO  - 2014-02-01 16:10:55.206; org.apache.solr.update.CommitTracker; Hard AutoCommit: if uncommited for 15000ms; 
+INFO  - 2014-02-01 16:10:55.206; org.apache.solr.update.CommitTracker; Soft AutoCommit: disabled
+INFO  - 2014-02-01 16:10:55.357; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@15517e5e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3,generation=3}
+INFO  - 2014-02-01 16:10:55.363; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 3
+INFO  - 2014-02-01 16:10:55.444; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@326cbecf main
+INFO  - 2014-02-01 16:10:55.453; org.apache.solr.handler.component.SpellCheckComponent; Initializing spell checkers
+INFO  - 2014-02-01 16:10:55.463; org.apache.solr.spelling.DirectSolrSpellChecker; init: {name=default,field=text,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+INFO  - 2014-02-01 16:10:55.473; org.apache.solr.handler.component.SpellCheckComponent; No queryConverter defined, using default converter
+INFO  - 2014-02-01 16:10:55.476; org.apache.solr.handler.component.QueryElevationComponent; Loading QueryElevation from: /Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/conf/elevate.xml
+INFO  - 2014-02-01 16:10:55.546; org.apache.solr.handler.ReplicationHandler; Commits will be reserved for  10000
+INFO  - 2014-02-01 16:10:55.547; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@326cbecf main{StandardDirectoryReader(segments_3:9:nrt _0(4.5):C11756/8559 _1(4.5):C12026/8786 _2(4.5):C95525/55864)}
+INFO  - 2014-02-01 16:10:55.548; org.apache.solr.core.CoreContainer; registering core: collection1
+INFO  - 2014-02-01 16:10:55.553; org.apache.solr.servlet.SolrDispatchFilter; user.dir=/Users/frosty/szsearch3/solr-4.5.0/example
+INFO  - 2014-02-01 16:10:55.553; org.apache.solr.servlet.SolrDispatchFilter; SolrDispatchFilter.init() done
+INFO  - 2014-02-01 16:10:55.619; org.eclipse.jetty.server.AbstractConnector; Started SocketConnector@0.0.0.0:8983
+INFO  - 2014-02-01 16:10:55.635; org.apache.solr.core.SolrCore; [collection1] webapp=null path=null params={event=firstSearcher&q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false} hits=0 status=0 QTime=83 
+INFO  - 2014-02-01 16:10:55.636; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2014-02-01 16:10:55.637; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: default
+INFO  - 2014-02-01 16:10:55.637; org.apache.solr.handler.component.SpellCheckComponent$SpellCheckerListener; Loading spell index for spellchecker: wordbreak
+INFO  - 2014-02-01 16:10:55.638; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@326cbecf main{StandardDirectoryReader(segments_3:9:nrt _0(4.5):C11756/8559 _1(4.5):C12026/8786 _2(4.5):C95525/55864)}
+INFO  - 2014-02-01 16:11:12.956; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-02-01 16:11:12.956; org.apache.solr.update.DirectUpdateHandler2; No uncommitted changes. Skipping IW.commit.
+INFO  - 2014-02-01 16:11:12.958; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@51af7c57 main
+INFO  - 2014-02-01 16:11:12.960; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-02-01 16:11:12.961; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@51af7c57 main{StandardDirectoryReader(segments_3:9:nrt _0(4.5):C11756/8559 _1(4.5):C12026/8786 _2(4.5):C95525/55864)}
+INFO  - 2014-02-01 16:11:12.961; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2014-02-01 16:11:12.961; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@51af7c57 main{StandardDirectoryReader(segments_3:9:nrt _0(4.5):C11756/8559 _1(4.5):C12026/8786 _2(4.5):C95525/55864)}
+INFO  - 2014-02-01 16:11:12.962; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/update params={<delete><query>*:*</query></delete>=&commit=true} {commit=} 0 13
+INFO  - 2014-02-01 16:17:46.890; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={} status=0 QTime=3 
+INFO  - 2014-02-01 16:17:53.075; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: data-config.xml
+INFO  - 2014-02-01 16:17:53.089; org.apache.solr.handler.dataimport.config.DIHConfiguration; solr_mModelID is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-02-01 16:17:53.090; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Rating present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:53.090; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :PID present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:53.091; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ProductTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:53.091; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Review present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:53.092; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ReviewTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:53.092; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-02-01 16:17:53.094; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=20 
+INFO  - 2014-02-01 16:17:53.094; org.apache.solr.handler.dataimport.DataImporter; Starting Full Import
+INFO  - 2014-02-01 16:17:53.123; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-02-01 16:17:53.616; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@4145582 realtime
+WARN  - 2014-02-01 16:17:53.644; org.apache.solr.handler.dataimport.FileDataSource; FileDataSource.basePath is empty. Resolving to: /Users/frosty/szsearch3/solr-4.5.0/example/.
+ERROR - 2014-02-01 16:17:53.645; org.apache.solr.common.SolrException; Exception while processing: product document : SolrInputDocument(fields: []):org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:63)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:286)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.fetchNextRow(XPathEntityProcessor.java:224)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.nextRow(XPathEntityProcessor.java:204)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:469)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:408)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:323)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:231)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:476)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:457)
+Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:125)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:84)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:46)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:283)
+	... 10 more
+Caused by: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:121)
+	... 13 more
+
+INFO  - 2014-02-01 16:17:53.646; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=20 {deleteByQuery=*:* (-1458884075239505920)} 0 20
+ERROR - 2014-02-01 16:17:53.646; org.apache.solr.common.SolrException; Full Import failed:java.lang.RuntimeException: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:270)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:476)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:457)
+Caused by: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:410)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:323)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:231)
+	... 3 more
+Caused by: org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:63)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:286)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.fetchNextRow(XPathEntityProcessor.java:224)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.nextRow(XPathEntityProcessor.java:204)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:469)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:408)
+	... 5 more
+Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:125)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:84)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:46)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:283)
+	... 10 more
+Caused by: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:121)
+	... 13 more
+
+INFO  - 2014-02-01 16:17:53.647; org.apache.solr.update.DirectUpdateHandler2; start rollback{}
+INFO  - 2014-02-01 16:17:53.647; org.apache.solr.update.DefaultSolrCoreState; Creating new IndexWriter...
+INFO  - 2014-02-01 16:17:53.647; org.apache.solr.update.DefaultSolrCoreState; Waiting until IndexWriter is unused... core=collection1
+INFO  - 2014-02-01 16:17:53.648; org.apache.solr.update.DefaultSolrCoreState; Rollback old IndexWriter... core=collection1
+INFO  - 2014-02-01 16:17:53.660; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@15517e5e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3,generation=3}
+INFO  - 2014-02-01 16:17:53.660; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 3
+INFO  - 2014-02-01 16:17:53.661; org.apache.solr.update.DefaultSolrCoreState; New IndexWriter is ready to be used.
+INFO  - 2014-02-01 16:17:53.661; org.apache.solr.update.DirectUpdateHandler2; end_rollback
+INFO  - 2014-02-01 16:17:54.956; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: data-config.xml
+INFO  - 2014-02-01 16:17:54.961; org.apache.solr.handler.dataimport.config.DIHConfiguration; solr_mModelID is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-02-01 16:17:54.961; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Rating present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:54.962; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :PID present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:54.962; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ProductTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:54.962; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Review present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:54.963; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ReviewTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:17:54.963; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-02-01 16:17:54.964; org.apache.solr.handler.dataimport.DataImporter; Starting Full Import
+INFO  - 2014-02-01 16:17:54.964; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=9 
+INFO  - 2014-02-01 16:17:54.973; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-02-01 16:17:55.137; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@6b064b80 realtime
+WARN  - 2014-02-01 16:17:55.147; org.apache.solr.handler.dataimport.FileDataSource; FileDataSource.basePath is empty. Resolving to: /Users/frosty/szsearch3/solr-4.5.0/example/.
+ERROR - 2014-02-01 16:17:55.148; org.apache.solr.common.SolrException; Exception while processing: product document : SolrInputDocument(fields: []):org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:63)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:286)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.fetchNextRow(XPathEntityProcessor.java:224)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.nextRow(XPathEntityProcessor.java:204)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:469)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:408)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:323)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:231)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:476)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:457)
+Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:125)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:84)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:46)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:283)
+	... 10 more
+Caused by: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:121)
+	... 13 more
+
+INFO  - 2014-02-01 16:17:55.148; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=9 {deleteByQuery=*:* (-1458884077198245888)} 0 9
+ERROR - 2014-02-01 16:17:55.149; org.apache.solr.common.SolrException; Full Import failed:java.lang.RuntimeException: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:270)
+	at org.apache.solr.handler.dataimport.DataImporter.doFullImport(DataImporter.java:411)
+	at org.apache.solr.handler.dataimport.DataImporter.runCmd(DataImporter.java:476)
+	at org.apache.solr.handler.dataimport.DataImporter$1.run(DataImporter.java:457)
+Caused by: java.lang.RuntimeException: org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:410)
+	at org.apache.solr.handler.dataimport.DocBuilder.doFullDump(DocBuilder.java:323)
+	at org.apache.solr.handler.dataimport.DocBuilder.execute(DocBuilder.java:231)
+	... 3 more
+Caused by: org.apache.solr.handler.dataimport.DataImportHandlerException: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.DataImportHandlerException.wrapAndThrow(DataImportHandlerException.java:63)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:286)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.fetchNextRow(XPathEntityProcessor.java:224)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.nextRow(XPathEntityProcessor.java:204)
+	at org.apache.solr.handler.dataimport.EntityProcessorWrapper.nextRow(EntityProcessorWrapper.java:243)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:469)
+	at org.apache.solr.handler.dataimport.DocBuilder.buildDocument(DocBuilder.java:408)
+	... 5 more
+Caused by: java.lang.RuntimeException: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:125)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:84)
+	at org.apache.solr.handler.dataimport.FileDataSource.getData(FileDataSource.java:46)
+	at org.apache.solr.handler.dataimport.XPathEntityProcessor.initQuery(XPathEntityProcessor.java:283)
+	... 10 more
+Caused by: java.io.FileNotFoundException: Could not find file: dataset.xml (resolved to: /Users/frosty/szsearch3/solr-4.5.0/example/./dataset.xml
+	at org.apache.solr.handler.dataimport.FileDataSource.getFile(FileDataSource.java:121)
+	... 13 more
+
+INFO  - 2014-02-01 16:17:55.149; org.apache.solr.update.DirectUpdateHandler2; start rollback{}
+INFO  - 2014-02-01 16:17:55.149; org.apache.solr.update.DefaultSolrCoreState; Creating new IndexWriter...
+INFO  - 2014-02-01 16:17:55.150; org.apache.solr.update.DefaultSolrCoreState; Waiting until IndexWriter is unused... core=collection1
+INFO  - 2014-02-01 16:17:55.150; org.apache.solr.update.DefaultSolrCoreState; Rollback old IndexWriter... core=collection1
+INFO  - 2014-02-01 16:17:55.160; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onInit: commits: num=1
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@15517e5e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3,generation=3}
+INFO  - 2014-02-01 16:17:55.161; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 3
+INFO  - 2014-02-01 16:17:55.161; org.apache.solr.update.DefaultSolrCoreState; New IndexWriter is ready to be used.
+INFO  - 2014-02-01 16:17:55.162; org.apache.solr.update.DirectUpdateHandler2; end_rollback
+INFO  - 2014-02-01 16:18:44.956; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: data-config.xml
+INFO  - 2014-02-01 16:18:44.961; org.apache.solr.handler.dataimport.config.DIHConfiguration; solr_mModelID is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-02-01 16:18:44.961; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Rating present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:44.962; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :PID present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:44.962; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ProductTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:44.962; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Review present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:44.962; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ReviewTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:44.963; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-02-01 16:18:44.963; org.apache.solr.handler.dataimport.DataImporter; Starting Full Import
+INFO  - 2014-02-01 16:18:44.963; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=7 
+INFO  - 2014-02-01 16:18:44.970; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-02-01 16:18:45.120; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@7c6743e2 realtime
+WARN  - 2014-02-01 16:18:45.128; org.apache.solr.handler.dataimport.FileDataSource; FileDataSource.basePath is empty. Resolving to: /Users/frosty/szsearch3/solr-4.5.0/example/.
+INFO  - 2014-02-01 16:18:48.570; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=1 
+INFO  - 2014-02-01 16:18:52.157; org.apache.solr.handler.dataimport.DocBuilder; Import completed successfully
+INFO  - 2014-02-01 16:18:52.158; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-02-01 16:18:52.161; org.apache.solr.core.SolrDeletionPolicy; SolrDeletionPolicy.onCommit: commits: num=2
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@15517e5e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_3,generation=3}
+	commit{dir=NRTCachingDirectory(org.apache.lucene.store.NIOFSDirectory@/Users/frosty/szsearch3/solr-4.5.0/example/solr/collection1/data/index lockFactory=org.apache.lucene.store.NativeFSLockFactory@15517e5e; maxCacheMB=48.0 maxMergeSizeMB=4.0),segFN=segments_4,generation=4}
+INFO  - 2014-02-01 16:18:52.162; org.apache.solr.core.SolrDeletionPolicy; newest commit generation = 4
+INFO  - 2014-02-01 16:18:52.167; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@25927275 main
+INFO  - 2014-02-01 16:18:52.168; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-02-01 16:18:52.172; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@25927275 main{StandardDirectoryReader(segments_3:11:nrt)}
+INFO  - 2014-02-01 16:18:52.173; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2014-02-01 16:18:52.174; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@25927275 main{StandardDirectoryReader(segments_3:11:nrt)}
+INFO  - 2014-02-01 16:18:52.181; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-02-01 16:18:52.191; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Wrote last indexed time to dataimport.properties
+INFO  - 2014-02-01 16:18:52.192; org.apache.solr.handler.dataimport.DocBuilder; Time taken = 0:0:7.221
+INFO  - 2014-02-01 16:18:52.193; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=7 {deleteByQuery=*:* (-1458884129565179904),commit=} 0 7
+INFO  - 2014-02-01 16:18:52.362; org.apache.solr.handler.dataimport.DataImporter; Loading DIH Configuration: data-config.xml
+INFO  - 2014-02-01 16:18:52.366; org.apache.solr.handler.dataimport.config.DIHConfiguration; solr_mModelID is a required field in SolrSchema . But not found in DataConfig
+INFO  - 2014-02-01 16:18:52.367; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Rating present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:52.367; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :PID present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:52.367; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ProductTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:52.367; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :Review present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:52.368; org.apache.solr.handler.dataimport.config.DIHConfiguration; The field :ReviewTitle present in DataConfig does not have a counterpart in Solr Schema
+INFO  - 2014-02-01 16:18:52.368; org.apache.solr.handler.dataimport.DataImporter; Data Configuration loaded successfully
+INFO  - 2014-02-01 16:18:52.373; org.apache.solr.core.SolrCore; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=11 
+INFO  - 2014-02-01 16:18:52.380; org.apache.solr.handler.dataimport.DataImporter; Starting Full Import
+INFO  - 2014-02-01 16:18:52.388; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+WARN  - 2014-02-01 16:18:52.480; org.apache.solr.handler.dataimport.FileDataSource; FileDataSource.basePath is empty. Resolving to: /Users/frosty/szsearch3/solr-4.5.0/example/.
+INFO  - 2014-02-01 16:18:54.630; org.apache.solr.handler.dataimport.DocBuilder; Import completed successfully
+INFO  - 2014-02-01 16:18:54.631; org.apache.solr.update.DirectUpdateHandler2; start commit{,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+INFO  - 2014-02-01 16:18:54.631; org.apache.solr.update.DirectUpdateHandler2; No uncommitted changes. Skipping IW.commit.
+INFO  - 2014-02-01 16:18:54.631; org.apache.solr.search.SolrIndexSearcher; Opening Searcher@7c04703c main
+INFO  - 2014-02-01 16:18:54.632; org.apache.solr.update.DirectUpdateHandler2; end_commit_flush
+INFO  - 2014-02-01 16:18:54.632; org.apache.solr.core.QuerySenderListener; QuerySenderListener sending requests to Searcher@7c04703c main{StandardDirectoryReader(segments_3:11:nrt)}
+INFO  - 2014-02-01 16:18:54.633; org.apache.solr.core.QuerySenderListener; QuerySenderListener done.
+INFO  - 2014-02-01 16:18:54.633; org.apache.solr.core.SolrCore; [collection1] Registered new searcher Searcher@7c04703c main{StandardDirectoryReader(segments_3:11:nrt)}
+INFO  - 2014-02-01 16:18:54.634; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Read dataimport.properties
+INFO  - 2014-02-01 16:18:54.634; org.apache.solr.handler.dataimport.SimplePropertiesWriter; Wrote last indexed time to dataimport.properties
+INFO  - 2014-02-01 16:18:54.634; org.apache.solr.handler.dataimport.DocBuilder; Time taken = 0:0:2.246
+INFO  - 2014-02-01 16:18:54.635; org.apache.solr.update.processor.LogUpdateProcessor; [collection1] webapp=/solr path=/dataimport params={command=full-import} status=0 QTime=11 {deleteByQuery=*:* (-1458884137357148160),commit=} 0 11
