@@ -49,11 +49,20 @@
 
 <schema name="example" version="1.5">
  <fields>
-  <field name="PID" type="text_general" indexed="true" stored="true" multiValued="false" />
-  <field name="ProductTitle" type="text_general" indexed="false" stored="true" multiValued="false"/>
-  <field name="Review" type="text_en" indexed="true" stored="true" multiValued="true"/>
-  <field name="Rating" type="text_general" indexed="true" stored="true" multiValued="true"/>
-  <field name="ReviewTitle" type="text_en_splitting_tight" indexed="true" stored="true" multiValued="true"/>     
+  <field name="solr_mModelID" type="text_general" indexed="true" stored="true" multiValued="false" />
+  <field name="solr_mPartnerPID" type="text_general" indexed="false" stored="true" multiValued="false"/>
+  <field name="solr_mVendorName" type="text_en" indexed="true" stored="true" multiValued="false"/>
+  <field name="solr_mFamilyName" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="solr_mModelNumber" type="text_en_splitting_tight" indexed="true" stored="true" multiValued="false"/>
+  <field name="solr_mMPN" type="text_en_splitting_tight" indexed="true" stored="true" multiValued="false"/>  
+  <field name="solr_mCategory" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="solr_mImgURL" type="text_general" indexed="false" stored="true" multiValued="false"/>
+  <field name="solr_mCategoryID" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="solr_mProductTitle" type="text_general" indexed="false" stored="true" multiValued="false"/>
+  <field name="solr_mDescription" type="text_general" indexed="false" stored="true" multiValued="false"/>
+  <field name="solr_categoryExact" type="exact_match" indexed="true" stored="true" multiValued="false"/>
+  <field name="solr_vendorExact" type="exact_match" indexed="true" stored="true" multiValued="false"/>
+     
      
   <field name="content" type="text_general" indexed="false" stored="true" multiValued="true"/>
      
@@ -81,17 +90,17 @@
       Unless this field is marked with required="false", it will be a required field
    -->
 
-    <uniqueKey>PID</uniqueKey>
+    <uniqueKey>solr_mModelID</uniqueKey>
     
-    <defaultSearchField>ProductTitle</defaultSearchField>
-<!--     <defaultSearchField>solr_mFamilyName</defaultSearchField>
+    <defaultSearchField>solr_mVendorName</defaultSearchField>
+    <defaultSearchField>solr_mFamilyName</defaultSearchField>
     <defaultSearchField>solr_mModelNumber</defaultSearchField>
     <defaultSearchField>solr_mMPN</defaultSearchField>
     <defaultSearchField>solr_mModelNumber</defaultSearchField>
-    <defaultSearchField>solr_mCategory</defaultSearchField> -->
+    <defaultSearchField>solr_mCategory</defaultSearchField>
     
-    <!-- <copyField source="solr_mCategory" dest="solr_categoryExact"/>
-    <copyField source="solr_mVendorName" dest="solr_vendorExact"/> -->
+    <copyField source="solr_mCategory" dest="solr_categoryExact"/>
+    <copyField source="solr_mVendorName" dest="solr_vendorExact"/>
 
  
   <types>
