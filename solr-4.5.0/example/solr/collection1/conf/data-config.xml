@@ -6,6 +6,8 @@
 			<!--<field column="Brand" xpath="/products/product/@ProductTitle"/>-->
 			<field column="PID" xpath="/products/product/@PID"/>
 			<field column="ProductTitle" xpath="/products/product/@ProductTitle"/>
+			<field column="Brand" xpath="/products/product/@Brand"/>
+			<field column="Item" xpath="/products/product/@Item"/>
 			<field column="Review" xpath="/products/product/Comments/Comment/@Value"/>
 			<field column="Rating" xpath="/products/product/Comments/Comment/@Rating"/>
 			<field column="ReviewTitle" xpath="/products/product/Comments/Comment/@Title"/>
