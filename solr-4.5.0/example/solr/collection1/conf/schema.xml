@@ -51,6 +51,8 @@
  <fields>
   <field name="PID" type="text_general" indexed="true" stored="true" multiValued="false" />
   <field name="ProductTitle" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="Brand" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="Item" type="text_general" indexed="true" stored="true" multiValued="false"/>
   <field name="Review" type="text_en" indexed="true" stored="true" multiValued="true"/>
   <field name="Rating" type="text_general" indexed="true" stored="true" multiValued="true"/>
   <field name="ReviewTitle" type="text_en_splitting_tight" indexed="true" stored="true" multiValued="true"/>     
