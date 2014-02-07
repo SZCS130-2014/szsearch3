@@ -54,6 +54,7 @@
   <field name="Review" type="text_en" indexed="true" stored="true" multiValued="true"/>
   <field name="Rating" type="text_general" indexed="true" stored="true" multiValued="true"/>
   <field name="ReviewTitle" type="text_en_splitting_tight" indexed="true" stored="true" multiValued="true"/>     
+  <!--<field name="Brand" type="FirstWord" indexed="true" stored="true" multiValued="false"/>-->
      
   <field name="content" type="text_general" indexed="false" stored="true" multiValued="true"/>
      
@@ -497,6 +498,13 @@
                              refreshInterval: Number of minutes between each rates fetch (default: 1440, min: 60)
    -->
     <fieldType name="currency" class="solr.CurrencyField" precisionStep="8" defaultCurrency="USD" currencyConfig="currency.xml" />
+    
+    <!--An attempt at boosting 1st word. I don't think this is what we want, though. See the readme.-->
+    <!--<fieldType name="FirstWord" class="solr.TextField" indexed="true">
+      <analyzer type="index">
+        <tokenizer class="solr.PatternTokenizerFactory" pattern="$[^ ]+"/>
+      </analyzer>
+    </fieldType>-->
 
  </types>
   
