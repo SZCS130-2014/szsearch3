@@ -14,7 +14,7 @@ CS 130 Winter 2014 Search Engine Group 3
 <b>Instructions to reindex:</b>
 <ul>
     <li>Start Solr with the command above</li>
-    <li>Delete all the documents in the index by running the command "curl http://localhost:8983/solr/update?commit=true --data '&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;"</li>
+    <li>Delete all the documents in the index by running the command "curl http://localhost:8983/solr/update?commit=true --data '&lt;delete&gt;&lt;query&gt;*:*&lt;/query&gt;&lt;/delete&gt;'    "</li>
     <li>Now that everything is deleted, follow the instructions above to index the data again</li>
 </ul>
 
