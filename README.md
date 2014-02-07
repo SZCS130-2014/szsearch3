@@ -41,3 +41,9 @@ Making our own called simpleweighted, using defType="edismax" and qf=A few impor
 What we have to do is patch Solr with a patch that exposes SpanFirstQuery. Then we'll be able to do
 add < str name="sf">ProductTitle~1^4.0 </ str> or whatever.
 Not a complete solution, and not the most elegant but there literally seems to be no other way.
+
+<b>Transforming Data to Add Fields:</b>
+To strip out and add the "Brand" Field: <br>
+`sed 's/ProductTitle=\"\([^ ]*\)/Brand=\"\1\" ProductTitle=\"\1/g'` <br>
+To strip out and add the "Item" Field: <br>
+`sed 's/\(ProductTitle=\"\)\(.*\)\( \)\([^ ]\{1,\}\"\)/\1\2\3\4 Item=\"\4/g'` <br>
