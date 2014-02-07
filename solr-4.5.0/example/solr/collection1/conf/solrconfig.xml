@@ -903,6 +903,19 @@
         </lst>
     </requestHandler>
     
+    <!--Our request handler: an attempt to search for products by boosting the 3 text fields
+    that are important. TODO: patch Solr to expose SpanFirstQuery, insert
+    sf=ProductTitle~1^something parameter.-->
+    <requestHandler name="/simpleweighted" class="solr.SearchHandler">
+    	<lst name="defaults">
+    		<str name="echoParams">explicit</str>
+            <str name="wt">json</str>
+            <str name="indent">true</str>
+            <str name="df">text</str>
+            <str name="defType">edismax</str>
+            <str name="qf">ProductTitle^3.0 Review^2.0 ReviewTitle^1.0</str>
+        </lst>
+    </requestHandler>
     
     <!-- A Robust Example
      
