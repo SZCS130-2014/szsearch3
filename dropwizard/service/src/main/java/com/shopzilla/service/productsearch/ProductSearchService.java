@@ -5,8 +5,7 @@
 package com.shopzilla.service.productsearch;
 
 import com.google.common.collect.Lists;
-import com.shopzilla.service.shoppingcart.data.ShoppingCartDao;
-import com.shopzilla.service.shoppingcart.resource.*;
+import com.shopzilla.service.productsearch.resource.*;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
@@ -39,7 +38,9 @@ public class ProductSearchService extends Service<ProductSearchServiceConfigurat
     @Override
     public void run(ProductSearchServiceConfiguration configuration, Environment environment)
             throws Exception {
-
+        // environment.add(new ProductSearchResource());
+        // environment.add(new VersionResource());
+        // environment.add(new ConfigurationResource(configuration));
     }
 
 }
