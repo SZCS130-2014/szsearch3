@@ -7,3 +7,5 @@ solr-4.5.0/example/solr/collection1/conf/dataimport.properties
 solr-4.5.0/example/solr/collection1/data/
 solr-4.5.0/example/dataset.xml
 solr-4.5.0/example/logs/solr.log
+logs
+target

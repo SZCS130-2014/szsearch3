@@ -3,14 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
-    <artifactId>dropwizard-crud-archetype</artifactId>
+    <artifactId>product-search</artifactId>
     <groupId>com.shopzilla.archetypes</groupId>
     <version>1.0-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>shoppingcart-model</artifactId>
-  <name>Shopping Cart - Model</name>
+  <artifactId>productsearch-model</artifactId>
+  <name>Product Search - Model</name>
 
   <dependencies>
     <dependency>
@@ -36,7 +36,7 @@
         <version>1.5</version>
         <configuration>
           <outputDirectory>${project.build.directory}/generated-sources/jaxb</outputDirectory>
-          <packageName>com.shopzilla.site.service.shoppingcart.model.jaxb</packageName>
+          <packageName>com.shopzilla.site.service.productsearch.model.jaxb</packageName>
           <schemaDirectory>${basedir}/src/main/xsd</schemaDirectory>
         </configuration>
         <executions>
