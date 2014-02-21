@@ -1,0 +1,4 @@
+0:0:0:0:0:0:0:1 - - [21/Feb/2014:02:32:50 +0000] "GET /services/shoppingcart/v1 HTTP/1.1" 200 1617 57 57
+0:0:0:0:0:0:0:1 - - [21/Feb/2014:02:32:51 +0000] "GET /assets/bootstrap/css/bootstrap.min.css HTTP/1.1" 200 17051 33 33
+0:0:0:0:0:0:0:1 - - [21/Feb/2014:02:32:51 +0000] "GET /assets/jquery-1.9.1.min.js HTTP/1.1" 200 32819 34 34
+0:0:0:0:0:0:0:1 - - [21/Feb/2014:02:36:15 +0000] "GET /services/shoppingcart/v1/shoppingcart/shopperId/12345?format=json HTTP/1.1" 200 44 59 59
