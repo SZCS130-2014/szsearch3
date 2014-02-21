@@ -1,0 +1,22 @@
+02-20 18:32:02 jdbc[3]: null
+org.h2.message.DbException: The connection was not closed by the application and is garbage collected [90018-171]
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.jdbc.JdbcConnection.closeOld(JdbcConnection.java:175)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:120)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:93)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:571)
+	at java.sql.DriverManager.getConnection(DriverManager.java:187)
+	at org.apache.tomcat.dbcp.dbcp.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:78)
+	at org.apache.tomcat.dbcp.dbcp.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:582)
+	at org.apache.tomcat.dbcp.pool.impl.GenericObjectPool.addObject(GenericObjectPool.java:1679)
+	at org.apache.tomcat.dbcp.pool.impl.GenericObjectPool.ensureMinIdle(GenericObjectPool.java:1637)
+	at org.apache.tomcat.dbcp.pool.impl.GenericObjectPool.access$700(GenericObjectPool.java:190)
+	at org.apache.tomcat.dbcp.pool.impl.GenericObjectPool$Evictor.run(GenericObjectPool.java:1771)
+	at java.util.TimerThread.mainLoop(Timer.java:555)
+	at java.util.TimerThread.run(Timer.java:505)
+Caused by: org.h2.jdbc.JdbcSQLException: The connection was not closed by the application and is garbage collected [90018-171]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	... 17 more
