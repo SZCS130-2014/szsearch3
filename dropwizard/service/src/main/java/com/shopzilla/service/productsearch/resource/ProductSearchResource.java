@@ -6,10 +6,6 @@ package com.shopzilla.service.productsearch.resource;
 
 import com.fasterxml.jackson.jaxrs.json.annotation.JSONP;
 import com.shopzilla.service.productsearch.Format;
-import com.shopzilla.service.shoppingcart.data.ShoppingCartDao;
-import com.shopzilla.service.shoppingcart.ShoppingCartQuery;
-import com.shopzilla.site.service.shoppingcart.model.jaxb.ShoppingCartEntry;
-import com.shopzilla.site.service.shoppingcart.model.jaxb.ShoppingCartResponse;
 import com.yammer.metrics.annotation.Timed;
 import org.apache.commons.collections.CollectionUtils;
 import org.dozer.Mapper;

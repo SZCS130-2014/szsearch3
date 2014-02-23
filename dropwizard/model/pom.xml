@@ -9,7 +9,7 @@
   </parent>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>productsearch-model</artifactId>
+  <artifactId>product-search-model</artifactId>
   <name>Product Search - Model</name>
 
   <dependencies>
