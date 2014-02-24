@@ -9,3 +9,5 @@ solr-4.5.0/example/dataset.xml
 solr-4.5.0/example/logs/solr.log
 logs
 target
+*.iml
+.idea

@@ -7,15 +7,14 @@ package com.shopzilla.service.productsearch;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.shopzilla.service.productsearch.config.CustomHttpConfiguration;
 import com.yammer.dropwizard.config.Configuration;
-import com.yammer.dropwizard.db.DatabaseConfiguration;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 /**
  * Shopping cart service configuration.
  */
 public class ProductSearchServiceConfiguration extends Configuration {
+
+	@JsonProperty("solrBaseUrl")
+	private String solrBaseUrl;
 
     @JsonProperty("http")
     private CustomHttpConfiguration httpConfiguration = new CustomHttpConfiguration();
@@ -26,5 +25,13 @@ public class ProductSearchServiceConfiguration extends Configuration {
 
     public void setHttpConfiguration(CustomHttpConfiguration httpConfiguration) {
         this.httpConfiguration = httpConfiguration;
+    }
+
+    public String getSolrBaseUrl() {
+        return this.solrBaseUrl;
+    }
+
+    public void setSolrBaseUrl(String url) {
+        this.solrBaseUrl = url;
     }
 }

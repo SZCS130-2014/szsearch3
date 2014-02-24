@@ -1,3 +1,5 @@
+solrBaseUrl: http://localhost:8983/solr/collection1
+
 # HTTP-specific options.
 http:
   # HTTP request log settings

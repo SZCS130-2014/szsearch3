@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0"
+           targetNamespace="http://www.shopzilla.com/services/shoppingcart"
+           elementFormDefault="qualified" attributeFormDefault="qualified"
+           xmlns:tns="http://www.shopzilla.com/services/shoppingcart"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="ProductSearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="tns:ProductEntry" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ProductEntry">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element ref="tns:CommentEntry" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="tns:productAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="CommentEntry">
+      <xs:complexType>
+          <xs:attributeGroup ref="tns:commentAttributes"/>
+      </xs:complexType>
+  </xs:element>
+
+  <xs:attributeGroup name="productAttributes">
+    <xs:attribute name="brand" type="xs:string"/>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="title" type="xs:string"/>
+    <xs:attribute name="pid" type="xs:long"/>
+    <xs:attribute name="category" type="xs:string"/>
+
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="commentAttributes">
+      <xs:attribute name="rating" type="xs:int"/>
+      <xs:attribute name="title" type="xs:string"/>
+      <xs:attribute name="content" type="xs:string"/>
+  </xs:attributeGroup>
+
+</xs:schema>

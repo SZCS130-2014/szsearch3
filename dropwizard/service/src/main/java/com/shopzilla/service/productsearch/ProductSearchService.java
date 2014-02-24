@@ -5,6 +5,7 @@
 package com.shopzilla.service.productsearch;
 
 import com.google.common.collect.Lists;
+import com.shopzilla.service.productsearch.data.SolrDao;
 import com.shopzilla.service.productsearch.resource.*;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
@@ -32,15 +33,17 @@ public class ProductSearchService extends Service<ProductSearchServiceConfigurat
     public void initialize(Bootstrap<ProductSearchServiceConfiguration> bootstrap) {
         bootstrap.addBundle(new ViewBundle());
         bootstrap.addBundle(new AssetsBundle());
-        bootstrap.addBundle(new DBIExceptionsBundle());
     }
 
     @Override
     public void run(ProductSearchServiceConfiguration configuration, Environment environment)
             throws Exception {
-        // environment.add(new ProductSearchResource());
-        // environment.add(new VersionResource());
-        // environment.add(new ConfigurationResource(configuration));
+
+        final SolrDao solrDao = new SolrDao(configuration.getSolrBaseUrl());
+
+        environment.addResource(new ProductSearchResource(solrDao));
+        environment.addResource(new VersionResource());
+        environment.addResource(new ConfigurationResource(configuration));
     }
 
 }
