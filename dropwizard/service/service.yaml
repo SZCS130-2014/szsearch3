@@ -1,4 +1,5 @@
 solrBaseUrl: http://localhost:8983/solr/collection1
+solrRequestHandler: /simpleweighted
 
 # HTTP-specific options.
 http:
