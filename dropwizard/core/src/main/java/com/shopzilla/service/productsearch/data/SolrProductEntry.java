@@ -8,7 +8,7 @@ import java.util.List;
  * Created by brett on 2/23/14.
  */
 public class SolrProductEntry {
-    //TODO: define elements that are in the solr response
+    //TODO: maybe come up with a better naming scheme for the variables
 
     private String pid;
     private String category;
