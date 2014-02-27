@@ -21,8 +21,9 @@ public class TestSolrDao {
     public void testGetSearchResults() throws Exception {
         SolrDao solrDao = new SolrDao(solrBaseUrl, solrRequestHandler);
         String testQuery = "apple";
-        List<SolrProductEntry> productEntries = solrDao.getSearchResults(testQuery);
+        List<SolrProductEntry> productEntries = solrDao.getSearchResults(testQuery, 0, 1);
         assertNotNull(productEntries);
+        assertEquals(0, productEntries.size());        
     }
 
 }

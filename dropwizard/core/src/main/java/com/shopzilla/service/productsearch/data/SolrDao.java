@@ -15,7 +15,7 @@ public class SolrDao {
 
     public static void main(String[] args) throws Exception {
         SolrDao dao = new SolrDao("http://localhost:8983/solr/collection1", "/simpleweighted");
-        List<SolrProductEntry> products = dao.getSearchResults("apple");
+        List<SolrProductEntry> products = dao.getSearchResults("apple", null, null);
         for (SolrProductEntry p : products) {
             System.out.println("PID: " + p.getPid() + " DisplayName: " + p.getDisplayName());
         }
@@ -37,12 +37,18 @@ public class SolrDao {
         this.solrBaseUrl = solrBaseUrl;
     }
 
-    public List<SolrProductEntry> getSearchResults(String query) throws Exception {
+    public List<SolrProductEntry> getSearchResults(String query, Integer start, Integer rows) throws Exception {
         if (query == null || query.length() < 1)
-            return new LinkedList<SolrProductEntry>(); // TODO: throw exception instead?
+            return new LinkedList<SolrProductEntry>();
 
         SolrServer solrServer = new HttpSolrServer(solrBaseUrl);
-        SolrQuery solrQuery = new SolrQuery().setQuery(query).setRequestHandler(requestHandler);
+        SolrQuery solrQuery = new SolrQuery().setQuery(query)
+                                             .setRequestHandler(requestHandler);
+        if (start != null && rows != null) {
+            solrQuery.setRows(rows);
+            solrQuery.setStart(start);
+        }
+        
         QueryResponse response = solrServer.query(solrQuery); // TODO: exception handling?
         solrServer.shutdown();
         return response.getBeans(SolrProductEntry.class);
