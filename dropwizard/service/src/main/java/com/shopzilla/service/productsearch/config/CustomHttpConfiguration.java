@@ -36,7 +36,7 @@ public class CustomHttpConfiguration extends HttpConfiguration {
         }
     }
 
-    private String rootPath = "/services/productsearch/*";
+    private String rootPath = "/services/*";
     private int port = 7500;
     private int adminPort = 7500;
     private int maxThreads = 100;
