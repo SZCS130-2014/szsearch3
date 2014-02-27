@@ -42,7 +42,6 @@ public class ProductSearchService extends Service<ProductSearchServiceConfigurat
         final SolrDao solrDao = new SolrDao(configuration.getSolrBaseUrl(), configuration.getSolrRequestHandler());
 
         environment.addResource(new ProductSearchResource(solrDao));
-        environment.addResource(new VersionResource());
         environment.addResource(new ConfigurationResource(configuration));
     }
 
