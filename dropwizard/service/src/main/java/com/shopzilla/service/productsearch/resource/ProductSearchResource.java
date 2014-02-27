@@ -41,7 +41,9 @@ public class ProductSearchResource {
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     //@Path("")
     public Response get(@QueryParam("q") String query,
-                        @QueryParam("format") Format format) throws Exception {
+                        @QueryParam("format") Format format,
+                        @QueryParam("start") Integer start,
+                        @QueryParam("rows") Integer rows) throws Exception {
         if (query == null || query.length() < 1) {
             // TODO: log?
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();
@@ -49,7 +51,7 @@ public class ProductSearchResource {
 
         ProductSearchResponse response = new ProductSearchResponse();
 
-        List<SolrProductEntry> solrProductEntries = solrDao.getSearchResults(query);
+        List<SolrProductEntry> solrProductEntries = solrDao.getSearchResults(query, start, rows);
         for (SolrProductEntry solrProductEntry : solrProductEntries) {
             ProductEntry productEntry = new ProductEntry();
             // TODO: make sure all PIDs are valid longs?
