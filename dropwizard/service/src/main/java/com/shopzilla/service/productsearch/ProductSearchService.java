@@ -4,21 +4,15 @@
  */
 package com.shopzilla.service.productsearch;
 
-import com.google.common.collect.Lists;
 import com.shopzilla.service.productsearch.data.SolrDao;
-import com.shopzilla.service.productsearch.resource.*;
+import com.shopzilla.service.productsearch.resource.ConfigurationResource;
+import com.shopzilla.service.productsearch.resource.ProductResource;
+import com.shopzilla.service.productsearch.resource.ProductSearchResource;
 import com.yammer.dropwizard.Service;
 import com.yammer.dropwizard.assets.AssetsBundle;
 import com.yammer.dropwizard.config.Bootstrap;
 import com.yammer.dropwizard.config.Environment;
-import com.yammer.dropwizard.jdbi.DBIFactory;
-import com.yammer.dropwizard.jdbi.bundles.DBIExceptionsBundle;
 import com.yammer.dropwizard.views.ViewBundle;
-import com.yammer.metrics.util.DeadlockHealthCheck;
-import org.dozer.DozerBeanMapper;
-import org.dozer.Mapper;
-import org.skife.jdbi.v2.DBI;
-import org.skife.jdbi.v2.Handle;
 
 /**
  * Main entry point for product search service.
@@ -42,6 +36,7 @@ public class ProductSearchService extends Service<ProductSearchServiceConfigurat
         final SolrDao solrDao = new SolrDao(configuration.getSolrBaseUrl(), configuration.getSolrRequestHandler());
 
         environment.addResource(new ProductSearchResource(solrDao));
+        environment.addResource(new ProductResource(solrDao));
         environment.addResource(new ConfigurationResource(configuration));
     }
 

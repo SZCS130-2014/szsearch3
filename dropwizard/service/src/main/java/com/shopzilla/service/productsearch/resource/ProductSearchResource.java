@@ -39,7 +39,7 @@ public class ProductSearchResource {
     @GET
     @JSONP
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
-    //@Path("")
+    // TODO: filter out unnecessary product fields (e.g don't need reviews to render the results page) at java or solr layer?
     public Response get(@QueryParam("q") String query,
                         @QueryParam("format") Format format,
                         @QueryParam("start") Integer start,
@@ -54,7 +54,6 @@ public class ProductSearchResource {
         List<SolrProductEntry> solrProductEntries = solrDao.getSearchResults(query, start, rows);
         for (SolrProductEntry solrProductEntry : solrProductEntries) {
             ProductEntry productEntry = new ProductEntry();
-            // TODO: make sure all PIDs are valid longs?
             productEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
             productEntry.setBrand(solrProductEntry.getBrand());
             productEntry.setCategory(solrProductEntry.getCategory());
