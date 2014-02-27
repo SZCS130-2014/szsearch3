@@ -13,14 +13,6 @@ import java.util.List;
  */
 public class SolrDao {
 
-    public static void main(String[] args) throws Exception {
-        SolrDao dao = new SolrDao("http://localhost:8983/solr/collection1", "/simpleweighted");
-        List<SolrProductEntry> products = dao.getSearchResults("apple", null, null);
-        for (SolrProductEntry p : products) {
-            System.out.println("PID: " + p.getPid() + " DisplayName: " + p.getDisplayName());
-        }
-    }
-
     private String solrBaseUrl;
     private String requestHandler;
 
@@ -37,6 +29,33 @@ public class SolrDao {
         this.solrBaseUrl = solrBaseUrl;
     }
 
+    /**
+    * @param pid the id of the product of interest
+    * @return the product with the given PID, null otherwise
+     */
+    public SolrProductEntry getProduct(String pid) throws Exception {
+        if (pid == null)
+            return null; //TODO: not return null? not sure about this
+
+        String query = String.format("PID:%s", pid);
+
+        SolrServer solrServer = new HttpSolrServer(solrBaseUrl);
+        SolrQuery solrQuery = new SolrQuery().setQuery(query);
+
+        // do not set the request handler -- default "/select" will be used
+        QueryResponse response = solrServer.query(solrQuery);
+        solrServer.shutdown();
+        List<SolrProductEntry> solrProductEntries = response.getBeans(SolrProductEntry.class);
+        return solrProductEntries.size() == 0 ? null : solrProductEntries.get(0);
+    }
+
+    /**
+     * @param query plaintext query issued by the user
+     * @param start number of results from top to skip
+     * @param rows number of results to return
+     * @return list of all relevant products to the query
+     * @throws Exception
+     */
     public List<SolrProductEntry> getSearchResults(String query, Integer start, Integer rows) throws Exception {
         if (query == null || query.length() < 1)
             return new LinkedList<SolrProductEntry>();
