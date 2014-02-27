@@ -16,6 +16,9 @@ public class ProductSearchServiceConfiguration extends Configuration {
 	@JsonProperty("solrBaseUrl")
 	private String solrBaseUrl;
 
+    @JsonProperty("solrRequestHandler")
+    private String solrRequestHandler;
+
     @JsonProperty("http")
     private CustomHttpConfiguration httpConfiguration = new CustomHttpConfiguration();
     
@@ -33,5 +36,13 @@ public class ProductSearchServiceConfiguration extends Configuration {
 
     public void setSolrBaseUrl(String url) {
         this.solrBaseUrl = url;
+    }
+
+    public String getSolrRequestHandler() {
+        return solrRequestHandler;
+    }
+
+    public void setSolrRequestHandler(String solrRequestHandler) {
+        this.solrRequestHandler = solrRequestHandler;
     }
 }

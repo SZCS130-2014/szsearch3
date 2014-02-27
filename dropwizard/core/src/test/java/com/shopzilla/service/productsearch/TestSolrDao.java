@@ -16,7 +16,7 @@ public class TestSolrDao {
     private static final String solrBaseUrl = "http://localhost:8983/solr/collection1";
     private static final String solrRequestHandler = "/simpleweighted";
 
-    @Test
+    //@Test
     // TODO: more thorough test - perhaps actually check that the right results are being returned
     public void testGetSearchResults() throws Exception {
         SolrDao solrDao = new SolrDao(solrBaseUrl, solrRequestHandler);
