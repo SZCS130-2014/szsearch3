@@ -21,28 +21,30 @@ public class SolrDao {
         }
     }
 
-    private SolrServer solrServer;
+    private String solrBaseUrl;
     private String requestHandler;
 
     public SolrDao(String solrBaseUrl, String requestHandler) {
-        this.solrServer = new HttpSolrServer(solrBaseUrl);
+        this.solrBaseUrl = solrBaseUrl;
         this.requestHandler = requestHandler;
     }
 
-    public SolrServer getSolrServer() {
-        return solrServer;
+    public String getSolrBaseUrl() {
+        return this.solrBaseUrl;
     }
 
-    public void setSolrServer(SolrServer solrServer) {
-        this.solrServer = solrServer;
+    public void setSolrBaseUrl(String solrBaseUrl) {
+        this.solrBaseUrl = solrBaseUrl;
     }
 
     public List<SolrProductEntry> getSearchResults(String query) throws Exception {
         if (query == null || query.length() < 1)
             return new LinkedList<SolrProductEntry>(); // TODO: throw exception instead?
 
+        SolrServer solrServer = new HttpSolrServer(solrBaseUrl);
         SolrQuery solrQuery = new SolrQuery().setQuery(query).setRequestHandler(requestHandler);
         QueryResponse response = solrServer.query(solrQuery); // TODO: exception handling?
+        solrServer.shutdown();
         return response.getBeans(SolrProductEntry.class);
     }
 }

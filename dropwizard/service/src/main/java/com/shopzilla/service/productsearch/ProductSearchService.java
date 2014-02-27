@@ -39,7 +39,7 @@ public class ProductSearchService extends Service<ProductSearchServiceConfigurat
     public void run(ProductSearchServiceConfiguration configuration, Environment environment)
             throws Exception {
 
-        final SolrDao solrDao = new SolrDao(configuration.getSolrBaseUrl());
+        final SolrDao solrDao = new SolrDao(configuration.getSolrBaseUrl(), configuration.getSolrRequestHandler());
 
         environment.addResource(new ProductSearchResource(solrDao));
         environment.addResource(new VersionResource());
