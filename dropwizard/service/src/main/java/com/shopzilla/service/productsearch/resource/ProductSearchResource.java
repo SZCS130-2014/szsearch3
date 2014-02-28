@@ -8,6 +8,7 @@ import com.fasterxml.jackson.jaxrs.json.annotation.JSONP;
 import com.shopzilla.service.productsearch.Format;
 import com.shopzilla.service.productsearch.data.SolrDao;
 import com.shopzilla.service.productsearch.data.SolrProductEntry;
+import com.shopzilla.site.service.productsearch.model.jaxb.ProductSearchEntry;
 import com.shopzilla.site.service.productsearch.model.jaxb.ProductSearchResponse;
 import com.shopzilla.site.service.productsearch.model.jaxb.ProductEntry;
 import com.shopzilla.site.service.productsearch.model.jaxb.CommentEntry;
@@ -53,26 +54,14 @@ public class ProductSearchResource {
 
         List<SolrProductEntry> solrProductEntries = solrDao.getSearchResults(query, start, rows);
         for (SolrProductEntry solrProductEntry : solrProductEntries) {
-            ProductEntry productEntry = new ProductEntry();
-            productEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
-            productEntry.setBrand(solrProductEntry.getBrand());
-            productEntry.setCategory(solrProductEntry.getCategory());
-            productEntry.setName(solrProductEntry.getDisplayName());
-            productEntry.setTitle(solrProductEntry.getTitle());
+            ProductSearchEntry productSearchEntry = new ProductSearchEntry();
+            productSearchEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
+            productSearchEntry.setBrand(solrProductEntry.getBrand());
+            productSearchEntry.setCategory(solrProductEntry.getCategory());
+            productSearchEntry.setName(solrProductEntry.getDisplayName());
+            productSearchEntry.setTitle(solrProductEntry.getTitle());
 
-            int length = solrProductEntry.getReviewRatings().size();
-
-            for (int i = 0; i < length; i++) {
-                CommentEntry commentEntry = new CommentEntry();
-                commentEntry.setContent(solrProductEntry.getReviewContents().get(i));
-                commentEntry.setTitle(solrProductEntry.getReviewTitles().get(i));
-                String strRating = solrProductEntry.getReviewRatings().get(i);
-                double rating = (strRating == null || strRating.equals("")) ? 0 : Double.parseDouble(strRating);
-                commentEntry.setRating(rating);
-
-                productEntry.getCommentEntry().add(commentEntry);
-            }
-            response.getProductEntry().add(productEntry);
+            response.getProductSearchEntry().add(productSearchEntry);
         }
         return buildResponse(response, format);
     }
