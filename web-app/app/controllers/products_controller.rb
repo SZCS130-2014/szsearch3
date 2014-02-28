@@ -18,10 +18,9 @@ class ProductsController < ApplicationController
     # optional param: rows - number of rows to return
     #
     def results
-        # Create a SearchModel to fetch results in JSON format
-
-        # Format the results for the view
-
+        # Use Product model to fetch results in JSON format
+        @results = Product.search(params[:query], params[:start], params[:rows])
+        
     end
 
 	#
@@ -29,7 +28,7 @@ class ProductsController < ApplicationController
 	# param: id of product to display
 	#
 	def view
-		# Create a ProductModel to fetch the product's info
+		# Use Product model to fetch the product's info
 		
 	end
 

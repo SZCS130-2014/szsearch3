@@ -1,1 +1,13 @@
 <h1>Search Results page</h1>
+
+<ol>
+<% @results['productEntry'].each do |result| %>
+	<li> <%= result['name'] %>
+		<ul> 
+			<li><%= result['brand'] %></li>
+			<li><%= result['category'] %></li>
+			<li><%= result['title'] %></li>
+		</ul>
+	</li>
+<% end %>
+</ol>
