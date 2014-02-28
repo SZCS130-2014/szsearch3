@@ -8,8 +8,14 @@
   <xs:element name="ProductSearchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element ref="tns:ProductEntry" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element ref="tns:ProductSearchEntry" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ProductSearchEntry">
+    <xs:complexType>
+        <xs:attributeGroup ref="tns:productAttributes"/>
     </xs:complexType>
   </xs:element>
 

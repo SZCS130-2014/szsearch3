@@ -15,6 +15,7 @@ public class SolrDao {
 
     private String solrBaseUrl;
     private String requestHandler;
+    private static final String requestHandlerSelect = "/select";
 
     public SolrDao(String solrBaseUrl, String requestHandler) {
         this.solrBaseUrl = solrBaseUrl;
@@ -40,9 +41,8 @@ public class SolrDao {
         String query = String.format("PID:%s", pid);
 
         SolrServer solrServer = new HttpSolrServer(solrBaseUrl);
-        SolrQuery solrQuery = new SolrQuery().setQuery(query);
+        SolrQuery solrQuery = new SolrQuery().setQuery(query).setRequestHandler(requestHandlerSelect);
 
-        // do not set the request handler -- default "/select" will be used
         QueryResponse response = solrServer.query(solrQuery);
         solrServer.shutdown();
         List<SolrProductEntry> solrProductEntries = response.getBeans(SolrProductEntry.class);
