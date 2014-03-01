@@ -18,23 +18,34 @@ class Product
 	# optional param: rows - number of results ro return
 	# return: object containing search results or nil
 	#
-	def self.search(keywords, start = 0, rows = 20)
+	def self.search(keywords, start, rows)
 
 		# Check if we don't have any keywords
 		if keywords.nil?
-			return nil
+			return {:productSearchEntry => nil}
 		end
 
+		#set defaults for start and rows
+		if start.nil?
+			start = 0
+		end
+
+		if rows.nil?
+			rows = 20
+		end
+
+		puts "Issuing search for: #{keywords} start: #{start} rows: #{rows}"
 		# Issue a query to the service using HTTParty
 		params = { :query => {:q => keywords, :start => start,
 							  :rows => rows, :format => 'json'} }
 		response = get("#{@base_uri}/productsearch", params)
 
 		if response.success?
+			puts response
 			return JSON.parse(response.body)
 		else
 			puts response.response
-			return nil
+			return {:productSearchEntry => nil}
 		end
 
 	end
