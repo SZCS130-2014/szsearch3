@@ -1,1 +1,16 @@
 <h1>Product View</h1>
+
+<ul> 
+	<li><%= @product['name'] %>
+	<li><%= @product['brand'] %></li>
+	<li><%= @product['category'] %></li>
+	<li><%= @product['title'] %></li>
+</ul>
+
+<% @product['commentEntry'].each do |comment| %>
+	<ul> 
+		<li><%= comment['title'] %></li>
+		<li><%= comment['rating'] %></li>
+		<li><%= comment['content'] %></li>
+	</ul>
+<% end %>
