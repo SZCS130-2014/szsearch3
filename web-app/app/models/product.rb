@@ -16,7 +16,7 @@ class Product
 	# param: keywords - words to search
 	# optional param: start - offset to being returning results
 	# optional param: rows - number of results ro return
-	# return object containing 
+	# return: object containing search results or nil
 	#
 	def self.search(keywords, start = 0, rows = 20)
 
@@ -33,7 +33,34 @@ class Product
 		if response.success?
 			return JSON.parse(response.body)
 		else
-			raise response.response
+			puts response.response
+			return nil
+		end
+
+	end
+
+	#
+	# Fetches a single product record from the server
+	# param: productID to fetch
+	# return: object containing product info or nil
+	#
+	def self.getProduct(productID)
+
+		# Check that productID is valid
+		if productID.nil?
+			return nil
+		end
+
+		# Issue query to the service using HTTParty
+		params = { :query => {:format => 'json'} }
+		puts "#{@base_uri}/product/#{productID}"
+		response = get("#{@base_uri}/product/#{productID}", params)
+
+		if response.success?
+			return JSON.parse(response.body)
+		else
+			puts response.response
+			return nil
 		end
 
 	end

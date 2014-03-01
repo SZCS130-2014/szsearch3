@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
 	#
 	def view
 		# Use Product model to fetch the product's info
+        @product = Product.getProduct(params[:id])
 		
 	end
 
