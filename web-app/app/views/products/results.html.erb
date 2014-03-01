@@ -1,13 +1,29 @@
 <h1>Search Results page</h1>
 
-<ol>
-<% @results['productEntry'].each do |result| %>
-	<li> <%= result['name'] %>
-		<ul> 
-			<li><%= result['brand'] %></li>
-			<li><%= result['category'] %></li>
-			<li><%= result['title'] %></li>
-		</ul>
-	</li>
+<%= form_tag("/search", method: "get") do %>
+
+	<p>
+		<%= text_field_tag(:query) %>
+	</p>
+
+	<p>
+		<%= submit_tag() %>
+	</p>
 <% end %>
-</ol>
+
+<% if !@results['productSearchEntry'].nil? %>
+	<ol>
+	<% @results['productSearchEntry'].each do |result| %>
+		<li> <%= result['name'] %>
+			<ul> 
+				<li><%= result['brand'] %></li>
+				<li><%= result['category'] %></li>
+				<li><%= result['title'] %></li>
+			</ul>
+		</li>
+	<% end %>
+	</ol>
+
+<% else %>
+	<p>no results to show </p>	
+<% end %> 

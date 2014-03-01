@@ -8,7 +8,7 @@ class ProductsController < ApplicationController
     #
     # Action for the product search home page
     #
-    def index
+    def search
     end
 
     #

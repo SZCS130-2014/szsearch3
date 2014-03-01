@@ -1,0 +1,13 @@
+<h1>Search Homepage</h1>
+
+<%= form_tag("/search", method: "get") do %>
+
+	<p>
+		<%= text_field_tag(:query) %>
+	</p>
+
+	<p>
+		<%= submit_tag() %>
+	</p>
+
+<% end %>
