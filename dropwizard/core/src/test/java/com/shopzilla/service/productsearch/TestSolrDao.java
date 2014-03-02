@@ -1,12 +1,9 @@
 package com.shopzilla.service.productsearch;
 
 import com.shopzilla.service.productsearch.data.SolrDao;
-import com.shopzilla.service.productsearch.data.SolrProductEntry;
-import com.sun.org.apache.regexp.internal.recompile;
-import org.junit.Test;
-import static org.junit.Assert.*;
+import com.shopzilla.service.productsearch.data.SolrSearchResponse;
 
-import java.util.List;
+import static org.junit.Assert.*;
 
 /**
  * Created by brett on 2/24/14.
@@ -21,9 +18,9 @@ public class TestSolrDao {
     public void testGetSearchResults() throws Exception {
         SolrDao solrDao = new SolrDao(solrBaseUrl, solrRequestHandler);
         String testQuery = "apple";
-        List<SolrProductEntry> productEntries = solrDao.getSearchResults(testQuery, 0, 1);
-        assertNotNull(productEntries);
-        assertEquals(0, productEntries.size());        
+        SolrSearchResponse solrSearchResponse = solrDao.getSearchResults(testQuery, 0, 1);
+        assertNotNull(solrSearchResponse);
+        assertEquals(0, solrSearchResponse.getSolrProductEntries().size());
     }
 
 }
