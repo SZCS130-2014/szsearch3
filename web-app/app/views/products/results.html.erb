@@ -2,19 +2,49 @@
 
 <div class= "col-lg-10 col-lg-offset-1">
 	<div class="page-header">
-		<h2>Results <small>100 found</small></h2>
+		<h2>Results 
+			<% if !@results['numFound'].nil? %>
+				<small><%= @results['numFound'] %> found</small>
+			<% end %>
+		</h2>
+
 	</div>
 
 	<% if !@results['productSearchEntry'].nil? %>
-		<div class="col-lg-4">
+		<div class="col-lg-3">
 			<div class="panel panel-default">
-				<!-- INSERT FILTERING BOX HERE -->
+				<div class="panel-heading">
+					Filter your results
+				</div>
+					<div class="panel-body">
+						
+					<% @results['facetAttribute'].each do |facet| %>
+
+						<p><%= facet['name'] %></p>
+						<% facet['facet'].each do |facetValue| %>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1">
+										<%= facetValue['name'] %> (<%= facetValue['numFound'] %>)</span>
+								</label>
+							</div>
+						<% end %>
+
+					<% end %>
+				</div>
 			</div>
 		</div>
 
-		<div class="col-lg-8">
+		<div class="col-lg-9">
 			<% @results['productSearchEntry'].each do |result| %>
-				<!-- INSERT CODE TO DO THUMBNAILS HERE -->
+				<div class="col-lg-4">
+					<div class="thumbnail">
+						<% %>
+						<div class="caption">
+							<h5><%= link_to(result['title'], "products/#{result['pid']}") %></h5>
+						</div>
+					</div>
+				</div>
 			<% end %>
 		</div>
 
