@@ -3,6 +3,8 @@ szsearch3
 
 CS 130 Winter 2014 Search Engine Group 3
 
+<h2>Apache Solr</h2>
+
 <b>Instructions to index dataset into Solr:</b>
 <ul>
     <li>Move the dataset.xml file from Chris into the solr-4.5.0/example directory</li>
@@ -45,3 +47,80 @@ Not a complete solution, and not the most elegant but there literally seems to b
 <b>Transforming Data to Add Fields:</b> <br>
 To strip out and add the "Brand" and "Item" Fields: <br>
 `sed 's/ProductTitle=\"\([^ ]*\)/Brand=\"\1\" ProductTitle=\"\1/g' | sed 's/\(ProductTitle=\"\)\(.*\)\( \)\([^ ]\{1,\}\"\)/\1\2\3\4 Item=\"\4/g'` <br>
+
+
+
+<h2>Querying the Dropwizard Web Service</h2>
+<h4>ProductSearchResource</h4>
+* Description: Returns products relevant to the given query. Also supports filtering by Category.
+* Endpoint:    `/productsearch`
+* Parameters:
+
+  * `q`: search query
+  * `start`: number of results to skip
+  * `rows`: number of results to return
+  * `filterField`: field to filter by (currrently only Category)
+  * `filterValue`: value of field to filter
+  * `format`: xml or json (defaults to json)
+```json
+{
+    "productSearchEntry": [
+        {
+            "categories": [
+                "Laptop Computers"
+            ],
+            "brand": "Apple",
+            "name": "Apple 11 in. Macbook Air 64GB 1.7GHz dual-core Intel Core i5",
+            "title": "Apple - 11.6 MacBook Air Notebook - 4 GB Memory and 64 GB Solid State Drive",
+            "pid": 4382094588
+        }
+    ],
+    "numFound": 52,
+    "facetAttribute": [
+        {
+            "name": "Category",
+            "facet": [
+                {
+                    "name": "computers",
+                    "numFound": 52
+                },
+                {
+                    "name": "laptop",
+                    "numFound": 27
+                }
+            ]
+        }
+    ]
+}
+```
+
+<h4>ProductResource</h4>
+* Description: Returns all product information including comments
+* Endpoint:    `/product/{product_id}`
+* Parameters:
+
+  * `product_id`: seen above as part of the URL, this is the ID of the product to retrieve
+  * `format`: xml or json (defaults to json)
+```json
+{
+    "commentEntry": [
+        {
+            "rating": 5,
+            "title": "Best Laptop I have ever purchased",
+            "content": "I love it. Best laptop I have ever purchased. Perfect for school & traveling.\n"
+        },
+        {
+            "rating": 5,
+            "title": "By far the best investment for a notebook!",
+            "content": "Easy Applications, extremely well made, what more can I say except Bye bye to those awful window based PC's. Where have you been MAC all my life. Seriously, I could never look back, Apple is definately by far the best investment for the money.\n"
+        }
+    ],
+    "categories": [
+        "Laptop Computers"
+    ],
+    "brand": "Apple",
+    "name": "Apple 11 in. Macbook Air 64GB 1.7GHz dual-core Intel Core i5",
+    "title": "Apple - 11.6 MacBook Air Notebook - 4 GB Memory and 64 GB Solid State Drive",
+    "pid": 4382094588
+}
+```
