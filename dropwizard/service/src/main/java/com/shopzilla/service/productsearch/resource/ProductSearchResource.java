@@ -57,9 +57,12 @@ public class ProductSearchResource {
             ProductSearchEntry productSearchEntry = new ProductSearchEntry();
             productSearchEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
             productSearchEntry.setBrand(solrProductEntry.getBrand());
-            productSearchEntry.setCategory(solrProductEntry.getCategory());
             productSearchEntry.setName(solrProductEntry.getDisplayName());
             productSearchEntry.setTitle(solrProductEntry.getTitle());
+
+            for (String category : solrProductEntry.getCategory()) {
+                productSearchEntry.getCategories().add(category);
+            }
 
             response.getProductSearchEntry().add(productSearchEntry);
         }

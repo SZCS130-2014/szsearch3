@@ -15,6 +15,9 @@
 
   <xs:element name="ProductSearchEntry">
     <xs:complexType>
+        <xs:sequence>
+            <xs:element name="categories" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
         <xs:attributeGroup ref="tns:productAttributes"/>
     </xs:complexType>
   </xs:element>
@@ -23,6 +26,7 @@
     <xs:complexType>
         <xs:sequence>
             <xs:element ref="tns:CommentEntry" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="categories" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
         <xs:attributeGroup ref="tns:productAttributes"/>
     </xs:complexType>
@@ -39,7 +43,6 @@
     <xs:attribute name="name" type="xs:string"/>
     <xs:attribute name="title" type="xs:string"/>
     <xs:attribute name="pid" type="xs:long"/>
-    <xs:attribute name="category" type="xs:string"/>
 
   </xs:attributeGroup>
 
