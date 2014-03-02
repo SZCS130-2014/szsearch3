@@ -54,7 +54,7 @@ To strip out and add the "Brand" and "Item" Fields: <br>
 <h4>ProductSearchResource</h4>
 * Description: Returns products relevant to the given query. Also supports filtering by Category.
 * Endpoint:    `/productsearch`
-* Parameters:
+* Query Parameters:
 
   * `q`: search query
   * `start`: number of results to skip
@@ -97,9 +97,9 @@ To strip out and add the "Brand" and "Item" Fields: <br>
 <h4>ProductResource</h4>
 * Description: Returns all product information including comments
 * Endpoint:    `/product/{product_id}`
-* Parameters:
-
+* URL Parameters:
   * `product_id`: seen above as part of the URL, this is the ID of the product to retrieve
+* Query Parameters:
   * `format`: xml or json (defaults to json)
 ```json
 {
