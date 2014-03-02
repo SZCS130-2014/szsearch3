@@ -10,6 +10,7 @@ import com.shopzilla.site.service.productsearch.model.jaxb.ProductEntry;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -42,9 +43,12 @@ public class ProductResource {
         // TODO: make sure all PIDs are valid longs?
         productEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
         productEntry.setBrand(solrProductEntry.getBrand());
-        productEntry.setCategory(solrProductEntry.getCategory());
         productEntry.setName(solrProductEntry.getDisplayName());
         productEntry.setTitle(solrProductEntry.getTitle());
+
+        for (String category : solrProductEntry.getCategory()) {
+            productEntry.getCategories().add(category);
+        }
 
         int length = solrProductEntry.getReviewRatings().size();
 
@@ -58,6 +62,7 @@ public class ProductResource {
 
             productEntry.getCommentEntry().add(commentEntry);
         }
+        Collections.sort(productEntry.getCommentEntry(), new CommentEntryComparator());
 
         return buildResponse(productEntry, format);
     }
