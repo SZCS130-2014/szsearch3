@@ -43,7 +43,7 @@ public class ProductSearchResource {
                         @QueryParam("rows") Integer rows,
                         @QueryParam("filterField") String filterField,
                         @QueryParam("filterValue") String filterValue) throws Exception {
-        if (query == null || query.length() < 1 || !filterField.equals("Category")) {
+        if (query == null || query.length() < 1 || (filterField != null && !filterField.equals("Category"))) {
             // TODO: log?
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();
         }
