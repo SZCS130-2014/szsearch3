@@ -8,17 +8,13 @@ import com.fasterxml.jackson.jaxrs.json.annotation.JSONP;
 import com.shopzilla.service.productsearch.Format;
 import com.shopzilla.service.productsearch.data.SolrDao;
 import com.shopzilla.service.productsearch.data.SolrProductEntry;
+import com.shopzilla.service.productsearch.data.SolrSearchResponse;
+import com.shopzilla.site.service.productsearch.model.jaxb.Facet;
+import com.shopzilla.site.service.productsearch.model.jaxb.FacetAttribute;
 import com.shopzilla.site.service.productsearch.model.jaxb.ProductSearchEntry;
 import com.shopzilla.site.service.productsearch.model.jaxb.ProductSearchResponse;
-import com.shopzilla.site.service.productsearch.model.jaxb.ProductEntry;
-import com.shopzilla.site.service.productsearch.model.jaxb.CommentEntry;
-import com.yammer.metrics.annotation.Timed;
-import org.apache.commons.collections.CollectionUtils;
-import org.dozer.Mapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.solr.client.solrj.response.FacetField;
 
-import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -44,15 +40,22 @@ public class ProductSearchResource {
     public Response get(@QueryParam("q") String query,
                         @QueryParam("format") Format format,
                         @QueryParam("start") Integer start,
-                        @QueryParam("rows") Integer rows) throws Exception {
-        if (query == null || query.length() < 1) {
+                        @QueryParam("rows") Integer rows,
+                        @QueryParam("filterField") String filterField,
+                        @QueryParam("filterValue") String filterValue) throws Exception {
+        if (query == null || query.length() < 1 || !filterField.equals("Category")) {
             // TODO: log?
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();
         }
 
         ProductSearchResponse response = new ProductSearchResponse();
+        boolean isFilteredSearch = filterField != null && filterValue != null;
+        SolrSearchResponse searchResults = isFilteredSearch
+                                           ? solrDao.getFilteredSearchResults(query, start, rows, filterField, filterValue)
+                                           : solrDao.getSearchResults(query, start, rows);
 
-        List<SolrProductEntry> solrProductEntries = solrDao.getSearchResults(query, start, rows);
+        // add all solrProductEntries to response
+        List<SolrProductEntry> solrProductEntries = searchResults.getSolrProductEntries();
         for (SolrProductEntry solrProductEntry : solrProductEntries) {
             ProductSearchEntry productSearchEntry = new ProductSearchEntry();
             productSearchEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
@@ -68,12 +71,26 @@ public class ProductSearchResource {
             }
             response.getProductSearchEntry().add(productSearchEntry);
         }
+
+        for (FacetField facetField : searchResults.getFacetFields()) {
+            FacetAttribute facetAttribute = new FacetAttribute();
+            facetAttribute.setName(facetField.getName());
+            for (FacetField.Count c : facetField.getValues()) {
+                Facet facet = new Facet();
+                facet.setName(c.getName());
+                facet.setNumFound(c.getCount());
+                facetAttribute.getFacet().add(facet);
+            }
+            response.getFacetAttribute().add(facetAttribute);
+        }
+        response.setNumFound(searchResults.getNumFound());
+
         return buildResponse(response, format);
     }
 
     private Response buildResponse(Object response, Format format) {
         return Response.ok(response)
-                .type(format != null ? format.getMediaType() : Format.xml.getMediaType())
+                .type(format != null ? format.getMediaType() : Format.json.getMediaType())
                 .build();
     }
 

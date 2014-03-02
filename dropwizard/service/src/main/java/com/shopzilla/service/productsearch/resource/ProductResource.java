@@ -68,7 +68,7 @@ public class ProductResource {
     }
     private Response buildResponse(Object response, Format format) {
         return Response.ok(response)
-                .type(format != null ? format.getMediaType() : Format.xml.getMediaType())
+                .type(format != null ? format.getMediaType() : Format.json.getMediaType())
                 .build();
     }
 

@@ -9,6 +9,8 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="tns:ProductSearchEntry" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="numFound" type="xs:long"/>
+        <xs:element ref="tns:FacetAttribute" minOccurs="0" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -38,6 +40,21 @@
       </xs:complexType>
   </xs:element>
 
+  <xs:element name="FacetAttribute">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element ref="tns:Facet" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Facet">
+    <xs:complexType>
+        <xs:attributeGroup ref="tns:facetAttributes"/>
+    </xs:complexType>
+  </xs:element>
+
   <xs:attributeGroup name="productAttributes">
     <xs:attribute name="brand" type="xs:string"/>
     <xs:attribute name="name" type="xs:string"/>
@@ -50,6 +67,11 @@
       <xs:attribute name="rating" type="xs:double"/>
       <xs:attribute name="title" type="xs:string"/>
       <xs:attribute name="content" type="xs:string"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="facetAttributes">
+      <xs:attribute name="name" type="xs:string"/>
+      <xs:attribute name="numFound" type="xs:long"/>
   </xs:attributeGroup>
 
 </xs:schema>
