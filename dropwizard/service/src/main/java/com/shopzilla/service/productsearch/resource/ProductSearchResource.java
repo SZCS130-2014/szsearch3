@@ -57,13 +57,15 @@ public class ProductSearchResource {
             ProductSearchEntry productSearchEntry = new ProductSearchEntry();
             productSearchEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
             productSearchEntry.setBrand(solrProductEntry.getBrand());
-            productSearchEntry.setName(solrProductEntry.getDisplayName());
+            String displayName = solrProductEntry.getDisplayName();
+            productSearchEntry.setName(displayName == null ? "" : displayName);
             productSearchEntry.setTitle(solrProductEntry.getTitle());
 
-            for (String category : solrProductEntry.getCategory()) {
-                productSearchEntry.getCategories().add(category);
+            if (solrProductEntry.getCategory() != null) {
+                for (String category : solrProductEntry.getCategory()) {
+                    productSearchEntry.getCategories().add(category);
+                }
             }
-
             response.getProductSearchEntry().add(productSearchEntry);
         }
         return buildResponse(response, format);
