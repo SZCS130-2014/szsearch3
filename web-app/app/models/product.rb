@@ -16,7 +16,7 @@ class Product
 	# param: keywords - words to search
 	# optional param: start - offset to being returning results
 	# optional param: rows - number of results ro return
-	# return: object containing search results or nil
+	# return: object conta"shared/ad_banner"ining search results or nil
 	#
 	def self.search(keywords, start, rows)
 
@@ -45,7 +45,7 @@ class Product
 			return JSON.parse(response.body)
 		else
 			puts response.response
-			return {:productSearchEntry => nil}
+			return {:productSearchEntry => nil} 
 		end
 
 	end

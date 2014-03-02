@@ -1,29 +1,28 @@
-<h1>Search Results page</h1>
+<%= render "/partials/header" %>
 
-<%= form_tag("/search", method: "get") do %>
+<div class= "col-lg-10 col-lg-offset-1">
+	<div class="page-header">
+		<h2>Results <small>100 found</small></h2>
+	</div>
 
-	<p>
-		<%= text_field_tag(:query) %>
-	</p>
+	<% if !@results['productSearchEntry'].nil? %>
+		<div class="col-lg-4">
+			<div class="panel panel-default">
+				<!-- INSERT FILTERING BOX HERE -->
+			</div>
+		</div>
 
-	<p>
-		<%= submit_tag() %>
-	</p>
-<% end %>
+		<div class="col-lg-8">
+			<% @results['productSearchEntry'].each do |result| %>
+				<!-- INSERT CODE TO DO THUMBNAILS HERE -->
+			<% end %>
+		</div>
 
-<% if !@results['productSearchEntry'].nil? %>
-	<ol>
-	<% @results['productSearchEntry'].each do |result| %>
-		<li> <%= result['name'] %>
-			<ul> 
-				<li><%= result['brand'] %></li>
-				<li><%= result['category'] %></li>
-				<li><%= result['title'] %></li>
-			</ul>
-		</li>
-	<% end %>
-	</ol>
+	<% else %>
+		<div class="alert alert-warning col-lg-8 col-lg-offset-2">
+			<p class="text-center">No results found</p>	
+		</div>
+	<% end %> 
+</div>
 
-<% else %>
-	<p>no results to show </p>	
-<% end %> 
+<%= render "/partials/footer" %>
