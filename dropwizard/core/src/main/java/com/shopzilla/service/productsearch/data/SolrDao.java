@@ -65,7 +65,8 @@ public class SolrDao {
         SolrQuery solrQuery = new SolrQuery().setQuery(query)
                                              .setRequestHandler(requestHandler)
                                              .setFacet(true)
-                                             .addFacetField("Category");
+                                             .addFacetField("Category")
+                                             .setFacetMinCount(1);
         if (start != null && rows != null) {
             solrQuery.setRows(rows);
             solrQuery.setStart(start);
@@ -103,7 +104,8 @@ public class SolrDao {
                 .setRequestHandler(requestHandler)
                 .addFilterQuery(filterQuery)
                 .setFacet(true)
-                .addFacetField("Category");
+                .addFacetField("Category")
+                .setFacetMinCount(1);
         if (start != null && rows != null) {
             solrQuery.setRows(rows);
             solrQuery.setStart(start);
