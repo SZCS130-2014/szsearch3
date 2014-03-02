@@ -27,7 +27,6 @@ web-app/spec/tmp
 web-app/**.orig
 web-app/rerun.txt
 web-app/pickle-email-*.html
-web-app/config/initializers/secret_token.rb
 web-app/config/secrets.yml
 
 ## Environment normalisation:
