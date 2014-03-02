@@ -2,11 +2,11 @@
 <dataConfig>
 	<dataSource type="FileDataSource" encoding="UTF-8" url="merged_dataset.xml"/>
 	<document>
-		<entity name="product" processor="XPathEntityProcessor" stream="true" forEach="/products/product" url="merged_dataset.xml">
+		<entity name="product" processor="XPathEntityProcessor" transformer="RegexTransformer" stream="true" forEach="/products/product" url="merged_dataset.xml">
 			<field column="PID" xpath="/products/product/@PID"/>
 			<field column="ProductTitle" xpath="/products/product/@ProductTitle"/>
 			<field column="Brand" xpath="/products/product/@Brand"/>
-			<field column="Category" xpath="/products/product/Category"/>
+			<field column="Category" splitBy="  " xpath="/products/product/Category"/>
 			<field column="DisplayName" xpath="/products/product/DisplayName"/>
 			<field column="Rating" xpath="/products/product/Comments/Comment/@Rating"/>
 			<field column="ReviewTitle" xpath="/products/product/Comments/Comment/@Title"/>
