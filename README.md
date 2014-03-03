@@ -59,8 +59,9 @@ To strip out and add the "Brand" and "Item" Fields: <br>
   * `q`: search query
   * `start`: number of results to skip
   * `rows`: number of results to return
-  * `filterField`: field to filter by (currrently only Category)
-  * `filterValue`: value of field to filter
+  * `categoryFilter`: categories, separated by spaces, to filter by (if multiple, union is used)
+  * `ratingFilter`: rating to filter by. ex: 3 --> [3 TO *], 4 --> [4 TO *]
+  * TODO `sort`: true/false. sorts in order of descending ratings.
   * `format`: xml or json (defaults to json)
 ```json
 {
