@@ -60,7 +60,7 @@
     <xs:attribute name="name" type="xs:string"/>
     <xs:attribute name="title" type="xs:string"/>
     <xs:attribute name="pid" type="xs:long"/>
-
+    <xs:attribute name="rating" type="xs:double"/>
   </xs:attributeGroup>
 
   <xs:attributeGroup name="commentAttributes">

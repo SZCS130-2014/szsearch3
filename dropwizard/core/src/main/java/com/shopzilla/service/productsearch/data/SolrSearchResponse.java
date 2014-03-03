@@ -3,7 +3,9 @@ package com.shopzilla.service.productsearch.data;
 import org.apache.solr.client.solrj.response.FacetField;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by brett on 3/1/14.
@@ -14,19 +16,23 @@ public class SolrSearchResponse {
     private List<SolrProductEntry> solrProductEntries;
     private Long numFound;
     private List<FacetField> facetFields;
+    private Map<String, Integer> facetQuery;
 
     public SolrSearchResponse() {
         this.solrProductEntries = new ArrayList<SolrProductEntry>();
         this.numFound = 0L;
         this.facetFields = new ArrayList<FacetField>();
+        this.facetQuery = new HashMap<String, Integer>();
     }
 
     public SolrSearchResponse(List<SolrProductEntry> solrProductEntries,
                               Long numFound,
-                              List<FacetField> facetFields) {
+                              List<FacetField> facetFields,
+                              Map<String, Integer> facetQueries) {
         this.solrProductEntries = solrProductEntries;
         this.numFound = numFound;
         this.facetFields = facetFields;
+        this.facetQuery = facetQueries;
     }
 
     public List<SolrProductEntry> getSolrProductEntries() {
@@ -51,5 +57,13 @@ public class SolrSearchResponse {
 
     public void setFacetFields(List<FacetField> facetFields) {
         this.facetFields = facetFields;
+    }
+
+    public Map<String, Integer> getFacetQuery() {
+        return facetQuery;
+    }
+
+    public void setFacetQuery(Map<String, Integer> facetQuery) {
+        this.facetQuery = facetQuery;
     }
 }

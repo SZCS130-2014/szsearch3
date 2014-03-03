@@ -54,6 +54,7 @@
   <field name="Brand" type="text_general" indexed="true" stored="true" multiValued="false"/>
   <field name="Category" type="text_general" indexed="true" stored="true" multiValued="true"/>
   <field name="DisplayName" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="AvgRating" type="double" indexed="true" stored="true" multiValued="false"/>
   <field name="Rating" type="text_general" indexed="true" stored="true" multiValued="true"/>
   <field name="ReviewTitle" type="text_general" indexed="true" stored="true" multiValued="true"/> 
   <field name="Review" type="text_general" indexed="true" stored="true" multiValued="true"/>              

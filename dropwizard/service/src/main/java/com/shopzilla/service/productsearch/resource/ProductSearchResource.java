@@ -19,6 +19,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Brett Konold
@@ -41,21 +42,18 @@ public class ProductSearchResource {
                         @QueryParam("format") Format format,
                         @QueryParam("start") Integer start,
                         @QueryParam("rows") Integer rows,
-                        @QueryParam("filterField") String filterField,
-                        @QueryParam("filterValue") String filterValue) throws Exception {
-        if (query == null || query.length() < 1 || (filterField != null && !filterField.equals("Category"))) {
+                        @QueryParam("categoryFilter") String categoryFilter,
+                        @QueryParam("ratingFilter") Integer ratingFilter) throws Exception {
+        if (query == null || query.length() < 1) {
             // TODO: log?
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();
         }
 
         ProductSearchResponse response = new ProductSearchResponse();
-        boolean isFilteredSearch = filterField != null && filterValue != null;
-        SolrSearchResponse searchResults = isFilteredSearch
-                                           ? solrDao.getFilteredSearchResults(query, start, rows, filterField, filterValue)
-                                           : solrDao.getSearchResults(query, start, rows);
+        SolrSearchResponse solrSearchResponse = solrDao.getSearchResults(query, start, rows, categoryFilter, ratingFilter);
 
         // add all solrProductEntries to response
-        List<SolrProductEntry> solrProductEntries = searchResults.getSolrProductEntries();
+        List<SolrProductEntry> solrProductEntries = solrSearchResponse.getSolrProductEntries();
         for (SolrProductEntry solrProductEntry : solrProductEntries) {
             ProductSearchEntry productSearchEntry = new ProductSearchEntry();
             productSearchEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
@@ -63,6 +61,7 @@ public class ProductSearchResource {
             String displayName = solrProductEntry.getDisplayName();
             productSearchEntry.setName(displayName == null ? "" : displayName);
             productSearchEntry.setTitle(solrProductEntry.getTitle());
+            productSearchEntry.setRating(solrProductEntry.getRating());
 
             if (solrProductEntry.getCategory() != null) {
                 for (String category : solrProductEntry.getCategory()) {
@@ -72,7 +71,7 @@ public class ProductSearchResource {
             response.getProductSearchEntry().add(productSearchEntry);
         }
 
-        for (FacetField facetField : searchResults.getFacetFields()) {
+        for (FacetField facetField : solrSearchResponse.getFacetFields()) {
             FacetAttribute facetAttribute = new FacetAttribute();
             facetAttribute.setName(facetField.getName());
             for (FacetField.Count c : facetField.getValues()) {
@@ -83,7 +82,9 @@ public class ProductSearchResource {
             }
             response.getFacetAttribute().add(facetAttribute);
         }
-        response.setNumFound(searchResults.getNumFound());
+
+        addRatingFacets(response, solrSearchResponse.getFacetQuery());
+        response.setNumFound(solrSearchResponse.getNumFound());
 
         return buildResponse(response, format);
     }
@@ -92,6 +93,38 @@ public class ProductSearchResource {
         return Response.ok(response)
                 .type(format != null ? format.getMediaType() : Format.json.getMediaType())
                 .build();
+    }
+
+    private void addRatingFacets(ProductSearchResponse response, Map<String, Integer> facetQuery) {
+        FacetAttribute facetAttribute = new FacetAttribute();
+        facetAttribute.setName("Rating");
+
+        Facet facet = new Facet();
+        facet.setName("1");
+        facet.setNumFound(facetQuery.get("AvgRating: [1 TO *]").longValue());
+        facetAttribute.getFacet().add(facet);
+
+        facet = new Facet();
+        facet.setName("2");
+        facet.setNumFound(facetQuery.get("AvgRating: [2 TO *]").longValue());
+        facetAttribute.getFacet().add(facet);
+
+        facet = new Facet();
+        facet.setName("3");
+        facet.setNumFound(facetQuery.get("AvgRating: [3 TO *]").longValue());
+        facetAttribute.getFacet().add(facet);
+
+        facet = new Facet();
+        facet.setName("4");
+        facet.setNumFound(facetQuery.get("AvgRating: [4 TO *]").longValue());
+        facetAttribute.getFacet().add(facet);
+
+        facet = new Facet();
+        facet.setName("5");
+        facet.setNumFound(facetQuery.get("AvgRating: [5 TO *]").longValue());
+        facetAttribute.getFacet().add(facet);
+
+        response.getFacetAttribute().add(facetAttribute);
     }
 
     public SolrDao getDao() {
