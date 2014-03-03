@@ -8,6 +8,7 @@
 			<field column="Brand" xpath="/products/product/@Brand"/>
 			<field column="Category" splitBy="  " xpath="/products/product/Category"/>
 			<field column="DisplayName" xpath="/products/product/DisplayName"/>
+			<field column="AvgRating" xpath="/products/product/@AvgRating"/>
 			<field column="Rating" xpath="/products/product/Comments/Comment/@Rating"/>
 			<field column="ReviewTitle" xpath="/products/product/Comments/Comment/@Title"/>
 			<field column="Review" xpath="/products/product/Comments/Comment/@Value"/>

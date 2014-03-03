@@ -6,8 +6,9 @@ import org.apache.solr.client.solrj.impl.HttpSolrServer;
 import org.apache.solr.client.solrj.response.FacetField;
 import org.apache.solr.client.solrj.response.QueryResponse;
 
-import java.util.LinkedList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by brett on 2/23/14.
@@ -54,58 +55,42 @@ public class SolrDao {
      * @param query plaintext query issued by the user
      * @param start number of results from top to skip
      * @param rows number of results to return
-     * @return list of all relevant products to the query
-     * @throws Exception
-     */
-    public SolrSearchResponse getSearchResults(String query, Integer start, Integer rows) throws Exception {
-        if (query == null || query.length() < 1)
-            return new SolrSearchResponse();
-
-        SolrServer solrServer = new HttpSolrServer(solrBaseUrl);
-        SolrQuery solrQuery = new SolrQuery().setQuery(query)
-                                             .setRequestHandler(requestHandler)
-                                             .setFacet(true)
-                                             .addFacetField("Category")
-                                             .setFacetMinCount(1);
-        if (start != null && rows != null) {
-            solrQuery.setRows(rows);
-            solrQuery.setStart(start);
-        }
-        
-        QueryResponse response = solrServer.query(solrQuery); // TODO: exception handling?
-        solrServer.shutdown();
-        List<SolrProductEntry> solrProductEntries = response.getBeans(SolrProductEntry.class);
-        Long numFound = response.getResults().getNumFound();
-        List<FacetField> facetFields = response.getFacetFields();
-        return new SolrSearchResponse(solrProductEntries, numFound, facetFields);
-    }
-
-    /**
-     * @param query plaintext query issued by the user
-     * @param start number of results from top to skip
-     * @param rows number of results to return
-     * @param filterField the field to apply filter to
-     * @param filter the filter value to apply
+     * @param categoryFilter the field to apply filter to
+     * @param ratingFilter the filter value to apply
      * @return list of products relevant to query, filtered by facetField and facetFilter
      * @throws Exception
      */
-    public SolrSearchResponse getFilteredSearchResults(String query,
-                                                      Integer start,
-                                                      Integer rows,
-                                                      String filterField,
-                                                      String filter) throws Exception {
+    public SolrSearchResponse getSearchResults(String query,
+                                               Integer start,
+                                               Integer rows,
+                                               String categoryFilter,
+                                               Integer ratingFilter) throws Exception {
         if (query == null || query.length() < 1)
             return new SolrSearchResponse();
-
-        String filterQuery = String.format("%s:(%s)", filterField, filter);
 
         SolrServer solrServer = new HttpSolrServer(solrBaseUrl);
         SolrQuery solrQuery = new SolrQuery().setQuery(query)
                 .setRequestHandler(requestHandler)
-                .addFilterQuery(filterQuery)
                 .setFacet(true)
                 .addFacetField("Category")
-                .setFacetMinCount(1);
+                .setFacetMinCount(1)
+                .addFacetQuery("AvgRating: [1 TO *]")
+                .addFacetQuery("AvgRating: [2 TO *]")
+                .addFacetQuery("AvgRating: [3 TO *]")
+                .addFacetQuery("AvgRating: [4 TO *]")
+                .addFacetQuery("AvgRating: [5 TO *]");
+
+        if (categoryFilter != null) {
+            categoryFilter = categoryFilter.replace(" ", " OR ");
+            String filterQueryCategory = String.format("Category:(%s)", categoryFilter);
+            solrQuery.addFilterQuery(filterQueryCategory);
+        }
+
+        if (ratingFilter != null) {
+            String filterQueryRating = String.format("AvgRating: [%d TO *]", ratingFilter);
+            solrQuery.addFilterQuery(filterQueryRating);
+        }
+
         if (start != null && rows != null) {
             solrQuery.setRows(rows);
             solrQuery.setStart(start);
@@ -116,7 +101,8 @@ public class SolrDao {
         List<SolrProductEntry> solrProductEntries = response.getBeans(SolrProductEntry.class);
         Long numFound = response.getResults().getNumFound();
         List<FacetField> facetFields = response.getFacetFields();
-        return new SolrSearchResponse(solrProductEntries, numFound, facetFields);
+        Map<String, Integer> facetQueries = response.getFacetQuery();
+        return new SolrSearchResponse(solrProductEntries, numFound, facetFields, facetQueries);
     }
 
 }

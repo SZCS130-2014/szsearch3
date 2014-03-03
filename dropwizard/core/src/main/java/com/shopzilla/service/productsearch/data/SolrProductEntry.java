@@ -15,6 +15,7 @@ public class SolrProductEntry {
     private String displayName;
     private String brand;
     private String title;
+    private Double rating;
     private List<String> reviewRatings;
     private List<String> reviewTitles;
     private List<String> reviewContents;
@@ -62,6 +63,15 @@ public class SolrProductEntry {
     @Field("ProductTitle")
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    @Field("AvgRating")
+    public void setRating(Double rating) {
+        this.rating = rating;
     }
 
     public List<String> getReviewRatings() {
