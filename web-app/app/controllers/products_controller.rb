@@ -1,4 +1,4 @@
-
+    
 # ProductController
 # A simple controller for viewing and searching for products
 # Author: Joshua Dykstra
@@ -19,7 +19,29 @@ class ProductsController < ApplicationController
     #
     def results
         # Use Product model to fetch results in JSON format
-        @results = Product.search(params[:query], params[:start], params[:rows])
+        @results = Product.search(params[:query], params[:start], params[:rows], params[:categoryFilter], params[:ratingFilter])
+        @searchTerm = params[:query]
+
+        # if !@results['numFound'].nil?
+        #     totalPages = @results['numFound'] / 20
+
+        #     if !params[:start].nil?
+        #         #if params[:start] / 20 > 3?
+        #         current = params[:start] / 20 
+        #         startPage = (params[:start] / 20) - 2
+        #         endPage = (params[:start] / 20) + 2
+        #     else
+        #         current = 1
+        #         startPage = 1
+        #         endPage = totalPages > 5 ? 5 : totalPages
+        #     end
+
+
+
+        #     #@results['pages'] = {'total' => totalPages, 'current' => current, 'start' => startPage, 'end' => endPage}
+
+        #     puts  @results['pages'] 
+        # end
         
     end
 
