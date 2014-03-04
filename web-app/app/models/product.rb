@@ -18,14 +18,16 @@ class Product
 	# optional param: rows - number of results ro return
 	# return: object conta"shared/ad_banner"ining search results or nil
 	#
-	def self.search(keywords, start, rows)
+	def self.search(keywords, start, rows, categoryFilter, ratingFilter)
 
 		# Check if we don't have any keywords
 		if keywords.nil?
-			return {:productSearchEntry => nil}
+			return {:productSearchEntry => nil,
+					:numFoud => nil,
+					:facetAttribute => nil}
 		end
 
-		#set defaults for start and rows
+		#set defaults
 		if start.nil?
 			start = 0
 		end
@@ -34,18 +36,30 @@ class Product
 			rows = 20
 		end
 
+		params = {:q => keywords, :start => start,
+					:rows => rows, :format => 'json'}
+
+		if !categoryFilter.nil?
+			params[:categoryFilter] = categoryFilter
+		end
+
+		if !ratingFilter.nil?
+			params[:ratingFilter] = ratingFilter
+		end
+
 		puts "Issuing search for: #{keywords} start: #{start} rows: #{rows}"
+
 		# Issue a query to the service using HTTParty
-		params = { :query => {:q => keywords, :start => start,
-							  :rows => rows, :format => 'json'} }
-		response = get("#{@base_uri}/productsearch", params)
+		response = get("#{@base_uri}/productsearch", { :query =>  params})
 
 		if response.success?
 			puts response
 			return JSON.parse(response.body)
 		else
-			puts response.response
-			return {:productSearchEntry => nil} 
+			puts response
+			return {:productSearchEntry => nil,
+					:numFoud => nil,
+					:facetAttribute => nil}
 		end
 
 	end

@@ -4,10 +4,16 @@
    <div class="center-container">
    	<div class="center-me" id="front-search">
        <h1>Find anything...</h1>
-				<%= form_tag("/search", method: "get") do %>
-					<p><%= text_field_tag(:query) %></p>
-					<p><%= submit_tag() %></p>
-				<% end %>
+			<%= form_tag("/search", method: "get", role: "form") do %>
+				<div class="input-group col-lg-6 col-lg-offset-3">
+					<%= text_field_tag(:query, nil, class:"form-control") %>
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+			<% end %>
        </div>
    </div>
 </div>
