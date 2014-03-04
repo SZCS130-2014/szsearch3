@@ -1,17 +1,15 @@
 <%= render "partials/headerplain" %>
 
-	<h1>Search Homepage</h1>
-
-	<%= form_tag("/search", method: "get") do %>
-
-		<p>
-			<%= text_field_tag(:query) %>
-		</p>
-
-		<p>
-			<%= submit_tag() %>
-		</p>
-
-	<% end %>
+<div class="whole-page-container">
+   <div class="center-container">
+   	<div class="center-me" id="front-search">
+       <h1>Find anything...</h1>
+				<%= form_tag("/search", method: "get") do %>
+					<p><%= text_field_tag(:query) %></p>
+					<p><%= submit_tag() %></p>
+				<% end %>
+       </div>
+   </div>
+</div>
 
 <%= render "partials/footer" %>
