@@ -1,5 +1,11 @@
 <%= render "partials/headerplain" %>
 
+<style type="text/css">
+	.whole-page-container {
+		background-image: url(<%= asset_path 'backgrounds/' + (rand(10) + 1).to_s + '.jpg' %> );
+	}
+</style>
+
 <div class="whole-page-container">
    <div class="center-container">
    	<div class="center-me" id="front-search">
