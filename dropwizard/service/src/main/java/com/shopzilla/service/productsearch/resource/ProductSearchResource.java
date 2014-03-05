@@ -18,6 +18,7 @@ import org.apache.solr.client.solrj.response.FacetField;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -43,7 +44,8 @@ public class ProductSearchResource {
                         @QueryParam("start") Integer start,
                         @QueryParam("rows") Integer rows,
                         @QueryParam("categoryFilter") String categoryFilter,
-                        @QueryParam("ratingFilter") Integer ratingFilter) throws Exception {
+                        @QueryParam("ratingFilter") Integer ratingFilter,
+                        @QueryParam("sort") Boolean sort) throws Exception {
         if (query == null || query.length() < 1) {
             // TODO: log?
             return Response.status(Response.Status.NOT_ACCEPTABLE).build();
@@ -84,6 +86,12 @@ public class ProductSearchResource {
         }
 
         addRatingFacets(response, solrSearchResponse.getFacetQuery());
+
+        // sort
+        if (sort != null && sort) {
+            Collections.sort(response.getProductSearchEntry(), new ProductSearchEntryComparator());
+        }
+
         response.setNumFound(solrSearchResponse.getNumFound());
 
         return buildResponse(response, format);
