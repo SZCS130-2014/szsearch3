@@ -64,6 +64,7 @@ public class ProductResource {
 
             productEntry.getCommentEntry().add(commentEntry);
         }
+        productEntry.setRating(solrProductEntry.getRating());
         Collections.sort(productEntry.getCommentEntry(), new CommentEntryComparator());
 
         return buildResponse(productEntry, format);
