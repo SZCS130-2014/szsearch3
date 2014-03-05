@@ -23,17 +23,22 @@
 						<div class="panel-body" id="filter-panel">
 								
 							<% @results['facetAttribute'].each do |facet| %>
-								
 								<div data-facet-container="<%= facet['name'] %>">
 									<p><strong><%= facet['name'] %></strong></p>
-									<% facet['facet'].each do |facetValue| %>
-										<div class="checkbox">
-											<label>
-												<input data-facet-field="<%= facet['name'] %>" data-facet-value="<%= facetValue['name'] %>" type="checkbox">
-													<%= facet['name'] == "Rating"? facetValue['name'] + "+" : facetValue['name'] %> (<%= facetValue['numFound'] %>)
-											</label>
-										</div>
-									<% end %>
+									<% if params[facet['name'].downcase + 'Filter'].nil? #Really janky way of checking for facetFilter=...%>
+										<% facet['facet'].each do |facetValue| %>
+											<div class="checkbox">
+												<label>
+													<input data-facet-field="<%= facet['name'] %>" data-facet-value="<%= facetValue['name'] %>" type="checkbox">
+														<%= facet['name'] == "Rating"? facetValue['name'] + "+" : facetValue['name'] %> (<%= facetValue['numFound'] %>)
+												</label>
+											</div>
+										<% end #facet.each do %>
+									<% else #facetFilter isn't nil, meaning it's activated; provide a way to go back %>
+										<p>Showing only <%= params[facet['name'].downcase + 'Filter'] %></p>
+										<p><button class="btn btn-default btn-block">Show all</button></p>
+										<% #note: this button does nothing currently. We should make it do something. %>
+									<% end #facetFilter%>	
 								</div>
 
 							<% end %>

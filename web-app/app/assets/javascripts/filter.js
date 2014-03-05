@@ -26,7 +26,7 @@ $.extend(Filter.prototype, {
 
 		// Add a button with event to expand the hidden filters if we hid any
 		if(hidden) {
-			expandBtn = $('<button class="btn btn-default btn-block">Show all ' + this.buttonName + '</button> <br>');
+			expandBtn = $('<button class="btn btn-default btn-block">See all ' + this.buttonName + '</button> <br>');
 			this.filterContainer.append(expandBtn);
 			expandBtn.click({filterContainer: this.filterContainer}, this.expandFilters);
 		}
