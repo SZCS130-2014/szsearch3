@@ -59,17 +59,15 @@ To strip out and add the "Brand" and "Item" Fields: <br>
   * `q`: search query
   * `start`: number of results to skip
   * `rows`: number of results to return
-  * `categoryFilter`: categories, separated by spaces, to filter by (if multiple, union is used)
+  * `categoryFilter`: category to filter by (if multiple, union is used)
   * `ratingFilter`: rating to filter by. ex: 3 --> [3 TO *], 4 --> [4 TO *]
-  * TODO `sort`: true/false. sorts in order of descending ratings.
+  * `sort`: true/false. sorts in order of descending ratings.
   * `format`: xml or json (defaults to json)
 ```json
 {
     "productSearchEntry": [
         {
-            "categories": [
-                "Laptop Computers"
-            ],
+            "category": "Laptop Computers",
             "brand": "Apple",
             "name": "Apple 11 in. Macbook Air 64GB 1.7GHz dual-core Intel Core i5",
             "title": "Apple - 11.6 MacBook Air Notebook - 4 GB Memory and 64 GB Solid State Drive",
@@ -116,9 +114,7 @@ To strip out and add the "Brand" and "Item" Fields: <br>
             "content": "Easy Applications, extremely well made, what more can I say except Bye bye to those awful window based PC's. Where have you been MAC all my life. Seriously, I could never look back, Apple is definately by far the best investment for the money.\n"
         }
     ],
-    "categories": [
-        "Laptop Computers"
-    ],
+    "category": "Laptop Computers",
     "brand": "Apple",
     "name": "Apple 11 in. Macbook Air 64GB 1.7GHz dual-core Intel Core i5",
     "title": "Apple - 11.6 MacBook Air Notebook - 4 GB Memory and 64 GB Solid State Drive",
