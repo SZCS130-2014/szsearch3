@@ -64,12 +64,7 @@ public class ProductSearchResource {
             productSearchEntry.setName(displayName == null ? "" : displayName);
             productSearchEntry.setTitle(solrProductEntry.getTitle());
             productSearchEntry.setRating(solrProductEntry.getRating());
-
-            if (solrProductEntry.getCategory() != null) {
-                for (String category : solrProductEntry.getCategory()) {
-                    productSearchEntry.getCategories().add(category);
-                }
-            }
+            productSearchEntry.setCategory(solrProductEntry.getCategory());
             response.getProductSearchEntry().add(productSearchEntry);
         }
 

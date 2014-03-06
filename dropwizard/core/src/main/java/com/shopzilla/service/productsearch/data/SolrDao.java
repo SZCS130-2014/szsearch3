@@ -81,8 +81,7 @@ public class SolrDao {
                 .addFacetQuery("AvgRating: [5 TO *]");
 
         if (categoryFilter != null) {
-            categoryFilter = categoryFilter.replace(" ", " OR ");
-            String filterQueryCategory = String.format("Category:(%s)", categoryFilter);
+            String filterQueryCategory = String.format("Category:(\"%s\")", categoryFilter);
             solrQuery.addFilterQuery(filterQueryCategory);
         }
 
