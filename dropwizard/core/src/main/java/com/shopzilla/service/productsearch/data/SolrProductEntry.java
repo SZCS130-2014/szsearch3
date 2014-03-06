@@ -11,7 +11,7 @@ public class SolrProductEntry {
     //TODO: maybe come up with a better naming scheme for the variables
 
     private String pid;
-    private List<String> category;
+    private String category;
     private String displayName;
     private String brand;
     private String title;
@@ -29,12 +29,12 @@ public class SolrProductEntry {
         this.pid = pid;
     }
 
-    public List<String> getCategory() {
+    public String getCategory() {
         return category;
     }
 
     @Field("Category")
-    public void setCategory(List<String> category) {
+    public void setCategory(String category) {
         this.category = category;
     }
 

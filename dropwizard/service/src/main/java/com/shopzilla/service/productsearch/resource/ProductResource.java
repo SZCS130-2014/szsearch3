@@ -45,12 +45,7 @@ public class ProductResource {
         productEntry.setBrand(solrProductEntry.getBrand());
         productEntry.setName(solrProductEntry.getDisplayName());
         productEntry.setTitle(solrProductEntry.getTitle());
-
-        if (solrProductEntry.getCategory() != null) {
-            for (String category : solrProductEntry.getCategory()) {
-                productEntry.getCategories().add(category);
-            }
-        }
+        productEntry.setCategory(solrProductEntry.getCategory());
 
         int length = solrProductEntry.getReviewRatings().size();
 
