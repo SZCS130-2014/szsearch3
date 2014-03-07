@@ -46,7 +46,7 @@
 						<div class="row">
 							<div class="col-lg-6">
 								<div class="page-header">
-									<h4>Positive Reviews</h4>
+									<h4><span class="glyphicon glyphicon-ok"></span>&nbsp;Positive Reviews</h4>
 								</div>
 								<% @product['commentEntry'].each do |comment|
 									if comment['rating'] > 3.0 %>
@@ -74,7 +74,7 @@
 							</div>
 							<div class="col-lg-6">
 								<div class="page-header">
-									<h4>Negative Reviews</h4>
+									<h4><span class="glyphicon glyphicon-remove"></span>&nbsp;Negative Reviews</h4>
 								</div>
 								<% @product['commentEntry'].sort_by{|comment| comment['rating']}.each do |comment|
 									if comment['rating'] <= 3.0 %>
