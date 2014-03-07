@@ -72,14 +72,22 @@ body {
 	-webkit-border-radius: 4px;
 	     -moz-border-radius: 4px;
 	          border-radius: 4px;
-	}
+}
 
 .review-rating {
-display: inline;
-text-align: center;
+	display: inline;
+	text-align: center;
 }
 
 .review-content-container {
-display: inline;
-margin: 0px 5px 0px 5px;
+	display: inline;
+	margin: 0px 5px 0px 5px;
+}
+
+.product-name-caption {
+	height: 75px;
+}
+
+.product-name-caption > h5 > a{
+	color:black;
 }

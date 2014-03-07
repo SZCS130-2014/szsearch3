@@ -7,9 +7,9 @@ class Product
 
 	require 'rubygems'
 	require 'json'
-	include HTTParty
 
-	base_uri '54.213.229.102:7500/services/'
+	# URIs for resources
+	@service_base_uri = URI.parse(URI.encode('http://54.213.229.102:7500/services'))
 
 	#
 	# Issues a query to the search service
@@ -33,8 +33,9 @@ class Product
 		end
 
 		if rows.nil?
-			rows = 20
+			rows = 21
 		end
+
 
 		params = {:q => keywords, :start => start,
 					:rows => rows, :format => 'json'}
@@ -50,7 +51,7 @@ class Product
 		puts "Issuing search for: #{keywords} start: #{start} rows: #{rows}"
 
 		# Issue a query to the service using HTTParty
-		response = get("#{@base_uri}/productsearch", { :query =>  params})
+		response = HTTParty.get("#{@service_base_uri}/productsearch", { :query =>  params})
 
 		if response.success?
 			puts response
@@ -78,8 +79,8 @@ class Product
 
 		# Issue query to the service using HTTParty
 		params = { :query => {:format => 'json'} }
-		puts "#{@base_uri}/product/#{productID}"
-		response = get("#{@base_uri}/product/#{productID}", params)
+		puts "#{@service_base_uri}/product/#{productID}"
+		response = HTTParty.get("#{@service_base_uri}/product/#{productID}", params)
 
 		if response.success?
 			return JSON.parse(response.body)
