@@ -18,7 +18,7 @@ class Product
 	# optional param: rows - number of results ro return
 	# return: object conta"shared/ad_banner"ining search results or nil
 	#
-	def self.search(keywords, start, rows, categoryFilter, ratingFilter)
+	def self.search(keywords, start, rows, categoryFilter, ratingFilter, brandFilter)
 
 		# Check if we don't have any keywords
 		if keywords.nil?
@@ -46,6 +46,10 @@ class Product
 
 		if !ratingFilter.nil?
 			params[:ratingFilter] = ratingFilter
+		end
+
+		if !brandFilter.nil?
+			params[:brandFilter] = brandFilter
 		end
 
 		puts "Issuing search for: #{keywords} start: #{start} rows: #{rows}"

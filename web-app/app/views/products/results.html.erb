@@ -116,8 +116,10 @@ var catFilter = new Filter($("div[data-facet-container='Category']"), "categoryF
 
 var ratingFilter = new Filter($("div[data-facet-container='Rating']"), "ratingFilter", "ratings");
 
+var brandFilter = new Filter($("div[data-facet-container='Brand']"), "brandFilter", "brands");
+
 $('#remove-filters').click(function(e) {
-	var newurl = URI(window.location).removeSearch("categoryFilter").removeSearch("ratingFilter");
+	var newurl = URI(window.location).removeSearch("categoryFilter").removeSearch("ratingFilter").removeSearch("brandFilter");
 	window.location = newurl;
 });
 </script>
