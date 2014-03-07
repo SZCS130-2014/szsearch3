@@ -45,6 +45,7 @@ public class ProductSearchResource {
                         @QueryParam("rows") Integer rows,
                         @QueryParam("categoryFilter") String categoryFilter,
                         @QueryParam("ratingFilter") Integer ratingFilter,
+                        @QueryParam("brandFilter") String brandFilter,
                         @QueryParam("sort") Boolean sort) throws Exception {
         if (query == null || query.length() < 1) {
             // TODO: log?
@@ -52,7 +53,13 @@ public class ProductSearchResource {
         }
 
         ProductSearchResponse response = new ProductSearchResponse();
-        SolrSearchResponse solrSearchResponse = solrDao.getSearchResults(query, start, rows, categoryFilter, ratingFilter);
+        SolrSearchResponse solrSearchResponse = solrDao.getSearchResults(query,
+                                                                         start,
+                                                                         rows,
+                                                                         categoryFilter,
+                                                                         ratingFilter,
+                                                                         brandFilter,
+                                                                         sort);
 
         // add all solrProductEntries to response
         List<SolrProductEntry> solrProductEntries = solrSearchResponse.getSolrProductEntries();
@@ -81,11 +88,6 @@ public class ProductSearchResource {
         }
 
         addRatingFacets(response, solrSearchResponse.getFacetQuery());
-
-        // sort
-        if (sort != null && sort) {
-            Collections.sort(response.getProductSearchEntry(), new ProductSearchEntryComparator());
-        }
 
         response.setNumFound(solrSearchResponse.getNumFound());
 

@@ -51,7 +51,7 @@
  <fields>
   <field name="PID" type="text_general" indexed="true" stored="true" multiValued="false" />
   <field name="ProductTitle" type="text_general" indexed="true" stored="true" multiValued="false"/>
-  <field name="Brand" type="text_general" indexed="true" stored="true" multiValued="false"/>
+  <field name="Brand" type="string" indexed="true" stored="true" multiValued="false"/>
   <field name="Category" type="string" indexed="true" stored="true" multiValued="false"/>
   <field name="DisplayName" type="text_general" indexed="true" stored="true" multiValued="false"/>
   <field name="AvgRating" type="double" indexed="true" stored="true" multiValued="false"/>
