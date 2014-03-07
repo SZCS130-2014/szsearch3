@@ -22,6 +22,12 @@ class ProductsController < ApplicationController
         @results = Product.search(params[:query], params[:start], params[:rows], params[:categoryFilter], params[:ratingFilter])
         @searchTerm = params[:query]
 
+        if !params[:categoryFilter].nil? || !params[:ratingFilter].nil?
+            @activeFilters = {"Category" => params[:categoryFilter], "Rating" => params[:ratingFilter]}
+        else
+            @activeFilters = nil;
+        end
+
         # if !@results['numFound'].nil?
         #     totalPages = @results['numFound'] / 20
 

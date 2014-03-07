@@ -9,9 +9,7 @@
 					<div class="page-header">
 						<h3><%= @product['title'] %></h3>
 						<p>
-							<% @product['categories'].each do |category| %>
-								<span class="label label-default"><%= category %></span>
-							<% end %>
+							<span class="label label-default"><%= @product['category'] %></span>
 						</p>
 					</div>
 				</div>
@@ -28,6 +26,13 @@
 						<div class="col-lg-9">				
 							<h4>By: <%= @product['brand'] %></h4>
 							<p><%= @product['name'] %></p>
+							<p><% for i in 1..@product['rating'].floor %>
+									<span class="glyphicon glyphicon-star"></span>
+								<% end %>
+								<% for i in @product['rating'].floor..4 %>
+									<span class="glyphicon glyphicon-star-empty"></span>
+								<% end %>
+							</p>
 						</div>
 					</div>
 				</div>
