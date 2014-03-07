@@ -58,6 +58,7 @@
     <xs:attribute name="pid" type="xs:long"/>
     <xs:attribute name="rating" type="xs:double"/>
     <xs:attribute name="category" type="xs:string"/>
+    <xs:attribute name="imgUrl" type="xs:string"/>
   </xs:attributeGroup>
 
   <xs:attributeGroup name="commentAttributes">

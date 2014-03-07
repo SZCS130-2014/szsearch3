@@ -71,7 +71,8 @@ To strip out and add the "Brand" and "Item" Fields: <br>
             "brand": "Apple",
             "name": "Apple 11 in. Macbook Air 64GB 1.7GHz dual-core Intel Core i5",
             "title": "Apple - 11.6 MacBook Air Notebook - 4 GB Memory and 64 GB Solid State Drive",
-            "pid": 4382094588
+            "pid": 4382094588,
+            "imgUrl": "http://asdfasdfasdfsdf.jpg"
         }
     ],
     "numFound": 52,
@@ -118,6 +119,7 @@ To strip out and add the "Brand" and "Item" Fields: <br>
     "brand": "Apple",
     "name": "Apple 11 in. Macbook Air 64GB 1.7GHz dual-core Intel Core i5",
     "title": "Apple - 11.6 MacBook Air Notebook - 4 GB Memory and 64 GB Solid State Drive",
-    "pid": 4382094588
+    "pid": 4382094588,
+    "imgUrl": "http://asdfasdfasdfsdf.jpg"
 }
 ```
