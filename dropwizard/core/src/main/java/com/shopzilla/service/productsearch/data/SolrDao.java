@@ -64,7 +64,9 @@ public class SolrDao {
                                                Integer start,
                                                Integer rows,
                                                String categoryFilter,
-                                               Integer ratingFilter) throws Exception {
+                                               Integer ratingFilter,
+                                               String brandFilter,
+                                               Boolean sort) throws Exception {
         if (query == null || query.length() < 1)
             return new SolrSearchResponse();
 
@@ -73,6 +75,7 @@ public class SolrDao {
                 .setRequestHandler(requestHandler)
                 .setFacet(true)
                 .addFacetField("Category")
+                .addFacetField("Brand")
                 .setFacetMinCount(1)
                 .addFacetQuery("AvgRating: [1 TO *]")
                 .addFacetQuery("AvgRating: [2 TO *]")
@@ -88,6 +91,15 @@ public class SolrDao {
         if (ratingFilter != null) {
             String filterQueryRating = String.format("AvgRating: [%d TO *]", ratingFilter);
             solrQuery.addFilterQuery(filterQueryRating);
+        }
+
+        if (brandFilter != null) {
+            String filterQueryBrand = String.format("Brand:(\"%s\")", brandFilter);
+            solrQuery.addFilterQuery(filterQueryBrand);
+        }
+
+        if (sort != null && sort) {
+            solrQuery.setSort("AvgRating", SolrQuery.ORDER.desc);
         }
 
         if (start != null && rows != null) {
