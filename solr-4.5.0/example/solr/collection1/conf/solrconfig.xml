@@ -913,7 +913,7 @@
             <str name="indent">true</str>
             <str name="df">text</str>
             <str name="defType">edismax</str>
-            <str name="fl">Brand, Category, PID, ProductTitle, DisplayName, AvgRating</str>
+            <str name="fl">Brand, Category, PID, ProductTitle, DisplayName, AvgRating, ImgUrl</str>
             <str name="qf">Brand^2.0 DisplayName^1.5 Category^2.0 ProductTitle^1.0 Review^0.5 ReviewTitle^0.5</str>
         </lst>
     </requestHandler>

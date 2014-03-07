@@ -16,6 +16,7 @@ public class SolrProductEntry {
     private String brand;
     private String title;
     private Double rating;
+    private String imgUrl;
     private List<String> reviewRatings;
     private List<String> reviewTitles;
     private List<String> reviewContents;
@@ -76,6 +77,15 @@ public class SolrProductEntry {
 
     public List<String> getReviewRatings() {
         return reviewRatings;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    @Field("ImgUrl")
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
     }
 
     @Field("Rating")

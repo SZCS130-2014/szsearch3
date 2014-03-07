@@ -40,12 +40,15 @@ public class ProductResource {
             return Response.status(Response.Status.NOT_FOUND).build();
 
         ProductEntry productEntry = new ProductEntry();
-        // TODO: make sure all PIDs are valid longs?
+
         productEntry.setPid(Long.parseLong(solrProductEntry.getPid()));
         productEntry.setBrand(solrProductEntry.getBrand());
-        productEntry.setName(solrProductEntry.getDisplayName());
+        String displayName = solrProductEntry.getDisplayName();
+        productEntry.setName(displayName == null ? "" : displayName);
         productEntry.setTitle(solrProductEntry.getTitle());
         productEntry.setCategory(solrProductEntry.getCategory());
+        productEntry.setImgUrl(solrProductEntry.getImgUrl());
+        productEntry.setRating(solrProductEntry.getRating());
 
         int length = solrProductEntry.getReviewRatings().size();
 
@@ -59,7 +62,6 @@ public class ProductResource {
 
             productEntry.getCommentEntry().add(commentEntry);
         }
-        productEntry.setRating(solrProductEntry.getRating());
         Collections.sort(productEntry.getCommentEntry(), new CommentEntryComparator());
 
         return buildResponse(productEntry, format);

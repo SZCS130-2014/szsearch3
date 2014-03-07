@@ -57,7 +57,8 @@
   <field name="AvgRating" type="double" indexed="true" stored="true" multiValued="false"/>
   <field name="Rating" type="text_general" indexed="true" stored="true" multiValued="true"/>
   <field name="ReviewTitle" type="text_general" indexed="true" stored="true" multiValued="true"/> 
-  <field name="Review" type="text_general" indexed="true" stored="true" multiValued="true"/>              
+  <field name="Review" type="text_general" indexed="true" stored="true" multiValued="true"/>  
+  <field name="ImgUrl" type="string" indexed="false" stored="true" multiValued="false"/>            
      
   <!-- catchall field, containing all other searchable text fields (implemented
   via copyField further on in this schema  -->

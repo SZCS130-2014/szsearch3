@@ -6,6 +6,7 @@
 			<field column="PID" xpath="/products/product/@PID"/>
 			<field column="ProductTitle" xpath="/products/product/@ProductTitle"/>
 			<field column="Brand" xpath="/products/product/@Brand"/>
+			<field column="ImgUrl" xpath="/products/product/@ImgUrl"/>
 			<field column="Category" xpath="/products/product/Category"/>
 			<field column="DisplayName" xpath="/products/product/DisplayName"/>
 			<field column="AvgRating" xpath="/products/product/@AvgRating"/>
