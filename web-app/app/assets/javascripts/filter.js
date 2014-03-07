@@ -22,7 +22,7 @@ $.extend(Filter.prototype, {
 		this.buttonName = button;
 
 		// Hide filters if necessary
-		var hidden = this.hideFilters(this.filterContainer.children(".checkbox"));
+		var hidden = this.hideFilters(this.filterContainer.children(".radio"));
 
 		// Add a button with event to expand the hidden filters if we hid any
 		if(hidden) {
@@ -65,9 +65,17 @@ $.extend(Filter.prototype, {
 	handleClick: function(e) {
 		
 		var target = $(e.target);
-		if(target.is('input') && target.attr('type') == 'checkbox') {
-			var newurl = window.location + "&" + e.data.filterName + "=" + target.attr('data-facet-value');
-			window.location = newurl;
+		if(target.is('input') && target.attr('type') == 'radio') {
+			if(target.is(':checked')) {
+				// Add this new filter
+				var newurl = URI(window.location).removeSearch(e.data.filterName)
+							.addSearch(e.data.filterName, target.attr('data-facet-value'));
+				window.location = newurl;
+			} else {
+				// Remove the filter
+				var newurl = URI(window.location).removeSearch(e.data.filterName);
+				window.location = newurl;
+			}
 		}
 	},
 
@@ -76,7 +84,7 @@ $.extend(Filter.prototype, {
 	 */
 	expandFilters: function(e) {
 
-		e.data.filterContainer.children(".checkbox")
+		e.data.filterContainer.children(".radio")
 		.each(function(index, filterNode) {
 			if (index >= 10)
 				$(filterNode).fadeIn("slow");
