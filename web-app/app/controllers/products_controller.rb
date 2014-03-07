@@ -3,6 +3,8 @@
 # A simple controller for viewing and searching for products
 # Author: Joshua Dykstra
 # Date: 2/27/14
+
+RESULTS_PER_PAGE = 21
 class ProductsController < ApplicationController
   
     #
@@ -29,27 +31,25 @@ class ProductsController < ApplicationController
             @activeFilters = nil
         end
 
-        # if !@results['numFound'].nil?
-        #     totalPages = @results['numFound'] / 20
+         if !@results['numFound'].nil?
+            totalPages = @results['numFound'] / RESULTS_PER_PAGE
 
-        #     if !params[:start].nil?
-        #         #if params[:start] / 20 > 3?
-        #         current = params[:start] / 20 
-        #         startPage = (params[:start] / 20) - 2
-        #         endPage = (params[:start] / 20) + 2
-        #     else
-        #         current = 1
-        #         startPage = 1
-        #         endPage = totalPages > 5 ? 5 : totalPages
-        #     end
-
-
-
-        #     #@results['pages'] = {'total' => totalPages, 'current' => current, 'start' => startPage, 'end' => endPage}
-
-        #     puts  @results['pages'] 
-        # end
-        
+             if params[:start].nil? || params[:start].to_i < (3*RESULTS_PER_PAGE) 
+                @current = (params[:start].to_f / RESULTS_PER_PAGE).ceil
+                @startPage = 1
+                @endPage = totalPages > 5 ? 5 : totalPages
+            
+             elsif @results['numFound'] - (params[:start].to_i) < (3*RESULTS_PER_PAGE)
+                @current = (params[:start].to_f / RESULTS_PER_PAGE).ceil
+                @endPage = totalPages;
+                @startPage = totalPages > 5 ? @endPage - 4 : 1;   #Need this logic in case current = 4, totalpages = 4 or 5.
+            
+              else    
+                 @current = (params[:start].to_f / RESULTS_PER_PAGE).ceil 
+                 @startPage = @current - 2
+                 @endPage = @current + 2
+             end
+         end
     end
 
 	#
