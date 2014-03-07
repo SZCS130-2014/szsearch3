@@ -19,26 +19,25 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							Filter your results
+							<% if !@activeFilters.nil? %>
+								<button class="btn btn-danger btn-xs pull-right" id="remove-filters">Remove Filters</button>
+							<% end %>
 						</div>
 						<div class="panel-body" id="filter-panel">
 								
 							<% @results['facetAttribute'].each do |facet| %>
 								<div data-facet-container="<%= facet['name'] %>">
 									<p><strong><%= facet['name'] %></strong></p>
-									<% if params[facet['name'].downcase + 'Filter'].nil? #Really janky way of checking for facetFilter=...%>
-										<% facet['facet'].each do |facetValue| %>
-											<div class="checkbox">
-												<label>
-													<input data-facet-field="<%= facet['name'] %>" data-facet-value="<%= facetValue['name'] %>" type="checkbox">
-														<%= facet['name'] == "Rating"? facetValue['name'] + "+" : facetValue['name'] %> (<%= facetValue['numFound'] %>)
-												</label>
-											</div>
-										<% end #facet.each do %>
-									<% else #facetFilter isn't nil, meaning it's activated; provide a way to go back %>
-										<p>Showing only <%= params[facet['name'].downcase + 'Filter'] %></p>
-										<p><button class="btn btn-default btn-block">Show all</button></p>
-										<% #note: this button does nothing currently. We should make it do something. %>
-									<% end #facetFilter%>	
+									<% facet['facet'].each do |facetValue| %>
+										<div class="radio">
+											<label>
+												<input data-facet-field="<%= facet['name'] %>" name=<%= facet['name'] %> data-facet-value="<%= facetValue['name'] %>" type="radio" <%= !@activeFilters.nil? && @activeFilters[facet['name']] == facetValue['name']? "checked" : ""  %>>
+													<%= facet['name'] == "Rating" && facetValue['name'] != "5"? facetValue['name'] + "+" : facetValue['name'] %> 
+													<%= facet['name'] != "Rating"? "(" + facetValue['numFound'].to_s + ")" : "" %>
+											</label>
+										</div>
+									<% end #facet.each do %>
+
 								</div>
 
 							<% end %>
@@ -51,15 +50,26 @@
 
 			<!-- BEGIN RESULTS -->
 			<div class="col-lg-9">
-				<% @results['productSearchEntry'].each do |result| %>
+		
+				<% @results['productSearchEntry'].each do |result| %>	
+
 					<div class="col-lg-4">
 						<div class="thumbnail">
-							<% %>
 							<div class="caption">
-								<h5><%= link_to(result['title'], "products/#{result['pid']}") %></h5>
+								<div class="product-name-caption">
+									<h5><%= link_to(truncate(result['title'], length:80), "products/#{result['pid']}") %></h5>
+								</div>
+								<p class="text-center"><% for i in 1..result['rating'].floor %>
+										<span class="glyphicon glyphicon-star"></span>
+									<% end %>
+									<% for i in result['rating'].floor..4 %>
+										<span class="glyphicon glyphicon-star-empty"></span>
+									<% end %>
+								</p>
 							</div>
 						</div>
 					</div>
+				  	
 				<% end %>
 <%
 =begin
@@ -106,6 +116,10 @@ var catFilter = new Filter($("div[data-facet-container='Category']"), "categoryF
 
 var ratingFilter = new Filter($("div[data-facet-container='Rating']"), "ratingFilter", "ratings");
 
+$('#remove-filters').click(function(e) {
+	var newurl = URI(window.location).removeSearch("categoryFilter").removeSearch("ratingFilter");
+	window.location = newurl;
+});
 </script>
 
 <%= render "/partials/footer" %>
