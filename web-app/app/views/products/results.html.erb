@@ -55,6 +55,10 @@
 
 					<div class="col-lg-4">
 						<div class="thumbnail">
+							<div class="thumbnail-holder">
+								<span class="vertical-align-helper"></span>
+								<img src="<%= result['imgUrl'] %>" alt="<%= result['title'] %>"/>
+							</div>
 							<div class="caption">
 								<div class="product-name-caption">
 									<h5><%= link_to(truncate(result['title'], length:80), "products/#{result['pid']}") %></h5>

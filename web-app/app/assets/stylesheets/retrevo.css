@@ -91,3 +91,23 @@ body {
 .product-name-caption > h5 > a{
 	color:black;
 }
+
+.thumbnail-holder {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.thumbnail-holder img {
+	max-width: 90%;
+	max-height: 90%;
+	vertical-align: middle;
+}
+
+span.vertical-align-helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	background: #eeeeee;
+}
