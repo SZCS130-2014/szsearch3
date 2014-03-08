@@ -26,9 +26,9 @@ $.extend(Filter.prototype, {
 
 		// Add a button with event to expand the hidden filters if we hid any
 		if(hidden) {
-			expandBtn = $('<button class="btn btn-default btn-block">See all ' + this.buttonName + '</button> <br>');
+			expandBtn = $('<button data-action="expand" class="btn btn-default btn-block">More ' + this.buttonName + '</button> <br>');
 			this.filterContainer.append(expandBtn);
-			expandBtn.click({filterContainer: this.filterContainer}, this.expandFilters);
+			expandBtn.click({filterContainer: this.filterContainer, buttonName: this.buttonName}, this.toggleFilters);
 		}
 
 		// Add event to register any click events
@@ -80,16 +80,34 @@ $.extend(Filter.prototype, {
 	},
 
 	/**
-	 * Expands the filter window to show more filters
+	 * Toggles the filter window to show/hide additional filters
 	 */
-	expandFilters: function(e) {
+	toggleFilters: function(e) {
 
-		e.data.filterContainer.children(".radio")
-		.each(function(index, filterNode) {
-			if (index >= 10)
-				$(filterNode).fadeIn("slow");
-		});
+		var target = $(e.target);
+		if(target.attr('data-action') == 'expand') {
 
-		$(e.target).hide();
+			e.data.filterContainer.children(".radio")
+			.each(function(index, filterNode) {
+				if (index >= 10)
+					$(filterNode).fadeIn("slow");
+			});
+
+			target.attr('data-action', 'collapse');
+			target.text("Less " + e.data.buttonName);
+
+		} else {
+
+			e.data.filterContainer.children(".radio")
+			.each(function(index, filterNode) {
+				if (index >= 10)
+					$(filterNode).fadeOut("slow");
+			});
+
+			target.attr('data-action', 'expand');
+			target.text("More " + e.data.buttonName);
+		}
+
+		
 	},
 });

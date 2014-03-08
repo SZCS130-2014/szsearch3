@@ -1,5 +1,3 @@
-<!-- TODO: Need to fix column width of rating section. Possibly just part stars. -->
-
 <%= render "/partials/header" %>
 
 <div class="container">
@@ -7,6 +5,7 @@
 		<div class= "col-lg-10 col-lg-offset-1">
 			<% if !@product.nil? %>
 
+				<!-- BEGIN PRODUCT TITLE -->
 				<div class="row">
 					<div class="page-header">
 						<h3><%= @product['title'] %></h3>
@@ -15,13 +14,14 @@
 						</p>
 					</div>
 				</div>
+				<!-- END PRODUCT TITLE -->
 
-
+				<!-- BEGIN PRODUCT DESCRIPTION-->
 				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2">
+					<div class="col-lg-10 col-lg-offset-1">
 						<div class="col-lg-3">
 							<div class="thumbnail">
-								
+								<img src="<%= @product['imgUrl']%>" alt="<%= @product['name']%>">
 							</div>
 						</div> 
 
@@ -38,12 +38,13 @@
 						</div>
 					</div>
 				</div>
+				<!-- END PRODUCT DESCRIPTION -->
 
-
+				<!-- BEGIN REVIEWS -->
 				<div class="row">
 					<div class="col-lg-10 col-lg-offset-1">
-
 						<div class="row">
+							<!-- BEGIN POSITIVE REVIEWS -->
 							<div class="col-lg-6">
 								<div class="page-header">
 									<h4><span class="glyphicon glyphicon-ok"></span>&nbsp;Positive Reviews</h4>
@@ -54,24 +55,33 @@
 											<div class="col-lg-12">
 												<div class="review-box">
 													<div class="row">
-														<div class="col-lg-2">
-															<div class="review-rating-container">
-																<h3 class="text-center"><%= comment['rating'] %><small>/5.0</small></h3>
-															</div>
+														<div class="col-lg-8">
+															<h5><strong><%= comment['title'] != ""? comment['title'] : "Review"%></strong></h5>
 														</div>
-														<div class="col-lg-10">
-															<div class="review-content-container">
-																<h5><strong><%= comment['title'] %></strong></h5>
-																<p><%= comment['content'] %>
-															</div>
+														<div class="col-lg-4">
+															<h5>
+																<% for i in 1..comment['rating'] .floor %>
+																	<span class="glyphicon glyphicon-star"></span>
+																<% end %>
+																<% for i in comment['rating'] .floor..4 %>
+																	<span class="glyphicon glyphicon-star-empty"></span>
+																<% end %>
+															</h5>
+														</div>
+													</div>
+													<div class="row">	
+														<div class="col-lg-12">
+															<p><%= comment['content'] %></p>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									<% end
-								end %>
+									<% end %>
+								<% end %>
 							</div>
+							<!-- END POSITIVE REVIEWS -->
+							<!-- BEGIN NEGATIVE REVIEWS -->
 							<div class="col-lg-6">
 								<div class="page-header">
 									<h4><span class="glyphicon glyphicon-remove"></span>&nbsp;Negative Reviews</h4>
@@ -82,30 +92,36 @@
 											<div class="col-lg-12">
 												<div class="review-box">
 													<div class="row">
-														<div class="col-lg-2">
-															<div class="review-rating-container">
-																<h3 class="text-center"><%= comment['rating'] %><small>/5.0</small></h3>
-															</div>
+														<div class="col-lg-8">
+															<h5><strong><%= comment['title'] != ""? comment['title'] : "Review"%></strong></h5>
 														</div>
-														<div class="col-lg-10">
-															<div class="review-content-container">
-																<h5><strong><%= comment['title'] %></strong></h5>
-																<p><%= comment['content'] %>
-															</div>
+														<div class="col-lg-4">
+															<h5>
+																<% for i in 1..comment['rating'] .floor %>
+																	<span class="glyphicon glyphicon-star"></span>
+																<% end %>
+																<% for i in comment['rating'] .floor..4 %>
+																	<span class="glyphicon glyphicon-star-empty"></span>
+																<% end %>
+															</h5>
+														</div>
+													</div>
+													<div class="row">	
+														<div class="col-lg-12">
+															<p><%= comment['content'] %></p>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
-									<% end	
-								end %>
-							
+									<% end %>	
+								<% end %>
 							</div>
+							<!-- END NEGATIVE REVIEWS -->
 						</div>
-
 					</div>
 				</div>
-
+				<!-- END REVIEWS -->
 				
 			<% else %>
 				<div class="alert alert-warning col-lg-8 col-lg-offset-2">
