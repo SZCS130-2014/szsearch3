@@ -71,19 +71,17 @@
 					</div>
 				  	
 				<% end %>
-<%
-=begin
-%>
-THIS ISN'T WORKING YET!!
-<!-- BEGIN PAGINATION -->
+
+
+				<!-- BEGIN PAGINATION -->
 				<div>
 					<% if !@results['numFound'].nil? %>
 						<ul class="pagination">
 							<li class="disabled"><a href="#">&laquo;</a></li>
 
-							<% for i in @start..@end %>
+							<% for i in @startPage..@endPage %>
 								<% if i == @current %>
-		  							<li class="current"><a href="#"><%= i %></a></li>
+		  							<li class="active"><a href="#"><%= i %></a></li>
 		  						<% else %>
 		  							<li><a href="#"><%= i %></a></li>
 		  						<% end %>
@@ -95,9 +93,6 @@ THIS ISN'T WORKING YET!!
 					<% end %>
 				</div>
 				<!-- END PAGINATION -->
-<%
-=end 
-%>
 
 			</div>
 			<!-- END RESULTS -->	

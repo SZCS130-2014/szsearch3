@@ -31,21 +31,27 @@ class ProductsController < ApplicationController
             @activeFilters = nil
         end
 
-         if !@results['numFound'].nil?
-            totalPages = @results['numFound'] / RESULTS_PER_PAGE
+############ PAGINATION
 
-             if params[:start].nil? || params[:start].to_i < (3*RESULTS_PER_PAGE) 
-                @current = (params[:start].to_f / RESULTS_PER_PAGE).ceil
+         if !@results['numFound'].nil?
+            totalPages = (@results['numFound'].to_f / RESULTS_PER_PAGE).ceil
+            recordToStartFrom = params[:start].to_f + 1 
+            ## If we start from the first record, recordToStartFrom has value 1.
+
+             if recordToStartFrom <= (3*RESULTS_PER_PAGE) 
+                @current = (recordToStartFrom / RESULTS_PER_PAGE).ceil
                 @startPage = 1
                 @endPage = totalPages > 5 ? 5 : totalPages
             
-             elsif @results['numFound'] - (params[:start].to_i) < (3*RESULTS_PER_PAGE)
-                @current = (params[:start].to_f / RESULTS_PER_PAGE).ceil
+             elsif @results['numFound'] - recordToStartFrom +1 < (3*RESULTS_PER_PAGE)
+             ## LHS is number of records left till the end. RHS is number of records on 3 pages.
+             ## Therefore if number of records left till the end fit on 3 pages, our starting record is somewhere on the last 3 pages.
+                @current = (recordToStartFrom / RESULTS_PER_PAGE).ceil
                 @endPage = totalPages;
                 @startPage = totalPages > 5 ? @endPage - 4 : 1;   #Need this logic in case current = 4, totalpages = 4 or 5.
             
               else    
-                 @current = (params[:start].to_f / RESULTS_PER_PAGE).ceil 
+                 @current = (recordToStartFrom / RESULTS_PER_PAGE).ceil 
                  @startPage = @current - 2
                  @endPage = @current + 2
              end
