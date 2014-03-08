@@ -3,7 +3,7 @@
 <div class="container">
 	<div class= "col-lg-12">
 		<div class="page-header">
-			<h2>Results 
+			<h2>Results for "<%= @searchTerm %>"
 				<% if !@results['numFound'].nil? %>
 					<small><%= @results['numFound'] %> found</small>
 				<% end %>
@@ -20,7 +20,7 @@
 						<div class="panel-heading">
 							Filter your results
 							<% if !@activeFilters.nil? %>
-								<button class="btn btn-danger btn-xs pull-right" id="remove-filters">Remove Filters</button>
+								<button class="btn btn-danger btn-xs pull-right" id="remove-filters">Remove All</button>
 							<% end %>
 						</div>
 						<div class="panel-body" id="filter-panel">
@@ -34,6 +34,10 @@
 												<input data-facet-field="<%= facet['name'] %>" name=<%= facet['name'] %> data-facet-value="<%= facetValue['name'] %>" type="radio" <%= !@activeFilters.nil? && @activeFilters[facet['name']] == facetValue['name']? "checked" : ""  %>>
 													<%= facet['name'] == "Rating" && facetValue['name'] != "5"? facetValue['name'] + "+" : facetValue['name'] %> 
 													<%= facet['name'] != "Rating"? "(" + facetValue['numFound'].to_s + ")" : "" %>
+
+													<% if !@activeFilters.nil? && @activeFilters[facet['name']] == facetValue['name'] %>
+														<button type="button" class="close" data-filter-remove="<%= facet['name'] %>">&times;</button>
+													<% end %>
 											</label>
 										</div>
 									<% end #facet.each do %>
@@ -55,6 +59,10 @@
 
 					<div class="col-lg-4">
 						<div class="thumbnail">
+							<div class="thumbnail-holder">
+								<span class="vertical-align-helper"></span>
+								<img src="<%= result['imgUrl'] %>" alt="<%= result['title'] %>"/>
+							</div>
 							<div class="caption">
 								<div class="product-name-caption">
 									<h5><%= link_to(truncate(result['title'], length:80), "products/#{result['pid']}") %></h5>
@@ -107,14 +115,33 @@
 </div>
 
 <script>
+// Create filters
 var catFilter = new Filter($("div[data-facet-container='Category']"), "categoryFilter", "categories");
-
 var ratingFilter = new Filter($("div[data-facet-container='Rating']"), "ratingFilter", "ratings");
-
 var brandFilter = new Filter($("div[data-facet-container='Brand']"), "brandFilter", "brands");
 
+// Remove all filters
 $('#remove-filters').click(function(e) {
 	var newurl = URI(window.location).removeSearch("categoryFilter").removeSearch("ratingFilter").removeSearch("brandFilter");
+	window.location = newurl;
+});
+
+// Remove Individual Buttons
+$("button[data-filter-remove='Category']").click(function(e) {
+	e.preventDefault();
+	var newurl = URI(window.location).removeSearch("categoryFilter");
+	window.location = newurl;
+});
+
+$("button[data-filter-remove='Brand']").click(function(e) {
+	e.preventDefault();
+	var newurl = URI(window.location).removeSearch("brandFilter");
+	window.location = newurl;
+});
+
+$("button[data-filter-remove='Rating']").click(function(e) {
+	e.preventDefault();
+	var newurl = URI(window.location).removeSearch("ratingFilter");
 	window.location = newurl;
 });
 </script>
