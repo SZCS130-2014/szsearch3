@@ -54,51 +54,58 @@
 
 			<!-- BEGIN RESULTS -->
 			<div class="col-lg-9">
-		
-				<% @results['productSearchEntry'].each do |result| %>	
-
-					<div class="col-lg-4">
-						<div class="thumbnail">
-							<div class="thumbnail-holder">
-								<span class="vertical-align-helper"></span>
-								<img src="<%= result['imgUrl'] %>" alt="<%= result['title'] %>"/>
-							</div>
-							<div class="caption">
-								<div class="product-name-caption">
-									<h5><%= link_to(truncate(result['title'], length:80), "products/#{result['pid']}") %></h5>
+				<div class="row"> 
+					<% @results['productSearchEntry'].each do |result| %>	
+						
+							<div class="col-lg-4">
+								<div class="thumbnail">
+									<div class="thumbnail-holder">
+										<span class="vertical-align-helper"></span>
+										<img src="<%= result['imgUrl'] %>" alt="<%= result['title'] %>"/>
+									</div>
+									<div class="caption">
+										<div class="product-name-caption">
+											<h5><%= link_to(truncate(result['title'], length:80), "products/#{result['pid']}") %></h5>
+										</div>
+										<p class="text-center"><% for i in 1..result['rating'].floor %>
+												<span class="glyphicon glyphicon-star"></span>
+											<% end %>
+											<% for i in result['rating'].floor..4 %>
+												<span class="glyphicon glyphicon-star-empty"></span>
+											<% end %>
+										</p>
+									</div>
 								</div>
-								<p class="text-center"><% for i in 1..result['rating'].floor %>
-										<span class="glyphicon glyphicon-star"></span>
-									<% end %>
-									<% for i in result['rating'].floor..4 %>
-										<span class="glyphicon glyphicon-star-empty"></span>
-									<% end %>
-								</p>
 							</div>
-						</div>
-					</div>
-				  	
-				<% end %>
+					<% end %>
+				</div>
 
 
 				<!-- BEGIN PAGINATION -->
-				<div>
-					<% if !@results['numFound'].nil? %>
-						<ul class="pagination">
-							<li class="disabled"><a href="#">&laquo;</a></li>
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3">
+						<% if !@results['numFound'].nil? %>
+							<ul class="pagination">
 
-							<% for i in @startPage..@endPage %>
-								<% if i == @current %>
-		  							<li class="active"><a href="#"><%= i %></a></li>
-		  						<% else %>
-		  							<li><a href="#"><%= i %></a></li>
-		  						<% end %>
-		  					<% end %>
+								<li class="<%= @startPage == @current? "disabled": "" %>">
+									<%= link_to( "&laquo;".html_safe, params.merge!({:start => ((@current-2) * RESULTS_PER_PAGE).to_s})) %>
+								</li>
 
-		  					<li><a href="#">&raquo;</a></li>
-				 		</ul>
+								<% for i in @startPage..@endPage %>
+									<% if i == @current %>
+			  							<li class="active"><a href="#"><%= i %></a></li>
+			  						<% else %>
+			  							<li><%= link_to(i, params.merge!({:start => ((i-1) * RESULTS_PER_PAGE).to_s})) %></li>
+			  						<% end %>
+			  					<% end %>
 
-					<% end %>
+			  					<li class="<%= @endPage == @current? "disabled": "" %>">
+			  						<%= link_to( "&raquo;".html_safe, params.merge!({:start => ((@current) * RESULTS_PER_PAGE).to_s})) %>
+			  					</li>
+					 		</ul>
+
+						<% end %>
+					</div>
 				</div>
 				<!-- END PAGINATION -->
 
