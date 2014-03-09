@@ -110,27 +110,32 @@ public class ProductSearchResource {
         Facet facet = new Facet();
         facet.setName("1");
         facet.setNumFound(facetQuery.get("AvgRating: [1 TO *]").longValue());
-        facetAttribute.getFacet().add(facet);
+        if (facet.getNumFound() > 0)
+            facetAttribute.getFacet().add(facet);
 
         facet = new Facet();
         facet.setName("2");
         facet.setNumFound(facetQuery.get("AvgRating: [2 TO *]").longValue());
-        facetAttribute.getFacet().add(facet);
+        if (facet.getNumFound() > 0)
+            facetAttribute.getFacet().add(facet);
 
         facet = new Facet();
         facet.setName("3");
         facet.setNumFound(facetQuery.get("AvgRating: [3 TO *]").longValue());
-        facetAttribute.getFacet().add(facet);
+        if (facet.getNumFound() > 0)
+            facetAttribute.getFacet().add(facet);
 
         facet = new Facet();
         facet.setName("4");
         facet.setNumFound(facetQuery.get("AvgRating: [4 TO *]").longValue());
-        facetAttribute.getFacet().add(facet);
+        if (facet.getNumFound() > 0)
+            facetAttribute.getFacet().add(facet);
 
         facet = new Facet();
         facet.setName("5");
         facet.setNumFound(facetQuery.get("AvgRating: [5 TO *]").longValue());
-        facetAttribute.getFacet().add(facet);
+        if (facet.getNumFound() > 0)
+            facetAttribute.getFacet().add(facet);
 
         response.getFacetAttribute().add(facetAttribute);
     }
