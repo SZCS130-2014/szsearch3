@@ -111,3 +111,7 @@ span.vertical-align-helper {
 	vertical-align: middle;
 	background: #eeeeee;
 }
+
+.adjust-left {
+	margin-right: 15px;
+}

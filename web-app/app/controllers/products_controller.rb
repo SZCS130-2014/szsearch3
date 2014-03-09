@@ -4,7 +4,6 @@
 # Author: Joshua Dykstra
 # Date: 2/27/14
 
-RESULTS_PER_PAGE = 21
 class ProductsController < ApplicationController
   
     #
@@ -28,7 +27,9 @@ class ProductsController < ApplicationController
                                   params[:ratingFilter], 
                                   params[:brandFilter],
                                   params[:sort])
+
         @searchTerm = params[:query]
+        @resultsPerPage = params[:rows].nil? ? 21 : params[:rows].to_i;
 
         if !params[:categoryFilter].nil? || !params[:ratingFilter].nil? || !params[:brandFilter].nil?
             @activeFilters = {"Category" => params[:categoryFilter], "Rating" => params[:ratingFilter],
@@ -40,24 +41,24 @@ class ProductsController < ApplicationController
         # PAGINATION
 
         if !@results['numFound'].nil?
-            totalPages = (@results['numFound'].to_f / RESULTS_PER_PAGE).ceil
+            totalPages = (@results['numFound'].to_f / @resultsPerPage).ceil
             recordToStartFrom = params[:start].to_f + 1 
             # If we start from the first record, recordToStartFrom has value 1.
 
-            if recordToStartFrom <= (3*RESULTS_PER_PAGE) 
-                @current = (recordToStartFrom / RESULTS_PER_PAGE).ceil
+            if recordToStartFrom <= (3*@resultsPerPage) 
+                @current = (recordToStartFrom / @resultsPerPage).ceil
                 @startPage = 1
                 @endPage = totalPages > 5 ? 5 : totalPages
             
-            elsif @results['numFound'] - recordToStartFrom +1 < (3*RESULTS_PER_PAGE)
+            elsif @results['numFound'] - recordToStartFrom +1 < (3*@resultsPerPage)
              # LHS is number of records left till the end. RHS is number of records on 3 pages.
              # Therefore if number of records left till the end fit on 3 pages, our starting record is somewhere on the last 3 pages.
-                @current = (recordToStartFrom / RESULTS_PER_PAGE).ceil
+                @current = (recordToStartFrom / @resultsPerPage).ceil
                 @endPage = totalPages;
                 @startPage = totalPages > 5 ? @endPage - 4 : 1;   #Need this logic in case current = 4, totalpages = 4 or 5.
             
             else    
-                @current = (recordToStartFrom / RESULTS_PER_PAGE).ceil 
+                @current = (recordToStartFrom / @resultsPerPage).ceil 
                 @startPage = @current - 2
                 @endPage = @current + 2
             end
