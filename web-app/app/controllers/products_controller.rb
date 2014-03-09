@@ -21,7 +21,13 @@ class ProductsController < ApplicationController
     #
     def results
         # Use Product model to fetch results in JSON format
-        @results = Product.search(params[:query], params[:start], params[:rows], params[:categoryFilter], params[:ratingFilter], params[:brandFilter])
+        @results = Product.search(params[:query], 
+                                  params[:start], 
+                                  params[:rows], 
+                                  params[:categoryFilter], 
+                                  params[:ratingFilter], 
+                                  params[:brandFilter],
+                                  params[:sort])
         @searchTerm = params[:query]
 
         if !params[:categoryFilter].nil? || !params[:ratingFilter].nil? || !params[:brandFilter].nil?
