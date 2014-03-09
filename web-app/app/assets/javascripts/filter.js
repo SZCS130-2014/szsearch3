@@ -68,12 +68,12 @@ $.extend(Filter.prototype, {
 		if(target.is('input') && target.attr('type') == 'radio') {
 			if(target.is(':checked')) {
 				// Add this new filter
-				var newurl = URI(window.location).removeSearch(e.data.filterName)
+				var newurl = URI(window.location).removeSearch(e.data.filterName).removeSearch("start")
 							.addSearch(e.data.filterName, target.attr('data-facet-value'));
 				window.location = newurl;
 			} else {
 				// Remove the filter
-				var newurl = URI(window.location).removeSearch(e.data.filterName);
+				var newurl = URI(window.location).removeSearch(e.data.filterName).removeSearch("start");
 				window.location = newurl;
 			}
 		}
