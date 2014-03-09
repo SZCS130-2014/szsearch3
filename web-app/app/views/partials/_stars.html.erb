@@ -1,0 +1,7 @@
+<% for i in 1..locals[:rating] %>
+	<span class="glyphicon glyphicon-star"></span>
+<% end %>
+<% for i in locals[:rating]..4 %>
+	<span class="glyphicon glyphicon-star-empty"></span>
+<% end %>
+<%= locals[:rating] == 5 ? "" : " & Up" %>
