@@ -52,6 +52,7 @@
   <field name="PID" type="text_general" indexed="true" stored="true" multiValued="false" />
   <field name="ProductTitle" type="text_general" indexed="true" stored="true" multiValued="false"/>
   <field name="Brand" type="string" indexed="true" stored="true" multiValued="false"/>
+  <field name="BrandSearch" type="text_general" indexed="true" stored="true" multiValued="false"/>
   <field name="Category" type="string" indexed="true" stored="true" multiValued="false"/>
   <field name="CategorySearch" type="text_general" indexed="true" stored="true" multiValued="false"/>
   <field name="DisplayName" type="text_general" indexed="true" stored="true" multiValued="false"/>
@@ -88,6 +89,7 @@
     
     <defaultSearchField>ProductTitle</defaultSearchField>
     <copyField source="Category" dest="CategorySearch"/>
+    <copyField source="Brand" dest="BrandSearch"/>
 <!--     <defaultSearchField>solr_mFamilyName</defaultSearchField>
     <defaultSearchField>solr_mModelNumber</defaultSearchField>
     <defaultSearchField>solr_mMPN</defaultSearchField>
