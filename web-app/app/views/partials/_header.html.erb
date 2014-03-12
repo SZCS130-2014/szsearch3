@@ -16,8 +16,8 @@
 		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		    	<div style="width:300px; margin: auto;">
 			   		<%= form_tag("/search", method: "get", class: "navbar-form navbar-left", role: "search") do %>
-		  				<div class="col-xs-4">
-		  					<%= text_field_tag 'query', @searchTerm, class: "form-control", placeholder: "Search" %>
+		  				<div class="col-lg-4">
+		  					<%= text_field_tag 'query', @searchTerm, class: "form-control search-bar", placeholder: "Search" %>
 		  				</div>
 					<% end %>
 				</div>
