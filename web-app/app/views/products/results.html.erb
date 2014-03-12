@@ -1,0 +1,207 @@
+<%= render "/partials/header" %>
+
+<div class="container">
+	<div class= "row">
+		<div class="col-lg-12">
+			<div class="page-header">
+				<h2>Results for "<%= @searchTerm %>"
+					<% if !@results['numFound'].nil? %>
+						<small><%= @results['numFound'] %> found</small>
+					<% end %>
+
+					<select id="sort" name="sort" class="pull-right selectpicker" data-width="130px">
+						<option disabled="disabled" selected>
+							Order By
+						</option>
+						<option value="false" <%= (!params[:sort].nil? && params[:sort] == "false") ? "selected" : "" %> >
+							Relevance
+						</option>
+						<option value="true" <%= (!params[:sort].nil? && params[:sort] == "true") ? "selected" : "" %> >
+							Rating
+						</option>
+					</select>
+
+					<select id="rows" name="rows" class="pull-right adjust-left selectpicker" data-width="100px">
+						<option class="text-center" disabled="disabled" selected>Per Page</option>
+						<option class="text-center" <%= (!params[:rows].nil? && params[:rows] == "9") ? "selected" : "" %> >9</option>
+						<option class="text-center" <%= (!params[:rows].nil? && params[:rows] == "21") ? "selected" : "" %> >21</option>
+						<option class="text-center" <%= (!params[:rows].nil? && params[:rows] == "33") ? "selected" : "" %> >33</option>
+						<option class="text-center" <%= (!params[:rows].nil? && params[:rows] == "45") ? "selected" : "" %> >45</option>
+					</select>
+				</h2>
+			</div>
+		</div>
+
+		<!-- BEGIN RESULTS AND FILTERS -->
+		<% if !@results['productSearchEntry'].nil? %>
+
+			<!-- BEGIN FILTERS -->
+			<% if !@results['facetAttribute'].nil? %>	
+				<div class="col-lg-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							Filter your results
+							<% if !@activeFilters.nil? %>
+								<button class="btn btn-danger btn-xs pull-right" id="remove-filters">Remove All</button>
+							<% end %>
+						</div>
+						<div class="panel-body" id="filter-panel">
+								
+							<% @results['facetAttribute'].each do |facet| %>
+								<div data-facet-container="<%= facet['name'] %>">
+									<p><strong><%= facet['name'] %></strong></p>
+									<% facet['facet'].each do |facetValue| %>
+										<div class="radio">
+											<label>
+												<input data-facet-field="<%= facet['name'] %>" name=<%= facet['name'] %> data-facet-value="<%= facetValue['name'] %>" type="radio" <%= !@activeFilters.nil? && @activeFilters[facet['name']] == facetValue['name']? "checked" : ""  %>>
+													<%= facet['name'] == "Rating" && facetValue['name'] != "5"? (render "/partials/stars", :locals => {:rating => facetValue['name'].to_i}) : 	(facet['name'] == "Rating" ? (render "/partials/stars", :locals => {:rating => facetValue['name'].to_i}) : facetValue['name']) %> 
+													<%= facet['name'] != "Rating"? "(" + facetValue['numFound'].to_s + ")" : "" %>
+
+													<% if !@activeFilters.nil? && @activeFilters[facet['name']] == facetValue['name'] %>
+														<button type="button" class="close" data-filter-remove="<%= facet['name'] %>">&times;</button>
+													<% end %>
+											</label>
+										</div>
+									<% end #facet.each do %>
+
+								</div>
+
+							<% end %>
+
+						</div>
+					</div>
+				</div>
+			<% end %>
+			<!-- END FILTERS -->
+
+			<!-- BEGIN RESULTS -->
+			<div class="col-lg-9">
+				<div class="row"> 
+					<% @results['productSearchEntry'].each do |result| %>	
+						
+							<div class="col-lg-4">
+								<div class="thumbnail">
+									<a href="<%= "products/#{result['pid']}" %>">
+										<div class="thumbnail-holder">
+											<span class="vertical-align-helper"></span>
+											<img src="<%= result['imgUrl'] == '' ? 'http://www.weefmgrenada.com/images/na.jpg' : result['imgUrl'] %>" alt="<%= result['title'] %>"/>
+										</div>
+									</a>
+									<div class="caption">
+										<div class="product-name-caption">
+											<h5><%= link_to(truncate(result['title'], length:80), "products/#{result['pid']}") %></h5>
+										</div>
+										<p class="text-center"><% for i in 1..result['rating'].floor %>
+												<span class="glyphicon glyphicon-star"></span>
+											<% end %>
+											<% for i in result['rating'].floor..4 %>
+												<span class="glyphicon glyphicon-star-empty"></span>
+											<% end %>
+										</p>
+									</div>
+								</div>
+							</div>
+					<% end %>
+				</div>
+
+
+				<!-- BEGIN PAGINATION -->
+				<div class="row">
+					<div class="col-lg-6 col-lg-offset-3">
+						<% if !@results['numFound'].nil? %>
+							<ul class="pagination">
+
+								<li class="<%= @startPage == @current? "disabled": "" %>">
+									<%= link_to( "&laquo;".html_safe, params.merge!({:start => ((@current-2) * @resultsPerPage).to_s})) %>
+								</li>
+
+								<% for i in @startPage..@endPage %>
+									<% if i == @current %>
+			  							<li class="active"><a href="#"><%= i %></a></li>
+			  						<% else %>
+			  							<li><%= link_to(i, params.merge!({:start => ((i-1) * @resultsPerPage).to_s})) %></li>
+			  						<% end %>
+			  					<% end %>
+
+			  					<li class="<%= @endPage == @current? "disabled": "" %>">
+			  						<%= link_to( "&raquo;".html_safe, params.merge!({:start => ((@current) * @resultsPerPage).to_s})) %>
+			  					</li>
+					 		</ul>
+
+						<% end %>
+					</div>
+				</div>
+				<!-- END PAGINATION -->
+
+			</div>
+			<!-- END RESULTS -->	
+
+		<% else %>
+			<div class="alert alert-warning col-lg-8 col-lg-offset-2">
+				<p class="text-center">No results found</p>	
+			</div>
+		<% end %> 
+		<!-- END RESULTS AND FILTERS -->
+	</div>
+</div>
+
+<script>
+$(document).ready(function() {
+	// Create filters
+	var catFilter = new Filter($("div[data-facet-container='Category']"), "categoryFilter", "categories");
+	var ratingFilter = new Filter($("div[data-facet-container='Rating']"), "ratingFilter", "ratings");
+	var brandFilter = new Filter($("div[data-facet-container='Brand']"), "brandFilter", "brands");
+
+	// Remove all filters
+	$('#remove-filters').click(function(e) {
+		var newurl = URI(window.location).removeSearch("categoryFilter")
+									     .removeSearch("ratingFilter")
+									     .removeSearch("brandFilter")
+									     .removeSearch("start");
+		window.location = newurl;
+	});
+
+	// Remove Individual Buttons
+	$("button[data-filter-remove='Category']").click(function(e) {
+		e.preventDefault();
+		var newurl = URI(window.location).removeSearch("categoryFilter").removeSearch("start");
+		window.location = newurl;
+	});
+
+	$("button[data-filter-remove='Brand']").click(function(e) {
+		e.preventDefault();
+		var newurl = URI(window.location).removeSearch("brandFilter").removeSearch("start");
+		window.location = newurl;
+	});
+
+	$("button[data-filter-remove='Rating']").click(function(e) {
+		e.preventDefault();
+		var newurl = URI(window.location).removeSearch("ratingFilter").removeSearch("start");
+		window.location = newurl;
+	});
+
+	$("#sort").change(function(e) {
+		var value = $(e.target).val();
+		var newurl = URI(window.location).removeSearch(e.target.name)
+							.addSearch(e.target.name, value);
+		window.location = newurl;
+	});
+
+	$("#rows").change(function(e) {
+		var value = $(e.target).val();
+		var uri = URI(window.location);
+		var oldStart = uri.query(true)['start'];
+		var newStart = oldStart === undefined ? 0 : oldStart - (oldStart % value);
+		var newurl = URI(window.location).removeSearch(e.target.name)
+										 .addSearch(e.target.name, value)
+										 .removeSearch("start")
+										 .addSearch("start", newStart);
+		window.location = newurl;
+	});
+
+   $('.selectpicker').selectpicker();
+});
+
+</script>
+
+<%= render "/partials/footer" %>

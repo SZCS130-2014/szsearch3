@@ -1,0 +1,136 @@
+<%= render "/partials/header" %>
+
+<div class="container">
+	<div class="row">
+		<div class= "col-lg-10 col-lg-offset-1">
+			<% if !@product.nil? %>
+
+				<!-- BEGIN PRODUCT TITLE -->
+				<div class="row">
+					<div class="page-header">
+						<h3><%= @product['title'] %></h3>
+						<p>
+							<span class="label label-default"><%= @product['category'] %></span>
+						</p>
+					</div>
+				</div>
+				<!-- END PRODUCT TITLE -->
+
+				<!-- BEGIN PRODUCT DESCRIPTION-->
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="col-lg-3">
+							<div class="thumbnail">
+								<img src="<%= @product['imgUrl'] == '' ? 'http://www.weefmgrenada.com/images/na.jpg' : @product['imgUrl'] %>" alt="<%= @product['name']%>">
+							</div>
+						</div> 
+
+						<div class="col-lg-9">				
+							<h4>By: <%= @product['brand'] %></h4>
+							<p><%= @product['name'] %></p>
+							<p><% for i in 1..@product['rating'].floor %>
+									<span class="glyphicon glyphicon-star"></span>
+								<% end %>
+								<% for i in @product['rating'].floor..4 %>
+									<span class="glyphicon glyphicon-star-empty"></span>
+								<% end %>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- END PRODUCT DESCRIPTION -->
+
+				<!-- BEGIN REVIEWS -->
+				<div class="row">
+					<div class="col-lg-10 col-lg-offset-1">
+						<div class="row">
+							<!-- BEGIN POSITIVE REVIEWS -->
+							<div class="col-lg-6">
+								<div class="page-header">
+									<h4><span class="glyphicon glyphicon-ok"></span>&nbsp;Positive Reviews</h4>
+								</div>
+								<% @product['commentEntry'].each do |comment|
+									if comment['rating'] > 3.0 %>
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="review-box">
+													<div class="row">
+														<div class="col-lg-8">
+															<h5><strong><%= comment['title'] != ""? comment['title'] : "Review"%></strong></h5>
+														</div>
+														<div class="col-lg-4">
+															<h5>
+																<% for i in 1..comment['rating'] .floor %>
+																	<span class="glyphicon glyphicon-star"></span>
+																<% end %>
+																<% for i in comment['rating'] .floor..4 %>
+																	<span class="glyphicon glyphicon-star-empty"></span>
+																<% end %>
+															</h5>
+														</div>
+													</div>
+													<div class="row">	
+														<div class="col-lg-12">
+															<p><%= comment['content'] %></p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									<% end %>
+								<% end %>
+							</div>
+							<!-- END POSITIVE REVIEWS -->
+							<!-- BEGIN NEGATIVE REVIEWS -->
+							<div class="col-lg-6">
+								<div class="page-header">
+									<h4><span class="glyphicon glyphicon-remove"></span>&nbsp;Negative Reviews</h4>
+								</div>
+								<% @product['commentEntry'].sort_by{|comment| comment['rating']}.each do |comment|
+									if comment['rating'] <= 3.0 %>
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="review-box">
+													<div class="row">
+														<div class="col-lg-8">
+															<h5><strong><%= comment['title'] != ""? comment['title'] : "Review"%></strong></h5>
+														</div>
+														<div class="col-lg-4">
+															<h5>
+																<% for i in 1..comment['rating'] .floor %>
+																	<span class="glyphicon glyphicon-star"></span>
+																<% end %>
+																<% for i in comment['rating'] .floor..4 %>
+																	<span class="glyphicon glyphicon-star-empty"></span>
+																<% end %>
+															</h5>
+														</div>
+													</div>
+													<div class="row">	
+														<div class="col-lg-12">
+															<p><%= comment['content'] %></p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									<% end %>	
+								<% end %>
+							</div>
+							<!-- END NEGATIVE REVIEWS -->
+						</div>
+					</div>
+				</div>
+				<!-- END REVIEWS -->
+				
+			<% else %>
+				<div class="alert alert-warning col-lg-8 col-lg-offset-2">
+					<p class="text-center">Product not found</p>	
+				</div>
+			<% end %>
+
+		</div>
+	</div>
+</div>
+
+<%= render "/partials/footer" %>

@@ -12,3 +12,28 @@ target
 *.iml
 .idea
 *[D|d]ataset*.xml
+
+## Standard Rails gitignore ##
+web-app/*.rbc
+web-app/*.sassc
+web-app/.sass-cache
+web-app/capybara-*.html
+web-app/.rspec
+web-app/log
+web-app/tmp
+web-app/db/*.sqlite3
+web-app/public/system
+web-app/coverage/
+web-app/spec/tmp
+web-app/**.orig
+web-app/rerun.txt
+web-app/pickle-email-*.html
+web-app/config/secrets.yml
+
+## Environment normalisation:
+web-app/.bundle
+web-app/vendor/bundle
+
+# these should all be checked in to normalise the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
+
