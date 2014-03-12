@@ -115,3 +115,7 @@ span.vertical-align-helper {
 .adjust-left {
 	margin-right: 15px;
 }
+
+.form-control.search-bar {
+	width: 250px;
+}
