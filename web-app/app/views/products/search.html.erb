@@ -1,0 +1,27 @@
+<%= render "partials/headerplain" %>
+
+<style type="text/css">
+	.whole-page-container {
+		background-image: url(<%= asset_path 'backgrounds/' + (rand(11) + 1).to_s + '.jpg' %> );
+	}
+</style>
+
+<div class="whole-page-container">
+   <div class="center-container">
+   	<div class="center-me" id="front-search">
+       <h1>Find anything...</h1>
+			<%= form_tag("/search", method: "get", role: "form") do %>
+				<div class="input-group col-lg-6 col-lg-offset-3">
+					<%= text_field_tag(:query, nil, class:"form-control") %>
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="submit">
+							<span class="glyphicon glyphicon-search"></span>
+						</button>
+					</span>
+				</div>
+			<% end %>
+       </div>
+   </div>
+</div>
+
+<%= render "partials/footer" %>
