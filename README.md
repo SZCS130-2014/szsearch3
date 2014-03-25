@@ -3,6 +3,23 @@ szsearch3
 
 CS 130 Winter 2014 Search Engine Group 3
 
+<h3>Build/Run Instructions</h3>
+
+Solr:
+* Move the dataset file into the solr-4.5.0/example folder with the name "merged_dataset.xml"
+* Start solr with the command `java -Xmx1024m -jar start.jar`, run from the example folder
+* Execute a dataimport in solr 
+
+Dropwizard:
+* Navigate to the dropwizard folder
+* run `mvn package`
+* cd into the dropwizard/service folder
+* run `java -jar target/product-search-service-1.0-SNAPSHOT.jar server service.yaml` to start the service
+
+Rails:
+* Navigate to the web-app folder. 
+* Run `rails server` to start the server
+
 <h2>Apache Solr</h2>
 
 <b>Instructions to index dataset into Solr:</b>
