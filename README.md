@@ -3,7 +3,14 @@ szsearch3
 
 CS 130 Winter 2014 Search Engine Group 3
 
-<h3>Build/Run Instructions</h3>
+<h2>Build/Run Instructions</h2>
+
+First, clone this github repository. 
+Next, clear out any existing index files from Solr:
+* `rm -r solr-4.5.0/example/solr/collection1/data/index`
+* `rm -r solr-4.5.0/example/solr/collection1/data/tlog`
+
+Now follow the below instructions to build and run the project.
 
 Solr:
 * Move the dataset file into the solr-4.5.0/example folder with the name "merged_dataset.xml"
