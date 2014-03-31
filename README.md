@@ -15,17 +15,24 @@ Now follow the below instructions to build and run the project.
 Solr:
 * Move the dataset file into the solr-4.5.0/example folder with the name "merged_dataset.xml"
 * Start solr with the command `java -Xmx1024m -jar start.jar`, run from the example folder
-* Execute a dataimport in solr 
+* Execute a dataimport in solr using the instructions below
 
 Dropwizard:
 * Navigate to the dropwizard folder
-* run `mvn package`
-* cd into the dropwizard/service folder
-* run `java -jar target/product-search-service-1.0-SNAPSHOT.jar server service.yaml` to start the service
+* Run `mvn clean install`
+* Run `mvn package` to make fat JARs
+* Navigate into the dropwizard/service folder
+* Run `java -jar target/product-search-service-1.0-SNAPSHOT.jar server service.yaml` to start the service
 
 Rails:
+* Install Ruby v2.1.1 with RVM using these instructions: [http://rvm.io/rvm/install]
+* Install Rails v4.0 using the Ruby Gems package manager and run `gem install rails -V` this may take awhile.
 * Navigate to the web-app folder. 
+* Install other necessary packages using `bundle install`
 * Run `rails server` to start the server
+* You may encounter an error containing a command that must be run to update the rails database. This can be solved by following the instructions in the error.
+
+* NOTE: You may need to change the endpoint URLs that Rails, Dropwizard and SOLR use to access each other depending on your configuration.  These are located in the Product model in Rails, and in the service.yaml file for Dropwizard.
 
 <h2>Apache Solr</h2>
 
